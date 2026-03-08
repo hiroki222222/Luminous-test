@@ -14,15 +14,15 @@
     --navy2:   #172B50;
     --accent:  #E8500A;
     --accent-l:#FF6B2B;
-    --gold:    #C5A059; /* 落ち着いたゴールドに変更 */
+    --gold:    #C5A059;
     --white:   #FFFFFF;
     --offwhite:#F8F9FA;
     --gray:    #4B5563;
     --lightgray:#E5E7EB;
     --text:    #1A1A1A;
     --green:   #25D366;
-    --radius:  4px; /* 直線的な美しさを重視 */
-    --shadow:  0 10px 30px rgba(0,0,0,0.05);
+    --radius:  4px;
+    --shadow:  0 10px 40px rgba(0,0,0,0.15);
   }
 
   /* ===== リセット ===== */
@@ -40,7 +40,7 @@
 
   /* ===== ユーティリティ ===== */
   .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-  .section { padding: 100px 0; }
+  .section { padding: 80px 0; }
   .section-label {
     display: flex;
     align-items: center;
@@ -62,27 +62,29 @@
   .section-title span { color: var(--accent); }
   .divider { width: 60px; height: 4px; background: var(--accent); margin-bottom: 32px; }
 
-  /* ===== 固定CTA ===== */
+  /* ===== 固定CTA（修正ポイント） ===== */
   .fixed-cta {
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 1000;
     display: flex;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
   }
   .fixed-cta a {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 20px 10px;
-    font-size: 16px;
-    font-weight: 700;
+    gap: 8px; /* 絵文字との間隔 */
+    padding: 22px 10px;
+    font-size: 17px;
+    font-weight: 900;
     color: #fff;
+    letter-spacing: 0.05em;
   }
-  .cta-tel { background: var(--navy); }
+  .cta-tel { background: var(--accent); } /* 電話は注意を引くオレンジ */
   .cta-line { background: var(--green); }
+  .cta-emoji { font-size: 1.2em; }
 
   /* ===== ヘッダー ===== */
   .site-header {
@@ -97,19 +99,20 @@
     border-bottom: 1px solid var(--lightgray);
   }
   .logo-text { font-weight: 900; font-size: 18px; color: var(--navy); }
-  .logo-text span { font-size: 12px; font-weight: 500; display: block; color: var(--gray); }
+  .logo-text span { font-size: 11px; font-weight: 500; display: block; color: var(--gray); letter-spacing: 0.05em; }
   .header-tel { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; color: var(--navy); }
 
   /* ===== ヒーロー ===== */
   .hero {
     background: var(--offwhite);
-    padding: 80px 0 120px;
+    padding: 100px 0 140px;
     position: relative;
+    overflow: hidden;
   }
   .hero-headline {
-    font-size: clamp(32px, 8vw, 64px);
+    font-size: clamp(34px, 8vw, 68px);
     font-weight: 900;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 32px;
     color: var(--navy);
   }
@@ -118,25 +121,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .hero-sub { font-size: 18px; color: var(--gray); margin-bottom: 40px; max-width: 600px; }
-
-  /* ===== 理由セクション (カード) ===== */
-  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
-  .reason-card {
-    background: #fff;
-    padding: 40px;
-    border: 1px solid var(--lightgray);
-    position: relative;
-  }
-  .reason-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: 60px;
-    color: var(--lightgray);
-    position: absolute;
-    top: 10px; right: 20px;
-    opacity: 0.5;
-  }
-  .reason-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--navy); }
+  .hero-sub { font-size: 18px; color: var(--gray); margin-bottom: 40px; max-width: 620px; }
 
   /* ===== 実績数値 ===== */
   .stat-grid {
@@ -145,30 +130,15 @@
     gap: 1px;
     background: var(--lightgray);
     border: 1px solid var(--lightgray);
+    margin-top: 60px;
   }
   .stat-item {
     background: #fff;
     padding: 40px 20px;
     text-align: center;
   }
-  .stat-num { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 600; color: var(--navy); }
-  .stat-label { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; }
-
-  /* ===== 施工の流れ (垂直ライン) ===== */
-  .flow-item {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  .flow-step {
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px;
-    width: 32px; height: 32px;
-    border: 1px solid var(--navy);
-    display: grid; place-items: center;
-    flex-shrink: 0;
-  }
-  .flow-content h3 { font-size: 18px; margin-bottom: 8px; }
+  .stat-num { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; }
 
   /* ===== アニメーション ===== */
   .fade-up {
@@ -180,7 +150,6 @@
 
   @media (min-width: 768px) {
     .stat-grid { grid-template-columns: repeat(4, 1fr); }
-    .hero { padding: 120px 0 160px; }
   }
 </style>
 </head>
@@ -202,104 +171,50 @@
         水回りの<span>課題</span>を<br>品質で解決する。
       </h1>
       <p class="hero-sub">
-        福岡で30年。私たちは単なる修理業者ではありません。<br>
-        あなたの住まいのインフラを支える、技術者集団です。
+        福岡で30年。熟練の技術者が24時間365日、<br>
+        あなたの住まいの安心を最優先で守り抜きます。
       </p>
       <div class="divider"></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-label">WHY CHOOSE US</div>
-      <h2 class="section-title">選ばれる<span>3つの理由</span></h2>
-      <div class="reason-grid">
-        <div class="reason-card fade-up">
-          <div class="reason-num">01</div>
-          <h3>最短即日の機動力</h3>
-          <p>福岡県内全域にサービス車両を配置。緊急を要するトラブルには専門チームが直行します。</p>
-        </div>
-        <div class="reason-card fade-up">
-          <div class="reason-num">02</div>
-          <h3>完全自社施工</h3>
-          <p>下請けを挟まないため、中間マージンをカット。適正価格で高品質な施工を約束します。</p>
-        </div>
-        <div class="reason-card fade-up">
-          <div class="reason-num">03</div>
-          <h3>10年間の品質保証</h3>
-          <p>施工後のアフターケアこそが重要です。独自の長期保証制度で、完工後も支え続けます。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background: var(--offwhite);">
-    <div class="container">
+      
       <div class="stat-grid fade-up">
         <div class="stat-item">
           <div class="stat-label">RESULTS</div>
           <div class="stat-num">1,200+</div>
-          <p style="font-size: 12px;">施工実績（件）</p>
+          <p style="font-size: 12px; color: var(--gray);">施工実績（件）</p>
         </div>
         <div class="stat-item">
           <div class="stat-label">SATISFACTION</div>
           <div class="stat-num">98.3%</div>
-          <p style="font-size: 12px;">顧客満足度</p>
+          <p style="font-size: 12px; color: var(--gray);">顧客満足度</p>
         </div>
         <div class="stat-item">
           <div class="stat-label">HISTORY</div>
           <div class="stat-num">30</div>
-          <p style="font-size: 12px;">創業年数</p>
+          <p style="font-size: 12px; color: var(--gray);">地域密着（年）</p>
         </div>
         <div class="stat-item">
           <div class="stat-label">WARRANTY</div>
           <div class="stat-num">10</div>
-          <p style="font-size: 12px;">施工保証（年）</p>
+          <p style="font-size: 12px; color: var(--gray);">施工保証（年）</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-label">PROCESS</div>
-      <h2 class="section-title">ご相談から<span>完了</span>まで</h2>
-      <div class="flow-list">
-        <div class="flow-item fade-up">
-          <div class="flow-step">01</div>
-          <div class="flow-content">
-            <h3>無料診断の受付</h3>
-            <p>電話または公式LINEより現状をお聞かせください。専門スタッフが状況をヒアリングします。</p>
-          </div>
-        </div>
-        <div class="flow-item fade-up">
-          <div class="flow-step">02</div>
-          <div class="flow-content">
-            <h3>現地調査・詳細見積</h3>
-            <p>経験豊富な技術者が現地を訪問。構造や劣化状況を精査し、最適なプランを提示します。</p>
-          </div>
-        </div>
-        <div class="flow-item fade-up">
-          <div class="flow-step">03</div>
-          <div class="flow-content">
-            <h3>施工・自社検査</h3>
-            <p>国家資格保有者による徹底した施工を行います。完工前には独自の品質チェックを実施します。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+  </main>
 
-<footer style="background: var(--navy); color: #fff; padding: 60px 24px 120px; text-align: center;">
-  <p style="font-size: 14px; opacity: 0.7; margin-bottom: 8px;">福岡県全域対応・水回り専門リフォーム</p>
-  <p style="font-weight: 700; font-size: 18px; margin-bottom: 24px;">○○インフラ設備株式会社</p>
-  <p style="font-size: 12px; opacity: 0.5;">© 2026 hiroki222222 / ○○ Infra Equipment Co., Ltd.</p>
+<footer style="background: var(--navy); color: #fff; padding: 60px 24px 140px; text-align: center;">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 12px;">○○インフラ設備株式会社</p>
+  <p style="font-size: 12px; opacity: 0.5;">© 2026 hiroki222222</p>
 </footer>
 
 <div class="fixed-cta">
-  <a href="tel:0120000000" class="cta-tel">お電話での相談</a>
-  <a href="#" class="cta-line">LINEでの相談</a>
+  <a href="tel:0120000000" class="cta-tel">
+    <span class="cta-emoji">📞</span> お電話での相談
+  </a>
+  <a href="#" class="cta-line">
+    <span class="cta-emoji">💬</span> LINEでの相談
+  </a>
 </div>
 
 <script>
