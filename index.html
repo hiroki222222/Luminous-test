@@ -6,23 +6,23 @@
 <title>水回りリフォーム｜福岡の地域密着インフラ・ガス設備会社</title>
 <meta name="description" content="福岡県の水回りリフォーム専門。キッチン・トイレ・浴室・洗面台の交換・修理を最短即日対応。地域密着30年の実績と信頼。まずは無料相談から。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@600&display=swap" rel="stylesheet">
 <style>
   /* ===== CSS変数 ===== */
   :root {
     --navy:    #0D1F3C;
     --navy2:   #172B50;
     --accent:  #E8500A;
-    --accent2: #FF6B2B;
-    --gold:    #F5A623;
+    --accent-l:#FF6B2B;
+    --gold:    #C5A059; /* 落ち着いたゴールドに変更 */
     --white:   #FFFFFF;
-    --offwhite:#F7F8FA;
-    --gray:    #6B7280;
+    --offwhite:#F8F9FA;
+    --gray:    #4B5563;
     --lightgray:#E5E7EB;
-    --text:    #1A1A2E;
-    --green:   #00B050;
-    --radius:  8px;
-    --shadow:  0 4px 24px rgba(13,31,60,0.12);
+    --text:    #1A1A1A;
+    --green:   #25D366;
+    --radius:  4px; /* 直線的な美しさを重視 */
+    --shadow:  0 10px 30px rgba(0,0,0,0.05);
   }
 
   /* ===== リセット ===== */
@@ -32,1073 +32,283 @@
     font-family: 'Noto Sans JP', sans-serif;
     background: var(--white);
     color: var(--text);
-    font-size: 15px;
-    line-height: 1.75;
+    font-size: 16px;
+    line-height: 1.8;
     overflow-x: hidden;
   }
-  img { max-width: 100%; height: auto; display: block; }
-  a { text-decoration: none; color: inherit; }
+  a { text-decoration: none; color: inherit; transition: 0.3s; }
 
   /* ===== ユーティリティ ===== */
-  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-  .section { padding: 60px 0; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 100px 0; }
   .section-label {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    padding: 4px 12px;
-    border-radius: 2px;
-    margin-bottom: 12px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 16px;
   }
+  .section-label::before { content: ""; width: 40px; height: 1px; background: var(--accent); }
   .section-title {
-    font-size: clamp(22px, 5vw, 28px);
+    font-size: clamp(26px, 5vw, 36px);
     font-weight: 900;
     line-height: 1.4;
     color: var(--navy);
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
   .section-title span { color: var(--accent); }
-  .section-sub {
-    color: var(--gray);
-    font-size: 14px;
-    margin-bottom: 32px;
-    line-height: 1.8;
-  }
-  .divider {
-    width: 48px; height: 4px;
-    background: var(--accent);
-    margin: 12px 0 24px;
-    border-radius: 2px;
-  }
-  .tag {
-    display: inline-block;
-    border: 1.5px solid var(--navy);
-    color: var(--navy);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 2px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
+  .divider { width: 60px; height: 4px; background: var(--accent); margin-bottom: 32px; }
 
-  /* ===== 固定CTAバー（スマホ下部） ===== */
+  /* ===== 固定CTA ===== */
   .fixed-cta {
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 1000;
     display: flex;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.18);
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
   }
   .fixed-cta a {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 14px 10px;
-    font-size: 15px;
+    gap: 10px;
+    padding: 20px 10px;
+    font-size: 16px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    color: #fff;
   }
-  .fixed-cta .cta-tel { background: var(--accent); color: #fff; }
-  .fixed-cta .cta-line { background: #06C755; color: #fff; }
-  .fixed-cta .cta-tel svg, .fixed-cta .cta-line svg { flex-shrink: 0; }
+  .cta-tel { background: var(--navy); }
+  .cta-line { background: var(--green); }
 
   /* ===== ヘッダー ===== */
   .site-header {
-    background: var(--navy);
-    padding: 12px 20px;
+    background: rgba(255,255,255,0.98);
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 900;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    border-bottom: 1px solid var(--lightgray);
   }
-  .logo-text {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-  .logo-text span { color: var(--gold); font-size: 11px; font-weight: 500; display: block; }
-  .header-tel {
-    color: var(--gold);
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+  .logo-text { font-weight: 900; font-size: 18px; color: var(--navy); }
+  .logo-text span { font-size: 12px; font-weight: 500; display: block; color: var(--gray); }
+  .header-tel { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; color: var(--navy); }
 
   /* ===== ヒーロー ===== */
   .hero {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #1a3a6b 100%);
-    padding: 48px 20px 56px;
+    background: var(--offwhite);
+    padding: 80px 0 120px;
     position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,80,10,0.18) 0%, transparent 70%);
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: -40px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
-  }
-  .hero-badge {
-    background: var(--accent);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 2px;
-    display: inline-block;
-    margin-bottom: 16px;
-    animation: pulse-badge 2s infinite;
-  }
-  @keyframes pulse-badge {
-    0%,100% { box-shadow: 0 0 0 0 rgba(232,80,10,0.5); }
-    50%      { box-shadow: 0 0 0 8px rgba(232,80,10,0); }
   }
   .hero-headline {
-    color: #fff;
-    font-size: clamp(24px, 6.5vw, 34px);
+    font-size: clamp(32px, 8vw, 64px);
     font-weight: 900;
-    line-height: 1.35;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: var(--navy);
   }
-  .hero-headline .accent-line {
-    display: inline;
-    background: linear-gradient(90deg, var(--accent), var(--gold));
+  .hero-headline span {
+    background: linear-gradient(90deg, var(--accent), var(--accent-l));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
-  .hero-sub {
-    color: rgba(255,255,255,0.82);
-    font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 28px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-points {
-    list-style: none;
-    margin-bottom: 32px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-points li {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 8px 0 8px 32px;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-points li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 16px;
-    font-weight: 900;
-  }
-  .hero-cta-wrap { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
-  .btn-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, var(--accent), #c73e00);
-    color: #fff;
-    font-size: 17px;
-    font-weight: 900;
-    padding: 18px 24px;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 20px rgba(232,80,10,0.5);
-    letter-spacing: 0.03em;
-    transition: transform 0.15s, box-shadow 0.15s;
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-main::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    animation: shine 2.5s infinite;
-  }
-  @keyframes shine {
-    0%   { left: -100%; }
-    40%  { left: 120%; }
-    100% { left: 120%; }
-  }
-  .btn-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 16px 24px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 16px rgba(6,199,85,0.4);
-    letter-spacing: 0.03em;
-  }
-  .btn-note {
-    color: rgba(255,255,255,0.6);
-    font-size: 11px;
-    text-align: center;
-  }
+  .hero-sub { font-size: 18px; color: var(--gray); margin-bottom: 40px; max-width: 600px; }
 
-  /* ===== 信頼バー ===== */
-  .trust-bar {
-    background: var(--gold);
-    padding: 14px 20px;
-    overflow: hidden;
-  }
-  .trust-scroll {
-    display: flex;
-    gap: 32px;
-    animation: marquee 18s linear infinite;
-    white-space: nowrap;
-  }
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .trust-item {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-
-  /* ===== お悩みセクション ===== */
-  .trouble { background: var(--offwhite); }
-  .trouble-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .trouble-card {
+  /* ===== 理由セクション (カード) ===== */
+  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+  .reason-card {
     background: #fff;
-    border-radius: var(--radius);
-    padding: 16px 14px;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    border-left: 4px solid var(--accent);
-    transition: transform 0.2s;
+    padding: 40px;
+    border: 1px solid var(--lightgray);
+    position: relative;
   }
-  .trouble-card:hover { transform: translateY(-2px); }
-  .trouble-icon { font-size: 26px; flex-shrink: 0; }
-  .trouble-card p { font-size: 13px; font-weight: 700; line-height: 1.45; color: var(--navy); }
-  .trouble-bottom {
-    background: var(--navy);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    border-radius: var(--radius);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.6;
-  }
-  .trouble-bottom span { color: var(--gold); font-size: 20px; }
-
-  /* ===== 選ばれる理由 ===== */
-  .reasons { background: #fff; }
-  .reason-list { display: flex; flex-direction: column; gap: 20px; }
-  .reason-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 20px;
-    background: var(--offwhite);
-    border-radius: var(--radius);
-    border: 2px solid transparent;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .reason-item:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(232,80,10,0.1); }
   .reason-num {
     font-family: 'Oswald', sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .reason-body h3 { font-size: 16px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
-  .reason-body p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-  .reason-badge {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 6px;
-  }
-
-  /* ===== 対応工事 ===== */
-  .works { background: var(--navy); }
-  .works .section-title { color: #fff; }
-  .works .section-sub { color: rgba(255,255,255,0.65); }
-  .works-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .work-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius);
-    padding: 20px 14px;
-    text-align: center;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .work-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
-  .work-emoji { font-size: 36px; margin-bottom: 10px; }
-  .work-name { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-  .work-desc { color: rgba(255,255,255,0.55); font-size: 11px; line-height: 1.5; }
-
-  /* ===== 施工の流れ ===== */
-  .flow { background: var(--offwhite); }
-  .flow-list { display: flex; flex-direction: column; gap: 0; }
-  .flow-item {
-    display: flex;
-    gap: 16px;
-    padding: 20px 0;
-    position: relative;
-  }
-  .flow-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 19px;
-    top: 52px;
-    bottom: 0;
-    width: 2px;
-    background: var(--lightgray);
-  }
-  .flow-dot {
-    width: 40px; height: 40px;
-    background: var(--navy);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .flow-dot.active { background: var(--accent); }
-  .flow-body h3 { font-size: 15px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
-  .flow-body p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-  .flow-time {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 4px;
-  }
-
-  /* ===== お客様の声 ===== */
-  .voices { background: #fff; }
-  .voice-list { display: flex; flex-direction: column; gap: 16px; }
-  .voice-card {
-    background: var(--offwhite);
-    border-radius: var(--radius);
-    padding: 20px;
-    border-left: 4px solid var(--gold);
-    position: relative;
-  }
-  .voice-card::before {
-    content: '"';
-    font-family: Georgia, serif;
     font-size: 60px;
-    color: var(--gold);
-    opacity: 0.25;
+    color: var(--lightgray);
     position: absolute;
-    top: 4px;
-    right: 16px;
-    line-height: 1;
+    top: 10px; right: 20px;
+    opacity: 0.5;
   }
-  .stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; letter-spacing: 2px; }
-  .voice-text { font-size: 13px; line-height: 1.85; color: var(--text); margin-bottom: 12px; }
-  .voice-meta { font-size: 12px; font-weight: 700; color: var(--gray); }
-  .voice-tag {
-    display: inline-block;
-    background: var(--navy);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-right: 6px;
-  }
+  .reason-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--navy); }
 
-  /* ===== 施工実績 ===== */
-  .results { background: var(--navy); }
-  .results .section-title { color: #fff; }
-  .results-grid {
+  /* ===== 実績数値 ===== */
+  .stat-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .result-stat {
-    background: rgba(255,255,255,0.07);
-    border-radius: var(--radius);
-    padding: 20px 10px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .result-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(28px, 7vw, 40px);
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .result-unit { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 700; }
-  .result-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
-
-  /* ===== よくある質問 ===== */
-  .faq { background: var(--offwhite); }
-  .faq-list { display: flex; flex-direction: column; gap: 12px; }
-  .faq-item {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--lightgray);
     border: 1px solid var(--lightgray);
   }
-  .faq-q {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 18px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
+  .stat-item {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
   }
-  .faq-q-mark {
-    width: 28px; height: 28px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 50%;
+  .stat-num { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 600; color: var(--navy); }
+  .stat-label { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; }
+
+  /* ===== 施工の流れ (垂直ライン) ===== */
+  .flow-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .flow-step {
+    font-family: 'Oswald', sans-serif;
     font-size: 14px;
-    font-weight: 900;
+    width: 32px; height: 32px;
+    border: 1px solid var(--navy);
+    display: grid; place-items: center;
     flex-shrink: 0;
   }
-  .faq-q .chevron {
-    margin-left: auto;
-    transition: transform 0.3s;
-    color: var(--gray);
-    font-size: 12px;
-  }
-  .faq-item.open .chevron { transform: rotate(180deg); }
-  .faq-a {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s;
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.8;
-    border-top: 0 solid var(--lightgray);
-  }
-  .faq-item.open .faq-a {
-    max-height: 200px;
-    padding: 14px 18px 18px;
-    border-top: 1px solid var(--lightgray);
-  }
-  .faq-a-mark { color: var(--accent); font-weight: 900; margin-right: 4px; }
-
-  /* ===== 無料相談CTA ===== */
-  .cta-section {
-    background: linear-gradient(135deg, var(--accent) 0%, #c73e00 100%);
-    padding: 56px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .cta-section .section-title { color: #fff; }
-  .cta-section .section-sub { color: rgba(255,255,255,0.85); }
-  .cta-tel-big {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #fff;
-    color: var(--accent);
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(26px, 7vw, 36px);
-    font-weight: 700;
-    padding: 16px 28px;
-    border-radius: var(--radius);
-    margin-bottom: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    letter-spacing: 0.05em;
-  }
-  .cta-tel-hours {
-    color: rgba(255,255,255,0.75);
-    font-size: 12px;
-    margin-bottom: 20px;
-  }
-  .cta-line-big {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 900;
-    padding: 18px 28px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(6,199,85,0.4);
-    margin-bottom: 16px;
-  }
-  .cta-guarantee {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius);
-    padding: 16px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 1.7;
-    margin-top: 8px;
-  }
-  .cta-guarantee strong { font-size: 15px; }
-
-  /* ===== フッター ===== */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.55);
-    padding: 32px 20px 100px;
-    font-size: 12px;
-    line-height: 1.8;
-    text-align: center;
-  }
-  footer .footer-logo {
-    color: #fff;
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-  footer .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 12px 0;
-  }
-  footer .footer-links a {
-    color: rgba(255,255,255,0.55);
-    font-size: 11px;
-    text-decoration: underline;
-  }
+  .flow-content h3 { font-size: 18px; margin-bottom: 8px; }
 
   /* ===== アニメーション ===== */
   .fade-up {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(30px);
+    transition: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* ===== スクロールトップ ===== */
-  .scroll-top {
-    position: fixed;
-    right: 16px;
-    bottom: 90px;
-    width: 44px; height: 44px;
-    background: var(--navy);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 800;
-  }
-  .scroll-top.show { opacity: 1; }
-
-  /* ===== レスポンシブ（PC対応） ===== */
   @media (min-width: 768px) {
-    .container { max-width: 720px; }
-    .trouble-grid { grid-template-columns: repeat(3, 1fr); }
-    .works-grid { grid-template-columns: repeat(3, 1fr); }
-    .hero-cta-wrap { flex-direction: row; }
-    .btn-main, .btn-line { flex: 1; }
+    .stat-grid { grid-template-columns: repeat(4, 1fr); }
+    .hero { padding: 120px 0 160px; }
   }
 </style>
 </head>
 <body>
 
-<!-- 固定CTAバー -->
-<div class="fixed-cta">
-  <a href="tel:0120000000" class="cta-tel">
-    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    今すぐ電話
-  </a>
-  <a href="https://lin.ee/xxxxx" class="cta-line">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-    LINEで相談
-  </a>
-</div>
-
-<!-- スクロールトップ -->
-<div class="scroll-top" id="scrollTop">▲</div>
-
-<!-- ヘッダー -->
 <header class="site-header">
   <div class="logo-text">
-    ○○インフラ設備株式会社
-    <span>福岡県 水回りリフォーム専門</span>
+    福岡水回り再生LAB
+    <span>運営：○○インフラ設備株式会社</span>
   </div>
-  <a href="tel:0120000000" class="header-tel">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    0120-000-000
-  </a>
+  <div class="header-tel">0120-000-000</div>
 </header>
 
-<!-- ヒーローセクション -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">📍 福岡県 地域密着 30年の実績</div>
-    <h1 class="hero-headline">
-      水回りの<span class="accent-line">トラブル・老朽化</span>を<br>
-      最短即日で解決します
-    </h1>
-    <p class="hero-sub">
-      キッチン・お風呂・トイレ・洗面台の<br>
-      交換・修理・リフォームはお任せください。<br>
-      地元福岡の職人が丁寧・迅速に対応します。
-    </p>
-    <ul class="hero-points">
-      <li>現地調査・お見積り 完全無料</li>
-      <li>最短即日〜翌日対応（緊急修理も可）</li>
-      <li>施工後10年保証 ＋ アフターサービス充実</li>
-      <li>クレジットカード・各種ローン対応</li>
-    </ul>
-    <div class="hero-cta-wrap">
-      <a href="tel:0120000000" class="btn-main">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        無料で今すぐ電話する
-      </a>
-      <a href="https://lin.ee/xxxxx" class="btn-line">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-        LINEで無料相談
-      </a>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="section-label">FUKUOKA REGION PRIDE</div>
+      <h1 class="hero-headline">
+        水回りの<span>課題</span>を<br>品質で解決する。
+      </h1>
+      <p class="hero-sub">
+        福岡で30年。私たちは単なる修理業者ではありません。<br>
+        あなたの住まいのインフラを支える、技術者集団です。
+      </p>
+      <div class="divider"></div>
     </div>
-    <p class="btn-note" style="margin-top:10px;">📞 受付時間：年中無休 8:00〜20:00</p>
-  </div>
-</section>
+  </section>
 
-<!-- 信頼バー -->
-<div class="trust-bar">
-  <div class="trust-scroll">
-    <span class="trust-item">施工実績 1,200件以上</span>
-    <span class="trust-item">お客様満足度 98.3%</span>
-    <span class="trust-item">施工後10年保証</span>
-    <span class="trust-item">福岡全域 即日対応</span>
-    <span class="trust-item">各種ローン対応</span>
-    <span class="trust-item">無料お見積り</span>
-    <!-- repeat for smooth loop -->
-    <span class="trust-item">施工実績 1,200件以上</span>
-    <span class="trust-item">お客様満足度 98.3%</span>
-    <span class="trust-item">施工後10年保証</span>
-    <span class="trust-item">福岡全域 即日対応</span>
-    <span class="trust-item">各種ローン対応</span>
-    <span class="trust-item">無料お見積り</span>
-  </div>
-</div>
+  <section class="section">
+    <div class="container">
+      <div class="section-label">WHY CHOOSE US</div>
+      <h2 class="section-title">選ばれる<span>3つの理由</span></h2>
+      <div class="reason-grid">
+        <div class="reason-card fade-up">
+          <div class="reason-num">01</div>
+          <h3>最短即日の機動力</h3>
+          <p>福岡県内全域にサービス車両を配置。緊急を要するトラブルには専門チームが直行します。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <div class="reason-num">02</div>
+          <h3>完全自社施工</h3>
+          <p>下請けを挟まないため、中間マージンをカット。適正価格で高品質な施工を約束します。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <div class="reason-num">03</div>
+          <h3>10年間の品質保証</h3>
+          <p>施工後のアフターケアこそが重要です。独自の長期保証制度で、完工後も支え続けます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- お悩みセクション -->
-<section class="trouble section">
-  <div class="container">
-    <span class="section-label">こんなお悩みありませんか？</span>
-    <h2 class="section-title">水回りの<span>不満・困りごと</span>、<br>一人で抱えていませんか？</h2>
-    <div class="divider"></div>
-    <div class="trouble-grid fade-up">
-      <div class="trouble-card"><div class="trouble-icon"></div><p>水が止まらない・漏れている</p></div>
-      <div class="trouble-card"><div class="trouble-icon"></div><p>お湯が出ない・シャワーが弱い</p></div>
-      <div class="trouble-card"><div class="trouble-icon"></div><p>トイレが詰まる・流れが悪い</p></div>
-      <div class="trouble-card"><div class="trouble-icon"></div><p>キッチンが古くて使いにくい</p></div>
-      <div class="trouble-card"><div class="trouble-icon"></div><p>お風呂のタイルが割れた・寒い</p></div>
-      <div class="trouble-card"><div class="trouble-icon"></div><p>排水の臭いが気になる</p></div>
+  <section class="section" style="background: var(--offwhite);">
+    <div class="container">
+      <div class="stat-grid fade-up">
+        <div class="stat-item">
+          <div class="stat-label">RESULTS</div>
+          <div class="stat-num">1,200+</div>
+          <p style="font-size: 12px;">施工実績（件）</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">SATISFACTION</div>
+          <div class="stat-num">98.3%</div>
+          <p style="font-size: 12px;">顧客満足度</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">HISTORY</div>
+          <div class="stat-num">30</div>
+          <p style="font-size: 12px;">創業年数</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">WARRANTY</div>
+          <div class="stat-num">10</div>
+          <p style="font-size: 12px;">施工保証（年）</p>
+        </div>
+      </div>
     </div>
-    <div class="trouble-bottom fade-up">
-      <span></span> そのお悩み、<strong>今すぐ解決できます！</strong><br>
-      まずは<span>無料相談・無料お見積り</span>からどうぞ
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- 選ばれる理由 -->
-<section class="reasons section">
-  <div class="container">
-    <span class="section-label">選ばれる理由</span>
-    <h2 class="section-title">福岡で<span>1,200件超</span>の<br>実績が信頼の証</h2>
-    <div class="divider"></div>
-    <div class="reason-list">
-      <div class="reason-item fade-up">
-        <div class="reason-num">01</div>
-        <div class="reason-body">
-          <div class="reason-badge">スピード</div>
-          <h3>最短即日対応・365日受付</h3>
-          <p>お電話いただいてから最短30分でスタッフが駆けつけます。緊急の水漏れや故障も年中無休で対応可能です。</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-label">PROCESS</div>
+      <h2 class="section-title">ご相談から<span>完了</span>まで</h2>
+      <div class="flow-list">
+        <div class="flow-item fade-up">
+          <div class="flow-step">01</div>
+          <div class="flow-content">
+            <h3>無料診断の受付</h3>
+            <p>電話または公式LINEより現状をお聞かせください。専門スタッフが状況をヒアリングします。</p>
+          </div>
         </div>
-      </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">02</div>
-        <div class="reason-body">
-          <div class="reason-badge">安心価格</div>
-          <h3>明朗会計・追加費用なし</h3>
-          <p>見積もり後の追加請求は一切ありません。ご納得いただいてから施工スタート。分割払い・ローンも対応しています。</p>
+        <div class="flow-item fade-up">
+          <div class="flow-step">02</div>
+          <div class="flow-content">
+            <h3>現地調査・詳細見積</h3>
+            <p>経験豊富な技術者が現地を訪問。構造や劣化状況を精査し、最適なプランを提示します。</p>
+          </div>
         </div>
-      </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">03</div>
-        <div class="reason-body">
-          <div class="reason-badge">長期保証</div>
-          <h3>施工後10年保証＋無料定期点検</h3>
-          <p>施工完了後も安心。万が一のトラブルは保証期間内であれば無償で対応いたします。定期点検も実施しています。</p>
-        </div>
-      </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">04</div>
-        <div class="reason-body">
-          <div class="reason-badge">地域密着</div>
-          <h3>福岡で30年・地域に根ざした信頼</h3>
-          <p>地元のお客様に長く愛されてきた会社です。ご近所への配慮、騒音・養生など、細部まで丁寧に施工します。</p>
+        <div class="flow-item fade-up">
+          <div class="flow-step">03</div>
+          <div class="flow-content">
+            <h3>施工・自社検査</h3>
+            <p>国家資格保有者による徹底した施工を行います。完工前には独自の品質チェックを実施します。</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- 対応工事 -->
-<section class="works section">
-  <div class="container">
-    <span class="section-label" style="background:var(--gold);color:var(--navy);">対応工事一覧</span>
-    <h2 class="section-title">水回り全般、<span style="color:var(--gold)">すべて</span>お任せください</h2>
-    <p class="section-sub">交換・修理・リフォームなど、幅広い水回り工事に対応しています。</p>
-    <div class="works-grid fade-up">
-      <div class="work-card">
-        <div class="work-name">キッチン</div>
-        <div class="work-desc">システムキッチン交換・水栓修理</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">浴室・浴槽</div>
-        <div class="work-desc">ユニットバス交換・タイル補修</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">トイレ</div>
-        <div class="work-desc">便器交換・詰まり修理・ウォシュレット</div>
-      </div>
-      <div class="work-card">
-        <div class="work-emoji">🪥</div>
-        <div class="work-name">洗面台</div>
-        <div class="work-desc">洗面化粧台交換・蛇口修理</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">配管工事</div>
-        <div class="work-desc">漏水修理・給排水管交換</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">給湯器</div>
-        <div class="work-desc">ガス給湯器・エコキュート交換</div>
-      </div>
-    </div>
-    <a href="tel:0120000000" class="btn-main" style="max-width:100%;">
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      工事内容について今すぐ相談する（無料）
-    </a>
-  </div>
-</section>
-
-<!-- 施工の流れ -->
-<section class="flow section">
-  <div class="container">
-    <span class="section-label">かんたん4ステップ</span>
-    <h2 class="section-title">ご依頼から完工まで<span>スムーズ</span>な流れ</h2>
-    <div class="divider"></div>
-    <div class="flow-list fade-up">
-      <div class="flow-item">
-        <div class="flow-dot active">1</div>
-        <div class="flow-body">
-          <div class="flow-time">📞 最短30分で担当から折り返し</div>
-          <h3>お電話・LINEでご相談（無料）</h3>
-          <p>症状・場所・ご希望をお聞かせください。概算のお見積りもお伝えできます。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-dot">2</div>
-        <div class="flow-body">
-          <div class="flow-time">🔍 現地訪問・完全無料</div>
-          <h3>現地調査・お見積り</h3>
-          <p>実際に現場を確認し、詳細なお見積りをご提示。ご納得いただいた後に進みます。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-dot">3</div>
-        <div class="flow-body">
-          <div class="flow-time">🔨 丁寧・迅速に施工</div>
-          <h3>ご契約・施工スタート</h3>
-          <p>プロの職人が養生から後片付けまで責任をもって対応。ご不在でも対応可能です。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-dot">4</div>
-        <div class="flow-body">
-          <div class="flow-time">✅ 10年保証付き</div>
-          <h3>完工・お引き渡し</h3>
-          <p>施工後の動作確認をしっかり実施。アフターサービス・定期点検も充実しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 施工実績 -->
-<section class="results section">
-  <div class="container">
-    <span class="section-label" style="background:var(--gold);color:var(--navy);">実績・数字で証明</span>
-    <h2 class="section-title" style="color:#fff;">数字が語る<span style="color:var(--gold)">私たちの実力</span></h2>
-    <div class="results-grid fade-up">
-      <div class="result-stat">
-        <div class="result-num">1,200<span style="font-size:18px">+</span></div>
-        <div class="result-unit">施工実績</div>
-        <div class="result-label">件数（福岡県内）</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num">98.3<span style="font-size:18px">%</span></div>
-        <div class="result-unit">満足度</div>
-        <div class="result-label">お客様アンケート</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num">30<span style="font-size:18px">年</span></div>
-        <div class="result-unit">創業</div>
-        <div class="result-label">地域密着の実績</div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="fade-up">
-      <div class="result-stat">
-        <div class="result-num" style="font-size:28px;">最短<span style="color:#fff">即日</span></div>
-        <div class="result-unit">対応スピード</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num" style="font-size:28px;">10<span style="font-size:18px">年</span></div>
-        <div class="result-unit">施工保証</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- お客様の声 -->
-<section class="voices section">
-  <div class="container">
-    <span class="section-label">お客様の声</span>
-    <h2 class="section-title">実際に利用された<span>お客様</span>から<br>喜びの声をいただいています</h2>
-    <div class="divider"></div>
-    <div class="voice-list">
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">キッチン交換</span>
-        <p class="voice-text">古いキッチンを一新していただきました。見積もりが分かりやすく、当日の職人さんの対応もとても丁寧で安心できました。仕上がりも想像以上で大満足です！</p>
-        <p class="voice-meta">福岡市博多区 ／ 50代 女性</p>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">緊急水漏れ修理</span>
-        <p class="voice-text">深夜に突然水が漏れ出して焦っていたところ、30分以内に駆けつけてくれました。迅速な対応で本当に助かりました。料金も明朗で追加請求もなく信頼できます。</p>
-        <p class="voice-meta">春日市 ／ 40代 男性</p>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">浴室リフォーム</span>
-        <p class="voice-text">タイル張りのお風呂からユニットバスに変えていただきました。工期も短く、毎日のお風呂が快適になりました。近所へのご挨拶まで対応くださり感激しました。</p>
-        <p class="voice-meta">大野城市 ／ 60代 女性</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- よくある質問 -->
-<section class="faq section">
-  <div class="container">
-    <span class="section-label">よくある質問</span>
-    <h2 class="section-title">ご相談の前に<span>確認</span>できます</h2>
-    <div class="divider"></div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          見積もりは本当に無料ですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>はい、現地調査・お見積りは完全無料です。お見積り後に契約を強制することも一切ありません。ご納得いただいてからご検討ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          対応エリアはどこですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>福岡県内全域に対応しています。福岡市（博多区・中央区・東区・西区・南区・城南区・早良区）、春日市、大野城市、筑紫野市、太宰府市、糸島市 等、お気軽にご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          費用の支払い方法は何がありますか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>現金・クレジットカード（VISA/Mastercard等）・銀行振込のほか、各種リフォームローンにも対応しています。月々の支払いに関してもお気軽にご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          工事中、家にいなくても大丈夫ですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>ご不在でも対応可能です。カギのお預かりや事前の施錠確認など、安心してお任せいただける体制を整えています。完工後は写真報告もいたします。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          保証はどうなっていますか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>施工完了後10年間の保証を提供しています。保証期間内に施工に起因するトラブルが発生した場合は、無償で対応いたします。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 最終CTA -->
-<section class="cta-section">
-  <div class="container">
-    <span class="section-label" style="background:rgba(255,255,255,0.25);color:#fff;">今すぐ無料相談</span>
-    <h2 class="section-title">まずは<span style="color:var(--gold)">お気軽に</span><br>ご連絡ください</h2>
-    <p class="section-sub">見積もり・相談は無料。しつこい営業は一切ありません。</p>
-    <a href="tel:0120000000" class="cta-tel-big">
-      <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      0120-000-000
-    </a>
-    <p class="cta-tel-hours">📞 受付時間：年中無休 8:00〜20:00（緊急時は24時間対応）</p>
-    <a href="https://lin.ee/xxxxx" class="cta-line-big">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-      LINEで24時間いつでも相談（無料）
-    </a>
-    <div class="cta-guarantee">
-      <strong>🔒 安心の3つの約束</strong><br>
-      ① 見積もり・相談は完全無料　② 契約の強制なし　③ しつこい営業なし
-    </div>
-  </div>
-</section>
-
-<!-- フッター -->
-<footer>
-  <p class="footer-logo">○○インフラ設備株式会社</p>
-  <p>福岡県〇〇市〇〇町 1-2-3<br>
-  TEL：0120-000-000　／　受付：年中無休 8:00〜20:00</p>
-  <div class="footer-links">
-    <a href="#">プライバシーポリシー</a>
-    <a href="#">特定商取引法に基づく表記</a>
-    <a href="#">お問い合わせ</a>
-  </div>
-  <p>© 2024 ○○インフラ設備株式会社 All Rights Reserved.</p>
+<footer style="background: var(--navy); color: #fff; padding: 60px 24px 120px; text-align: center;">
+  <p style="font-size: 14px; opacity: 0.7; margin-bottom: 8px;">福岡県全域対応・水回り専門リフォーム</p>
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 24px;">○○インフラ設備株式会社</p>
+  <p style="font-size: 12px; opacity: 0.5;">© 2026 hiroki222222 / ○○ Infra Equipment Co., Ltd.</p>
 </footer>
 
-<script>
-  // ===== FAQ アコーディオン =====
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
+<div class="fixed-cta">
+  <a href="tel:0120000000" class="cta-tel">お電話での相談</a>
+  <a href="#" class="cta-line">LINEでの相談</a>
+</div>
 
-  // ===== スクロールアニメーション =====
+<script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
-  }, { threshold: 0.12 });
-
+  }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // ===== スクロールトップ =====
-  const scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', () => {
-    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
-  });
-  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
