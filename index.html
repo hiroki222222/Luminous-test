@@ -3,1102 +3,1446 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>水回りリフォーム｜福岡の地域密着インフラ・ガス設備会社</title>
-<meta name="description" content="福岡県の水回りリフォーム専門。キッチン・トイレ・浴室・洗面台の交換・修理を最短即日対応。地域密着30年の実績と信頼。まずは無料相談から。">
+<title>SSIきみどり | あなたと家族の安心を、まっすぐに。</title>
+<meta name="description" content="SSIきみどりは、お年寄りやそのご家族に寄り添う保険商品を提供しています。医療保険・終身保険・がん保険など、暮らしの安心をサポートします。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-  /* ===== CSS変数 ===== */
-  :root {
-    --navy:    #0D1F3C;
-    --navy2:   #172B50;
-    --accent:  #E8500A;
-    --accent2: #FF6B2B;
-    --gold:    #F5A623;
-    --white:   #FFFFFF;
-    --offwhite:#F7F8FA;
-    --gray:    #6B7280;
-    --lightgray:#E5E7EB;
-    --text:    #1A1A2E;
-    --green:   #00B050;
-    --radius:  8px;
-    --shadow:  0 4px 24px rgba(13,31,60,0.12);
-  }
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* ===== リセット ===== */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: var(--white);
-    color: var(--text);
-    font-size: 15px;
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
-  img { max-width: 100%; height: auto; display: block; }
-  a { text-decoration: none; color: inherit; }
+:root {
+  --green-50: #f0f9f0;
+  --green-100: #dcf0dc;
+  --green-200: #b8e0b8;
+  --green-300: #7cc67c;
+  --green-400: #5cb85c;
+  --green-500: #4a9f4a;
+  --green-600: #3d8b3d;
+  --green-700: #2d6e2d;
+  --green-800: #1f4f1f;
+  --green-900: #143614;
 
-  /* ===== ユーティリティ ===== */
-  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-  .section { padding: 60px 0; }
-  .section-label {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    padding: 4px 12px;
-    border-radius: 2px;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-size: clamp(22px, 5vw, 28px);
-    font-weight: 900;
-    line-height: 1.4;
-    color: var(--navy);
-    margin-bottom: 16px;
-  }
-  .section-title span { color: var(--accent); }
-  .section-sub {
-    color: var(--gray);
-    font-size: 14px;
-    margin-bottom: 32px;
-    line-height: 1.8;
-  }
-  .divider {
-    width: 48px; height: 4px;
-    background: var(--accent);
-    margin: 12px 0 24px;
-    border-radius: 2px;
-  }
-  .tag {
-    display: inline-block;
-    border: 1.5px solid var(--navy);
-    color: var(--navy);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 2px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
+  --warm-50: #fefcf8;
+  --warm-100: #fdf6e8;
+  --warm-200: #f5ead0;
 
-  /* ===== 固定CTAバー（スマホ下部） ===== */
-  .fixed-cta {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 1000;
-    display: flex;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.18);
-  }
-  .fixed-cta a {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 10px;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-  .fixed-cta .cta-tel { background: var(--accent); color: #fff; }
-  .fixed-cta .cta-line { background: #06C755; color: #fff; }
-  .fixed-cta .cta-tel svg, .fixed-cta .cta-line svg { flex-shrink: 0; }
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e8e8e8;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
 
-  /* ===== ヘッダー ===== */
-  .site-header {
-    background: var(--navy);
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 900;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  }
-  .logo-text {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-  .logo-text span { color: var(--gold); font-size: 11px; font-weight: 500; display: block; }
-  .header-tel {
-    color: var(--gold);
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+  --radius: 6px;
+}
 
-  /* ===== ヒーロー ===== */
-  .hero {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #1a3a6b 100%);
-    padding: 48px 20px 56px;
-    position: relative;
-    overflow: hidden;
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  color: var(--gray-800);
+  line-height: 1.7;
+  background: var(--white);
+  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Numbers & English */
+.num, .en {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== ANIMATION ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background: rgba(232, 245, 232, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--green-200);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--green-600);
+}
+.header-logo .logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--green-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.header-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: color 0.2s;
+  position: relative;
+}
+.header-nav a:hover {
+  color: var(--green-600);
+}
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-500);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.header-cta-btn:hover {
+  background: var(--green-600);
+}
+
+/* Mobile menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-700);
+}
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a {
+  display: block;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-100);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+
+/* ===== HERO ===== */
+.hero {
+  margin-top: 72px;
+  position: relative;
+  background: linear-gradient(135deg, var(--green-50) 0%, var(--warm-50) 50%, var(--green-100) 100%);
+  overflow: hidden;
+  padding: 80px 0 60px;
+}
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-100);
+  color: var(--green-700);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--gray-900);
+  margin-bottom: 18px;
+  white-space: nowrap;
+}
+.hero-title .accent {
+  color: var(--green-600);
+}
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-600);
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+.hero-desc span {
+  display: inline-block;
+}
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-500);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover {
+  background: var(--green-600);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--green-600);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: 2px solid var(--green-300);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-outline:hover {
+  background: var(--green-50);
+  border-color: var(--green-500);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--green-600);
+  line-height: 1.2;
+}
+.hero-stat-num .unit {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+.hero-stat-label {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+/* Hero image */
+.hero-image {
+  flex: 0 0 440px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(74,159,74,0.15) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(74,159,74,0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* ===== SECTION COMMON ===== */
+.section {
+  padding: 80px 0;
+}
+.section-alt {
+  background: var(--gray-50);
+}
+.section-green {
+  background: linear-gradient(135deg, var(--green-50), var(--warm-50));
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-500);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.5;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--green-400);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+.section-subtitle {
+  font-size: 15px;
+  color: var(--gray-500);
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+.about-image {
+  flex: 0 0 420px;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-text {
+  flex: 1;
+}
+.about-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--gray-900);
+  line-height: 1.5;
+}
+.about-text p {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+.about-feature .icon-circle {
+  width: 28px;
+  height: 28px;
+  background: var(--green-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-600);
+  flex-shrink: 0;
+}
+
+/* ===== SERVICES ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 32px 24px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: default;
+}
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.service-icon {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.service-icon img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+.service-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-600);
+  transition: gap 0.2s;
+}
+.service-link:hover { gap: 8px; }
+
+/* ===== WHY CHOOSE US ===== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.why-card {
+  text-align: center;
+  padding: 28px 16px;
+}
+.why-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--green-300);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.why-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+}
+.why-card p {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* ===== PROCESS ===== */
+.process-steps {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 12px;
+}
+.process-step-num {
+  width: 48px;
+  height: 48px;
+  background: var(--green-500);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  position: relative;
+  z-index: 2;
+}
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 30px);
+  width: calc(100% - 60px);
+  height: 2px;
+  background: var(--green-200);
+  z-index: 1;
+}
+.process-step:last-child::after { display: none; }
+.process-step h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--green-600), var(--green-500));
+  padding: 64px 0;
+  text-align: center;
+  color: var(--white);
+}
+.cta-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.cta-section p {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.cta-section .btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--green-700);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.cta-section .btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* ===== COMPANY ===== */
+.company-table {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.company-row {
+  display: flex;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 16px 0;
+}
+.company-row dt {
+  flex: 0 0 160px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+.company-row dd {
+  flex: 1;
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ===== CONTACT ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--green-100);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-600);
+  flex-shrink: 0;
+}
+.contact-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 4px;
+}
+.contact-item p {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--gray-800);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green-400);
+}
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--gray-900);
+  color: var(--gray-400);
+  padding: 48px 0 24px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+}
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--gray-400);
+}
+.footer h4 {
+  color: var(--gray-200);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer ul li {
+  margin-bottom: 8px;
+}
+.footer ul li a {
+  font-size: 13px;
+  color: var(--gray-400);
+  transition: color 0.2s;
+}
+.footer ul li a:hover {
+  color: var(--green-300);
+}
+.footer-bottom {
+  border-top: 1px solid var(--gray-700);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+.footer-socials a {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray-600);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-socials a:hover {
+  color: var(--green-300);
+  border-color: var(--green-300);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .mobile-menu-btn { display: block; }
+
+  .hero { padding: 48px 0 40px; }
+  .hero .container { flex-direction: column; gap: 32px; }
+  .hero-title {
+    font-size: 24px;
+    white-space: normal;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,80,10,0.18) 0%, transparent 70%);
+  .hero-desc { font-size: 14px; }
+  .hero-image {
+    flex: none;
+    width: 100%;
+    height: 240px;
   }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: -40px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
-  }
-  .hero-badge {
-    background: var(--accent);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 2px;
-    display: inline-block;
-    margin-bottom: 16px;
-    animation: pulse-badge 2s infinite;
-  }
-  @keyframes pulse-badge {
-    0%,100% { box-shadow: 0 0 0 0 rgba(232,80,10,0.5); }
-    50%      { box-shadow: 0 0 0 8px rgba(232,80,10,0); }
-  }
-  .hero-headline {
-    color: #fff;
-    font-size: clamp(24px, 6.5vw, 34px);
-    font-weight: 900;
-    line-height: 1.35;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-headline .accent-line {
-    display: inline;
-    background: linear-gradient(90deg, var(--accent), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .hero-sub {
-    color: rgba(255,255,255,0.82);
-    font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 28px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-points {
-    list-style: none;
-    margin-bottom: 32px;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-points li {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 8px 0 8px 32px;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-points li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 16px;
-    font-weight: 900;
-  }
-  .hero-cta-wrap { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
-  .btn-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .hero-stats { gap: 20px; }
+  .hero-stat-num { font-size: 28px; }
+  .hero-buttons {
+    flex-direction: column;
     gap: 10px;
-    background: linear-gradient(135deg, var(--accent), #c73e00);
-    color: #fff;
-    font-size: 17px;
-    font-weight: 900;
-    padding: 18px 24px;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 20px rgba(232,80,10,0.5);
-    letter-spacing: 0.03em;
-    transition: transform 0.15s, box-shadow 0.15s;
-    position: relative;
-    overflow: hidden;
   }
-  .btn-main::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    animation: shine 2.5s infinite;
-  }
-  @keyframes shine {
-    0%   { left: -100%; }
-    40%  { left: 120%; }
-    100% { left: 120%; }
-  }
-  .btn-line {
-    display: flex;
-    align-items: center;
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
     justify-content: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 16px 24px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 16px rgba(6,199,85,0.4);
-    letter-spacing: 0.03em;
-  }
-  .btn-note {
-    color: rgba(255,255,255,0.6);
-    font-size: 11px;
-    text-align: center;
   }
 
-  /* ===== 信頼バー ===== */
-  .trust-bar {
-    background: var(--gold);
-    padding: 14px 20px;
-    overflow: hidden;
+  .section { padding: 56px 0; }
+  .section-title { font-size: 22px; }
+
+  .about-grid {
+    flex-direction: column;
+    gap: 24px;
   }
-  .trust-scroll {
-    display: flex;
-    gap: 32px;
-    animation: marquee 18s linear infinite;
-    white-space: nowrap;
-  }
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .trust-item {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
+  .about-image {
+    flex: none;
+    width: 100%;
+    height: 220px;
   }
 
-  /* ===== お悩みセクション ===== */
-  .trouble { background: var(--offwhite); }
-  .trouble-grid {
-    display: grid;
+  .services-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .trouble-card {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 16px 14px;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    border-left: 4px solid var(--accent);
-    transition: transform 0.2s;
-  }
-  .trouble-card:hover { transform: translateY(-2px); }
-  .trouble-icon { font-size: 26px; flex-shrink: 0; }
-  .trouble-card p { font-size: 13px; font-weight: 700; line-height: 1.45; color: var(--navy); }
-  .trouble-bottom {
-    background: var(--navy);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    border-radius: var(--radius);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.6;
-  }
-  .trouble-bottom span { color: var(--gold); font-size: 20px; }
-
-  /* ===== 選ばれる理由 ===== */
-  .reasons { background: #fff; }
-  .reason-list { display: flex; flex-direction: column; gap: 20px; }
-  .reason-item {
-    display: flex;
     gap: 16px;
-    align-items: flex-start;
-    padding: 20px;
-    background: var(--offwhite);
-    border-radius: var(--radius);
-    border: 2px solid transparent;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .reason-item:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(232,80,10,0.1); }
-  .reason-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .reason-body h3 { font-size: 16px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
-  .reason-body p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-  .reason-badge {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 6px;
   }
 
-  /* ===== 対応工事 ===== */
-  .works { background: var(--navy); }
-  .works .section-title { color: #fff; }
-  .works .section-sub { color: rgba(255,255,255,0.65); }
-  .works-grid {
-    display: grid;
+  .why-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .work-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius);
-    padding: 20px 14px;
-    text-align: center;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .work-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
-  .work-emoji { font-size: 36px; margin-bottom: 10px; }
-  .work-name { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-  .work-desc { color: rgba(255,255,255,0.55); font-size: 11px; line-height: 1.5; }
-
-  /* ===== 施工の流れ ===== */
-  .flow { background: var(--offwhite); }
-  .flow-list { display: flex; flex-direction: column; gap: 0; }
-  .flow-item {
-    display: flex;
     gap: 16px;
-    padding: 20px 0;
-    position: relative;
-  }
-  .flow-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 19px;
-    top: 52px;
-    bottom: 0;
-    width: 2px;
-    background: var(--lightgray);
-  }
-  .flow-dot {
-    width: 40px; height: 40px;
-    background: var(--navy);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .flow-dot.active { background: var(--accent); }
-  .flow-body h3 { font-size: 15px; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
-  .flow-body p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-  .flow-time {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 4px;
   }
 
-  /* ===== お客様の声 ===== */
-  .voices { background: #fff; }
-  .voice-list { display: flex; flex-direction: column; gap: 16px; }
-  .voice-card {
-    background: var(--offwhite);
-    border-radius: var(--radius);
-    padding: 20px;
-    border-left: 4px solid var(--gold);
-    position: relative;
+  .process-steps {
+    flex-direction: column;
+    gap: 24px;
   }
-  .voice-card::before {
-    content: '"';
-    font-family: Georgia, serif;
-    font-size: 60px;
-    color: var(--gold);
-    opacity: 0.25;
-    position: absolute;
-    top: 4px;
-    right: 16px;
-    line-height: 1;
-  }
-  .stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; letter-spacing: 2px; }
-  .voice-text { font-size: 13px; line-height: 1.85; color: var(--text); margin-bottom: 12px; }
-  .voice-meta { font-size: 12px; font-weight: 700; color: var(--gray); }
-  .voice-tag {
-    display: inline-block;
-    background: var(--navy);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-right: 6px;
+  .process-step::after { display: none; }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  /* ===== 施工実績 ===== */
-  .results { background: var(--navy); }
-  .results .section-title { color: #fff; }
-  .results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  .company-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .company-row dt { flex: none; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
     gap: 12px;
-    margin-bottom: 24px;
-  }
-  .result-stat {
-    background: rgba(255,255,255,0.07);
-    border-radius: var(--radius);
-    padding: 20px 10px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .result-num {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(28px, 7vw, 40px);
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .result-unit { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 700; }
-  .result-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
-
-  /* ===== よくある質問 ===== */
-  .faq { background: var(--offwhite); }
-  .faq-list { display: flex; flex-direction: column; gap: 12px; }
-  .faq-item {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    overflow: hidden;
-    border: 1px solid var(--lightgray);
-  }
-  .faq-q {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 18px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-  }
-  .faq-q-mark {
-    width: 28px; height: 28px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 900;
-    flex-shrink: 0;
-  }
-  .faq-q .chevron {
-    margin-left: auto;
-    transition: transform 0.3s;
-    color: var(--gray);
-    font-size: 12px;
-  }
-  .faq-item.open .chevron { transform: rotate(180deg); }
-  .faq-a {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s;
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.8;
-    border-top: 0 solid var(--lightgray);
-  }
-  .faq-item.open .faq-a {
-    max-height: 200px;
-    padding: 14px 18px 18px;
-    border-top: 1px solid var(--lightgray);
-  }
-  .faq-a-mark { color: var(--accent); font-weight: 900; margin-right: 4px; }
-
-  /* ===== 無料相談CTA ===== */
-  .cta-section {
-    background: linear-gradient(135deg, var(--accent) 0%, #c73e00 100%);
-    padding: 56px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .cta-section .section-title { color: #fff; }
-  .cta-section .section-sub { color: rgba(255,255,255,0.85); }
-  .cta-tel-big {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #fff;
-    color: var(--accent);
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(26px, 7vw, 36px);
-    font-weight: 700;
-    padding: 16px 28px;
-    border-radius: var(--radius);
-    margin-bottom: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    letter-spacing: 0.05em;
-  }
-  .cta-tel-hours {
-    color: rgba(255,255,255,0.75);
-    font-size: 12px;
-    margin-bottom: 20px;
-  }
-  .cta-line-big {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #06C755;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 900;
-    padding: 18px 28px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(6,199,85,0.4);
-    margin-bottom: 16px;
-  }
-  .cta-guarantee {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius);
-    padding: 16px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 1.7;
-    margin-top: 8px;
-  }
-  .cta-guarantee strong { font-size: 15px; }
-
-  /* ===== フッター ===== */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.55);
-    padding: 32px 20px 100px;
-    font-size: 12px;
-    line-height: 1.8;
     text-align: center;
   }
-  footer .footer-logo {
-    color: #fff;
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-  footer .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 12px 0;
-  }
-  footer .footer-links a {
-    color: rgba(255,255,255,0.55);
-    font-size: 11px;
-    text-decoration: underline;
-  }
-
-  /* ===== アニメーション ===== */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== スクロールトップ ===== */
-  .scroll-top {
-    position: fixed;
-    right: 16px;
-    bottom: 90px;
-    width: 44px; height: 44px;
-    background: var(--navy);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 800;
-  }
-  .scroll-top.show { opacity: 1; }
-
-  /* ===== レスポンシブ（PC対応） ===== */
-  @media (min-width: 768px) {
-    .container { max-width: 720px; }
-    .trouble-grid { grid-template-columns: repeat(3, 1fr); }
-    .works-grid { grid-template-columns: repeat(3, 1fr); }
-    .hero-cta-wrap { flex-direction: row; }
-    .btn-main, .btn-line { flex: 1; }
-  }
+}
 </style>
 </head>
 <body>
 
-<!-- 固定CTAバー -->
-<div class="fixed-cta">
-  <a href="tel:0120000000" class="cta-tel">
-    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    今すぐ電話
-  </a>
-  <a href="https://lin.ee/xxxxx" class="cta-line">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-    LINEで相談
-  </a>
-</div>
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="header-logo">
+      <svg style="height:32px;width:auto;display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.81 36.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #221815;
+      }
 
-<!-- スクロールトップ -->
-<div class="scroll-top" id="scrollTop">▲</div>
+      .cls-2 {
+        fill: #6cbb5a;
+      }
 
-<!-- ヘッダー -->
-<header class="site-header">
-  <div class="logo-text">
-    ○○インフラ設備株式会社
-    <span>福岡県 水回りリフォーム専門</span>
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #aacf52;
+      }
+    </style>
+  </defs>
+  <g id="レイヤー_2" data-name="レイヤー 2">
+    <g id="レイヤー_1-2" data-name="レイヤー 1">
+      <g>
+        <g>
+          <path class="cls-1" d="M34,1.58a3.1,3.1,0,0,1-.12.29,7.34,7.34,0,0,1-1.54,2.71,1.88,1.88,0,0,0-.52-.47A5.23,5.23,0,0,0,33,2.24a3.87,3.87,0,0,0,.29-.91ZM37.86,4c-.13.17-.13.17-.32.45A6.87,6.87,0,0,1,35.62,6.3a8.63,8.63,0,0,1-3,1.13,2.14,2.14,0,0,0-.35-.63,8.07,8.07,0,0,0,2.92-1A5.1,5.1,0,0,0,37.29,3.6ZM35.76.26a5.61,5.61,0,0,0,0,.83V4.14c0,.52-.19.66-1,.66-.2,0-.47,0-.75,0a2.06,2.06,0,0,0-.14-.64,4.58,4.58,0,0,0,.86.11c.3,0,.37,0,.37-.18v-3a4.06,4.06,0,0,0,0-.83Zm1.61,1a3.93,3.93,0,0,0,.45,1,4.81,4.81,0,0,0,1.23,1.34,2.52,2.52,0,0,0-.44.53A6.46,6.46,0,0,1,37,2c-.13-.26-.16-.32-.22-.42Z"/>
+          <path class="cls-1" d="M40.34,5.41V5a4.13,4.13,0,0,1-.48.25,1.24,1.24,0,0,0-.3-.5,5.38,5.38,0,0,0,1.66-.95,3,3,0,0,1-.57-.61,4.62,4.62,0,0,1-.65.61,2,2,0,0,0-.34-.41,3.64,3.64,0,0,0,1.11-1.17A2.13,2.13,0,0,0,41,1.61l.54.14a1.65,1.65,0,0,0-.13.24l-.1.18h.76a2.13,2.13,0,0,0,.49,0l.31.32a1.29,1.29,0,0,0-.13.18,6.93,6.93,0,0,1-.83,1.12,6.14,6.14,0,0,0,1.36.67,1.79,1.79,0,0,0-.23.5l-.32-.14a6,6,0,0,0,0,.67v1c0,.49,0,.49,0,.72h-.57V6.86H40.89v.46h-.58a4.81,4.81,0,0,0,0-.72Zm.91-4.6a2.62,2.62,0,0,0,0-.52h.65a2.47,2.47,0,0,0,0,.53V1h1.33V.46a3.92,3.92,0,0,0,.78,0H46a3.46,3.46,0,0,0,.77,0v.62A5.32,5.32,0,0,0,46,1h-.7a4.93,4.93,0,0,1-.28.76h.71a5.22,5.22,0,0,0,.72,0c0,.2,0,.4,0,.7V5.11c0,.33,0,.51,0,.77-.23,0-.43,0-.67,0H44a5.4,5.4,0,0,0-.66,0c0-.23,0-.49,0-.71V2.51c0-.32,0-.52,0-.74a3.86,3.86,0,0,0,.67,0h.44c.12-.31.2-.55.26-.76h-.82a6.65,6.65,0,0,0-.73,0,2.62,2.62,0,0,0,0,.43v.23a2.64,2.64,0,0,0,0,.48h-.54V1.52h-2.3v.8h-.56a3.44,3.44,0,0,0,0-.46V1.5c0-.16,0-.26,0-.49.12,0,.29,0,.64,0h.8Zm1,4a3.57,3.57,0,0,0,.53,0,6.73,6.73,0,0,1-1.15-.69,5.2,5.2,0,0,1-1,.71h1.58ZM40.89,6.37h1.3V5.28h-1.3Zm.17-3.74-.12.17a3.47,3.47,0,0,0,.61.65,3.69,3.69,0,0,0,.63-.82Zm3.58,3.66A4.54,4.54,0,0,1,43.2,7.35a1.61,1.61,0,0,0-.38-.48,3.34,3.34,0,0,0,1.37-1ZM44,3h2V2.29H44Zm0,1.18h2V3.46H44Zm0,1.2h2V4.64H44Zm1.56.59a4.59,4.59,0,0,0,1.51,1,2.41,2.41,0,0,0-.36.52,5.32,5.32,0,0,1-1.57-1.15Z"/>
+          <path class="cls-1" d="M48.61,1.85A4.74,4.74,0,0,1,48,2.93a1.48,1.48,0,0,0-.48-.36A4.25,4.25,0,0,0,48.37.88a3.5,3.5,0,0,0,.11-.65l.6.12A1.82,1.82,0,0,0,49,.7c0,.16-.1.38-.18.62h1.05a3.71,3.71,0,0,0,.66,0v.61a4.3,4.3,0,0,0-.67,0h-.22c0,.9,0,.9,0,1.4H50a2.89,2.89,0,0,0,.62,0v.64a3.85,3.85,0,0,0-.63,0h-.48c0,.15,0,.2,0,.37a3.65,3.65,0,0,0,1.28,1.43,2.81,2.81,0,0,0-.4.51,4.25,4.25,0,0,1-1-1.24A4.62,4.62,0,0,1,47.94,7a1.91,1.91,0,0,0-.4-.49A4,4,0,0,0,49,3.81h-.62a4.79,4.79,0,0,0-.7,0V3.21a3.56,3.56,0,0,0,.7,0H49a13.23,13.23,0,0,0,0-1.4Zm4.12,4.59a8.4,8.4,0,0,0,.72-1.89l.59.2a9.9,9.9,0,0,1-.73,1.69h.76a3.89,3.89,0,0,0,.73,0V7a5.07,5.07,0,0,0-.73,0h-3a5,5,0,0,0-.73,0V6.4a3.84,3.84,0,0,0,.73,0ZM50.65.62a3.84,3.84,0,0,0,.73,0h2.54a3.68,3.68,0,0,0,.73,0v.64a5,5,0,0,0-.73,0H51.38a5.25,5.25,0,0,0-.73,0Zm3.59,3.16a4,4,0,0,0,0,.62,4.87,4.87,0,0,0-.7,0h-2a4.73,4.73,0,0,0-.69,0,4.09,4.09,0,0,0,0-.62V2.61a4.29,4.29,0,0,0,0-.64,4.53,4.53,0,0,0,.71,0h2a4.69,4.69,0,0,0,.71,0,4.16,4.16,0,0,0,0,.64ZM51.76,6.23a4.86,4.86,0,0,0-.66-1.46l.51-.21A5.56,5.56,0,0,1,52.29,6Zm-.26-2.4h2.15V2.54H51.5Z"/>
+          <path class="cls-1" d="M56.3,1.05a6.89,6.89,0,0,0,0-.72h.63a4.75,4.75,0,0,0,0,.72V1.2H58.2V1.05a4.35,4.35,0,0,0,0-.72h.62a6.57,6.57,0,0,0,0,.72V1.2a4.73,4.73,0,0,0,.63,0v.57a5,5,0,0,0-.63,0V5a4.18,4.18,0,0,0,.59,0v.57l-.71,0h-2.5a4.67,4.67,0,0,0-.62,0V4.92a3.1,3.1,0,0,0,.61,0h.19V1.7a4.79,4.79,0,0,0-.69,0V1.16a4.27,4.27,0,0,0,.65,0h0ZM57.19,6A4.57,4.57,0,0,1,56,7.35a1.82,1.82,0,0,0-.43-.45,3.06,3.06,0,0,0,1.16-1.22Zm1-3.54V1.7H56.85v.73Zm0,1.22V2.91H56.85v.74ZM58.2,5V4.13H56.85V5Zm0,.72a2.55,2.55,0,0,0,.76.81,2.09,2.09,0,0,0-.43.41A3.9,3.9,0,0,1,57.74,6Zm2-.83a4.24,4.24,0,0,1-.9,2.53,1.62,1.62,0,0,0-.47-.44,2.89,2.89,0,0,0,.74-1.67,29.72,29.72,0,0,0,.15-3.72c0-.52,0-.7,0-.93a7.51,7.51,0,0,0,.77,0h1.1a7.64,7.64,0,0,0,.77,0,7.42,7.42,0,0,0,0,.79V6.66c0,.52-.18.66-.89.66-.14,0-.21,0-.6,0a2.5,2.5,0,0,0-.16-.64,4,4,0,0,0,.83.1c.18,0,.25,0,.25-.18V4.85ZM60.27,3c0,.43,0,1,0,1.35h1.5V3Zm1.46-1.8H60.28V2.45h1.45Z"/>
+          <path class="cls-1" d="M64.21,4c0-.3,0-.6,0-.92a4.38,4.38,0,0,1-.76,1l0-.12a2.27,2.27,0,0,0-.28-.46A6.21,6.21,0,0,0,64.6,1.25,5.9,5.9,0,0,0,64.91.18l.64.2a4.4,4.4,0,0,0-.16.42,9,9,0,0,1-.6,1.45V6.44a6.71,6.71,0,0,0,0,.92h-.67a8.14,8.14,0,0,0,0-.93ZM67.5,3h-.85c-.39,0-.57,0-.83,0a4.84,4.84,0,0,0,0-.72V1.28a4.9,4.9,0,0,0,0-.7,5,5,0,0,0,.87,0h2.37a4.81,4.81,0,0,0,.85,0c0,.25,0,.39,0,.73v1a6.41,6.41,0,0,0,0,.7L69.1,3h-1v.78h1.55a6.31,6.31,0,0,0,.79,0v.64a5.49,5.49,0,0,0-.79,0H68.27a6.2,6.2,0,0,0,1,1,6,6,0,0,0,1.37.85,3.69,3.69,0,0,0-.4.58A8.1,8.1,0,0,1,69.06,6,4.81,4.81,0,0,1,68,4.8a7.68,7.68,0,0,1,0,.84v1a5.66,5.66,0,0,0,0,.75h-.66a5.94,5.94,0,0,0,0-.76v-1a7.86,7.86,0,0,1,0-.84A4.92,4.92,0,0,1,66.4,6.12a6.07,6.07,0,0,1-1.05.74,1.73,1.73,0,0,0-.4-.53,6.22,6.22,0,0,0,1.48-1,4,4,0,0,0,.84-1H66.06a4.88,4.88,0,0,0-.81,0V3.77a6.14,6.14,0,0,0,.81,0H67.5Zm-1.06-.54h2.85V1.16H66.44Z"/>
+          <path class="cls-1" d="M75.09,2.57a6.76,6.76,0,0,0-.69,0V2.17a5.29,5.29,0,0,1-.86.53,1.29,1.29,0,0,0-.36-.47c-.14.3-.17.36-.32.65A2.19,2.19,0,0,1,73.44,4a3,3,0,0,1,.1.83c0,.43-.14.7-.42.8a1.74,1.74,0,0,1-.64.09h-.17a1.51,1.51,0,0,0-.15-.59,2.07,2.07,0,0,0,.4,0c.33,0,.42-.09.42-.47a2.58,2.58,0,0,0-.22-1A1.89,1.89,0,0,0,72.29,3,11.56,11.56,0,0,0,73.09,1H72V6.58a4.25,4.25,0,0,0,0,.78H71.4a4.17,4.17,0,0,0,0-.78V1.1c0-.22,0-.4,0-.63A4,4,0,0,0,72,.5h1a1.87,1.87,0,0,0,.49,0l.31.35a9,9,0,0,0-.38.89c-.06.15-.1.23-.22.49a4.53,4.53,0,0,0,1-.6A4.23,4.23,0,0,0,75.43.25h.62a4.68,4.68,0,0,0,2.51,1.86,1.61,1.61,0,0,0-.37.56,5.26,5.26,0,0,1-.9-.5v.42a6.45,6.45,0,0,0-.68,0h-.55v.62h1.12l.71,0c0,.24,0,.38,0,.58v.89a3.76,3.76,0,0,0,0,.61,5.44,5.44,0,0,0-.76,0h-1a3,3,0,0,0,.88,1,4.33,4.33,0,0,0,1.41.64,2.09,2.09,0,0,0-.35.56,4.08,4.08,0,0,1-2.33-1.87,3.27,3.27,0,0,1-2.3,1.9,1.68,1.68,0,0,0-.37-.53,3.94,3.94,0,0,0,1.49-.66,2.08,2.08,0,0,0,.73-1h-.8a5,5,0,0,0-.71,0s0-.08,0-.11,0-.26,0-.4V3.69a4.27,4.27,0,0,0,0-.52,6.25,6.25,0,0,0,.68,0h1.07V2.57Zm-.77,1.12v1h1.09a6.06,6.06,0,0,0,.1-1Zm2.29-1.64h.49A5.56,5.56,0,0,1,75.77.73,5.32,5.32,0,0,1,74.56,2h2ZM76,3.69a6.88,6.88,0,0,1-.09,1h1.38v-1Z"/>
+          <path class="cls-1" d="M80.69,6a4,4,0,0,0,1.53.32c1,0,1.21-.48,1.21-.93s-.23-.82-1-1.18L82,4c-.94-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A5,5,0,0,1,84,.9v.72a4.19,4.19,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M85.11,6a4,4,0,0,0,1.53.32c1,0,1.21-.48,1.21-.93s-.23-.82-1-1.18L86.44,4c-.94-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A5,5,0,0,1,88.46.9v.72a4.19,4.19,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.16,4.16,0,0,1-1.54-.26Z"/>
+          <path class="cls-1" d="M89.91,6.84v-6h.74v6Z"/>
+          <path class="cls-1" d="M94.05,7.6A5.53,5.53,0,0,1,92.5,3.8,5.53,5.53,0,0,1,94.05,0h.63a5.58,5.58,0,0,0-1.55,3.8,5.58,5.58,0,0,0,1.55,3.8Z"/>
+          <path class="cls-1" d="M95.21,6a4,4,0,0,0,1.53.32c1,0,1.22-.48,1.22-.93s-.23-.82-1-1.18L96.54,4c-.93-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A4.87,4.87,0,0,1,98.56.9v.72a4.15,4.15,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M99.77,6.84V2.4h.68v.36a2,2,0,0,1,1.25-.41,1.4,1.4,0,0,1,1.22.58,2.18,2.18,0,0,1,1.52-.58,1.4,1.4,0,0,1,1.5,1.56V6.84h-.73V4c0-.77-.43-1.06-.95-1.06a1.64,1.64,0,0,0-1.12.45,2.1,2.1,0,0,1,.06.51V6.84h-.74V4c0-.77-.43-1-.95-1a1.56,1.56,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M109.58,6.84a2,2,0,0,1-.08-.44,2,2,0,0,1-1.38.49,1.22,1.22,0,0,1-1.32-1.2c0-.88.42-1.39,2.61-1.5V4.07c0-.61-.28-1.1-.94-1.1a2.73,2.73,0,0,0-1.11.23V2.63a3.15,3.15,0,0,1,1.31-.29c1.07,0,1.45.73,1.45,1.61V5.39a7.41,7.41,0,0,0,.1,1.45Zm-.17-2.09c-1.46.12-1.86.34-1.86.85a.67.67,0,0,0,.75.7,1.89,1.89,0,0,0,1.11-.38Z"/>
+          <path class="cls-1" d="M112.4,6.84c-.67,0-1.06-.23-1.06-1V.42h.73V5.67c0,.42.14.53.46.53h.25v.64Z"/>
+          <path class="cls-1" d="M114.63,6.84c-.67,0-1.06-.23-1.06-1V.42h.72V5.67c0,.42.15.53.47.53H115v.64Z"/>
+          <path class="cls-1" d="M116.82,6.84l2.26-6h.86l2.26,6h-.81l-.63-1.7H118.2l-.62,1.7Zm1.61-2.35h2.09l-1-2.83Z"/>
+          <path class="cls-1" d="M123,6.84V2.4h.68v.36a2,2,0,0,1,1.25-.41,1.4,1.4,0,0,1,1.22.58,2.18,2.18,0,0,1,1.52-.58,1.4,1.4,0,0,1,1.5,1.56V6.84h-.73V4c0-.77-.43-1.06-.95-1.06a1.64,1.64,0,0,0-1.12.45,2.1,2.1,0,0,1,.06.51V6.84h-.74V4c0-.77-.43-1-1-1a1.56,1.56,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M130.15,4.69c0-1.54.79-2.35,2-2.35s2,.67,2,2.22-.8,2.35-2,2.35S130.15,6.24,130.15,4.69Zm3.32-.07c0-1.26-.57-1.68-1.29-1.68s-1.28.42-1.28,1.68.57,1.69,1.28,1.69S133.47,5.88,133.47,4.62Z"/>
+          <path class="cls-1" d="M138,6.84V6.32a2.05,2.05,0,0,1-1.4.56,1.4,1.4,0,0,1-1.45-1.59V2.4h.74V5.21c0,.77.4,1.07,1,1.07A1.54,1.54,0,0,0,138,5.76V2.4h.74V6.84Z"/>
+          <path class="cls-1" d="M140,6.84V2.4h.69v.47A2,2,0,0,1,142,2.35a1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.42-1.06-.94-1.06a1.75,1.75,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M146.79,6.83a4.27,4.27,0,0,1-.75.08c-.83,0-1.16-.32-1.16-1.06V3h-.75V2.4h.75V1.24l.71-.3V2.4h1.16V3h-1.16V5.76c0,.4.15.56.75.56a2.89,2.89,0,0,0,.45,0Z"/>
+          <path class="cls-1" d="M153.33,6.84l-.6-.64a2.7,2.7,0,0,1-2,.72,1.66,1.66,0,0,1-1.85-1.59c0-.81.41-1.29,1.33-1.92a2.1,2.1,0,0,1-.66-1.36A1.3,1.3,0,0,1,150.9.71a1.16,1.16,0,0,1,1.31,1.18c0,.76-.42,1.09-1.06,1.57l1.52,1.66A5.12,5.12,0,0,0,153,3.25h.66a4.93,4.93,0,0,1-.48,2.38c.36.39.73.81,1.11,1.21Zm-2.78-3c-.67.47-.94.79-.94,1.37a1.13,1.13,0,0,0,1.27,1.13,1.82,1.82,0,0,0,1.43-.59Zm.32-2.53a.65.65,0,0,0-.64.72c0,.28.05.49.54,1a1.42,1.42,0,0,0,.76-1.1A.62.62,0,0,0,150.87,1.29Z"/>
+          <path class="cls-1" d="M156.45,6a4,4,0,0,0,1.53.32c1,0,1.22-.48,1.22-.93s-.24-.82-1-1.18L157.78,4c-.93-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A4.89,4.89,0,0,1,159.8.9v.72a4.15,4.15,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M161,6.84V.42h.73V2.83A1.89,1.89,0,0,1,163,2.35a1.42,1.42,0,0,1,1.52,1.56V6.84h-.75V4c0-.76-.42-1.06-.94-1.06a1.65,1.65,0,0,0-1.15.48V6.84Z"/>
+          <path class="cls-1" d="M165.49,4.69c0-1.54.8-2.35,2-2.35s2,.67,2,2.22-.8,2.35-2,2.35S165.49,6.24,165.49,4.69Zm3.33-.07c0-1.26-.58-1.68-1.29-1.68s-1.29.42-1.29,1.68.58,1.69,1.29,1.69S168.82,5.88,168.82,4.62Z"/>
+          <path class="cls-1" d="M170.54,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.15,1.15,0,0,1,.3,0V3a1.07,1.07,0,0,0-.29,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M175.77,6.83a4.26,4.26,0,0,1-.74.08c-.84,0-1.17-.32-1.17-1.06V3h-.75V2.4h.75V1.24l.71-.3V2.4h1.16V3h-1.16V5.76c0,.4.15.56.75.56a2.89,2.89,0,0,0,.45,0Z"/>
+          <path class="cls-1" d="M179.69,6.84V1.5h-2.08V.82h4.91V1.5h-2.09V6.84Z"/>
+          <path class="cls-1" d="M185.64,6.74a4.68,4.68,0,0,1-1.26.16,1.91,1.91,0,0,1-2.13-2.14c0-1.5.79-2.4,2-2.4A1.61,1.61,0,0,1,186,4.18v.64h-3c0,1.13.65,1.5,1.62,1.5a3.86,3.86,0,0,0,1-.13Zm-.39-2.51c0-1-.46-1.27-1.1-1.27s-1,.34-1.13,1.27Z"/>
+          <path class="cls-1" d="M186.9,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.3,1.3,0,0,1,.31,0V3a1.19,1.19,0,0,0-.3,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M189.85,6.84V2.4h.67v.36a2,2,0,0,1,1.25-.41,1.41,1.41,0,0,1,1.23.58,2.18,2.18,0,0,1,1.52-.58A1.41,1.41,0,0,1,196,3.91V6.84h-.74V4c0-.77-.42-1.06-.95-1.06a1.66,1.66,0,0,0-1.12.45,2.09,2.09,0,0,1,.07.51V6.84h-.74V4c0-.77-.43-1-.95-1a1.59,1.59,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M199.37,6.84v-6h.74v6Z"/>
+          <path class="cls-1" d="M201.61,6.84V2.4h.68v.47a2,2,0,0,1,1.38-.52,1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.43-1.06-.95-1.06a1.78,1.78,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M206.08,6.09a3.17,3.17,0,0,0,1.14.23c.64,0,.92-.26.92-.67a.59.59,0,0,0-.46-.62L207,4.81a1.12,1.12,0,0,1-.88-1.13c0-.88.65-1.35,1.58-1.35a4.11,4.11,0,0,1,1,.12v.63a3.39,3.39,0,0,0-1.1-.17c-.54,0-.79.26-.79.63a.55.55,0,0,0,.44.63l.76.25a1.06,1.06,0,0,1,.83,1.11c0,.84-.62,1.37-1.63,1.37a4.11,4.11,0,0,1-1.15-.15Z"/>
+          <path class="cls-1" d="M212.57,6.84V6.32a2,2,0,0,1-1.39.56,1.41,1.41,0,0,1-1.46-1.59V2.4h.74V5.21c0,.77.4,1.07,1,1.07a1.54,1.54,0,0,0,1.13-.52V2.4h.74V6.84Z"/>
+          <path class="cls-1" d="M214.54,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.15,1.15,0,0,1,.3,0V3a1.07,1.07,0,0,0-.29,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M219.78,6.84a2,2,0,0,1-.09-.44,2,2,0,0,1-1.38.49A1.22,1.22,0,0,1,217,5.69c0-.88.42-1.39,2.61-1.5V4.07c0-.61-.28-1.1-.94-1.1a2.73,2.73,0,0,0-1.11.23V2.63a3.15,3.15,0,0,1,1.31-.29c1.08,0,1.45.73,1.45,1.61V5.39a7.31,7.31,0,0,0,.11,1.45Zm-.18-2.09c-1.45.12-1.86.34-1.86.85a.67.67,0,0,0,.75.7,1.87,1.87,0,0,0,1.11-.38Z"/>
+          <path class="cls-1" d="M221.5,6.84V2.4h.69v.47a2,2,0,0,1,1.37-.52,1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.43-1.06-1-1.06a1.78,1.78,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M229.24,6.77a3.5,3.5,0,0,1-1,.13A2,2,0,0,1,226,4.8a2.16,2.16,0,0,1,2.32-2.44,4.22,4.22,0,0,1,.92.09v.62a4.26,4.26,0,0,0-.94-.11c-1.13,0-1.57.64-1.57,1.71s.43,1.65,1.69,1.65a3.73,3.73,0,0,0,.84-.09Z"/>
+          <path class="cls-1" d="M233.08,6.74a4.6,4.6,0,0,1-1.25.16,1.92,1.92,0,0,1-2.14-2.14c0-1.5.79-2.4,2-2.4a1.6,1.6,0,0,1,1.73,1.82v.64h-3c0,1.13.66,1.5,1.63,1.5a3.78,3.78,0,0,0,1-.13Zm-.39-2.51c0-1-.46-1.27-1.09-1.27s-1,.34-1.14,1.27Z"/>
+          <path class="cls-1" d="M233.62,7.6a5.54,5.54,0,0,0,1.56-3.8A5.54,5.54,0,0,0,233.62,0h.64a5.58,5.58,0,0,1,1.55,3.8,5.58,5.58,0,0,1-1.55,3.8Z"/>
+        </g>
+        <path class="cls-2" d="M20.51,21C17,15.22,22.65,8.48,36.88,18a31,31,0,0,1,6.67,6c-13.41-8.41-18.69-1.88-15.26,3.78a8.58,8.58,0,0,1-5.81-4.59A5.15,5.15,0,0,0,20.4,21l.11,0m-6.91,5.3A6.68,6.68,0,0,0,10,25.1c.86,1.4,2,3.2,3.5,5.57A19.81,19.81,0,0,0,21,36.9c-5-7.79-5.41-9.22-7.37-10.57M13,24a6,6,0,0,1,6-3.49,9.33,9.33,0,0,1-4.3-4.11c-2.3-4.13-7.5-3.06-9.49.92L2,18.43a6.42,6.42,0,0,1,3.82,1.22c1.41,1,2,2,4.12,5.4Z"/>
+        <path class="cls-3" d="M10.38,17.36a.8.8,0,1,1-.79-.79.8.8,0,0,1,.79.79"/>
+        <path class="cls-2" d="M18.16,24a.8.8,0,1,1-.79-.79.8.8,0,0,1,.79.79"/>
+        <path class="cls-2" d="M6,12.77c.61-4.59,4.13-9,9.79-8.41C15.6,8,12.09,12.16,6,12.77"/>
+        <path class="cls-4" d="M6,12.77C5.6,10,3.45,7.27,0,7.64c.09,2.24,2.24,4.76,6,5.13"/>
+        <path class="cls-2" d="M6,12.77a9,9,0,0,0-1.67,2.37,12.84,12.84,0,0,0-1,2.71c-.06.23-.11.47-.16.71s-.08.47-.13.71S3,19.75,3,20s0,.24,0,.36l0,.36a17.8,17.8,0,0,0,0,2.92,10.69,10.69,0,0,1-.35-2.93c0-.5.05-1,.1-1.48,0-.25.07-.5.12-.74s.09-.49.15-.73l.2-.72.24-.7.3-.69c.11-.22.23-.44.35-.66a6.69,6.69,0,0,1,2-2.21"/>
+        <path class="cls-1" d="M194.74,17.82a8.88,8.88,0,0,1-2.12,2.75.39.39,0,0,1-.26.1.58.58,0,0,1-.53-.53.34.34,0,0,1,.15-.29,7.46,7.46,0,0,0,2.25-2.58h-1.42a.37.37,0,0,1-.39-.31.53.53,0,0,1-.42.3.27.27,0,0,1-.25-.2,7,7,0,0,0-.4-.95v5a.44.44,0,0,1-.88,0V17c-.31,1.23-.46,1.72-.81,1.72a.49.49,0,0,1-.46-.47.37.37,0,0,1,.05-.2,12.94,12.94,0,0,0,1.22-3h-.78c-.2,0-.31-.22-.31-.44s.11-.43.31-.43h.78V12.9a.44.44,0,0,1,.88,0v1.28h.7a.38.38,0,0,1,.37.43.39.39,0,0,1-.37.44h-.67c.43.63.85,1.19,1.06,1.57a.39.39,0,0,1,.37-.25h1.93v-1.5h-1.1c-.49,1.18-.64,1.28-.86,1.28a.58.58,0,0,1-.56-.53.42.42,0,0,1,.06-.21,7.9,7.9,0,0,0,1-2.43.36.36,0,0,1,.38-.31.46.46,0,0,1,.49.43,3.71,3.71,0,0,1-.23.86h.81V12.9a.41.41,0,0,1,.45-.41.41.41,0,0,1,.45.41V14h1.84a.4.4,0,0,1,.41.45.41.41,0,0,1-.41.46h-1.84v1.5h2.08a.41.41,0,0,1,.42.45.42.42,0,0,1-.42.45h-1.57a7.16,7.16,0,0,0,2,2.48.35.35,0,0,1,.14.29.58.58,0,0,1-.5.55c-.35,0-1.38-1.1-2.17-2.78v3.3a.41.41,0,0,1-.45.41.41.41,0,0,1-.45-.41Z"/>
+        <path class="cls-1" d="M201.26,16.4h-1.35a.43.43,0,0,1-.42-.45.42.42,0,0,1,.42-.45h3.86a.41.41,0,0,1,.41.45.41.41,0,0,1-.41.45H202.2v3.53c.74-.13,1.39-.24,1.73-.32l.12,0a.39.39,0,0,1,.38.42.52.52,0,0,1-.39.51c-.53.15-2.61.51-4.25.74h-.07a.48.48,0,0,1-.45-.52.39.39,0,0,1,.34-.42c.53-.07,1.08-.16,1.65-.25Zm4-2c.18,3.45,1.06,6.08,1.64,6.08.4,0,.42-1,.54-1.61a.42.42,0,0,1,.41-.36.47.47,0,0,1,.47.47s0,.05,0,.07c-.18,1.09-.26,2.44-1.43,2.44-1.66,0-2.4-3.88-2.57-7.09h-4.61a.43.43,0,0,1-.41-.47.43.43,0,0,1,.41-.47h4.57V13a.48.48,0,0,1,1,0h0v.51h1.32l-.17-.24a.44.44,0,0,1-.11-.28.42.42,0,0,1,.45-.37.49.49,0,0,1,.39.19,5.84,5.84,0,0,1,1.1,1.88.46.46,0,0,1-.46.46.43.43,0,0,1-.4-.28,4.23,4.23,0,0,0-.22-.42Z"/>
+        <path class="cls-1" d="M191.09,26.67a.46.46,0,0,1-.44-.47.44.44,0,0,1,.18-.37,8.12,8.12,0,0,1-1.09.34.58.58,0,0,1-.51-.6.41.41,0,0,1,.3-.42,10.53,10.53,0,0,0,3.57-1.77,1.05,1.05,0,0,1,.66-.24,1,1,0,0,1,.66.24,9.91,9.91,0,0,0,3.56,1.8.39.39,0,0,1,.3.41.58.58,0,0,1-.52.59,5.24,5.24,0,0,1-1-.31.47.47,0,0,1,.14.34.45.45,0,0,1-.43.46Zm1.7,1.85A20.32,20.32,0,0,1,191.5,31c2.2-.12,4-.3,4.89-.43a13.33,13.33,0,0,0-.83-1,.42.42,0,0,1-.11-.28.5.5,0,0,1,.49-.46.35.35,0,0,1,.26.12,19.28,19.28,0,0,1,1.86,2.43.48.48,0,0,1,.09.27.59.59,0,0,1-.55.56.34.34,0,0,1-.31-.19q-.16-.3-.36-.6a66.32,66.32,0,0,1-7.08.64h0a.48.48,0,0,1-.46-.52.38.38,0,0,1,.38-.42l.56,0a13.83,13.83,0,0,0,1.43-2.52h-2a.42.42,0,0,1-.41-.45.41.41,0,0,1,.41-.45h8a.4.4,0,0,1,.41.45.41.41,0,0,1-.41.45Zm3.74-2.76a12.82,12.82,0,0,1-2.67-1.6l-.06,0-.07,0a13.68,13.68,0,0,1-2.77,1.6Z"/>
+        <path class="cls-1" d="M200.92,28.26c-.87.67-1.06.74-1.18.74a.51.51,0,0,1-.48-.5.39.39,0,0,1,.2-.35,8.5,8.5,0,0,0,2.82-2.62s0,0,0-.05a0,0,0,0,0,0,0H200a.4.4,0,0,1-.41-.43.4.4,0,0,1,.41-.43h.95v-1a.47.47,0,0,1,.93,0v1h.71a.63.63,0,0,1,.69.68,3.46,3.46,0,0,1-1.12,1.88l1.11.92a.37.37,0,0,1,.15.3.54.54,0,0,1-.49.52.36.36,0,0,1-.25-.1c-.24-.21-.59-.59-.8-.77v3.76a.47.47,0,0,1-.93,0Zm2.19,3.64a.48.48,0,0,1,0-.95h2.14V26.08H203.8a.44.44,0,0,1-.42-.47.43.43,0,0,1,.42-.47h1.45V23.61a.48.48,0,0,1,.53-.47.48.48,0,0,1,.51.47v1.53h1.41a.42.42,0,0,1,.41.47.43.43,0,0,1-.41.47h-1.41V31h1.6a.48.48,0,0,1,0,.95Z"/>
+        <path class="cls-1" d="M49.55,18.18c0-2.81,2.43-5,6.66-5,3.86,0,6.4,1.59,6.83,4.48a1.28,1.28,0,0,1,.05.27A1.22,1.22,0,0,1,61.77,19a1.1,1.1,0,0,1-1.11-.77c-.3-1.73-1.73-2.82-4.5-2.82s-4.22,1.18-4.22,2.79c0,1.25.93,1.78,2.68,2.23,1.27.34,3.11.57,4.58,1,2.84.74,4.55,2.27,4.55,5,0,3.13-2.25,5.52-7.36,5.52-4.22,0-7.13-2.09-7.43-5.5,0-.06,0-.13,0-.2a1.25,1.25,0,0,1,1.32-1.14,1,1,0,0,1,1.07.84c.18,2.09,2.08,3.66,5.06,3.66,3.52,0,4.88-1.48,4.88-3.22,0-1.25-.89-2.28-2.68-2.78-1.36-.4-3.11-.56-4.75-1-2.74-.75-4.29-2-4.29-4.36Z"/>
+        <path class="cls-1" d="M67.38,18.18c0-2.81,2.43-5,6.66-5,3.85,0,6.4,1.59,6.83,4.48a1.28,1.28,0,0,1,0,.27A1.23,1.23,0,0,1,79.6,19a1.12,1.12,0,0,1-1.12-.77c-.29-1.73-1.72-2.82-4.49-2.82s-4.22,1.18-4.22,2.79c0,1.25.92,1.78,2.67,2.23,1.28.34,3.12.57,4.59,1,2.84.74,4.54,2.27,4.54,5,0,3.13-2.25,5.52-7.35,5.52-4.23,0-7.13-2.09-7.43-5.5,0-.06,0-.13,0-.2a1.25,1.25,0,0,1,1.32-1.14,1,1,0,0,1,1.06.84c.18,2.09,2.09,3.66,5.07,3.66,3.51,0,4.88-1.48,4.88-3.22,0-1.25-.89-2.28-2.68-2.78-1.36-.4-3.11-.56-4.75-1-2.75-.75-4.29-2-4.29-4.36Z"/>
+        <path class="cls-1" d="M86.64,14.43c0-.68.63-1,1.27-1a1.12,1.12,0,0,1,1.25,1V30.65a1.12,1.12,0,0,1-1.25,1c-.64,0-1.27-.34-1.27-1Z"/>
+        <path class="cls-1" d="M97.17,19.05c.46,0,.94,0,1.44,0,2.34,0,5-.13,7.67-.33-.32-.62-.61-1.23-.88-1.85-2.14.18-4.39.26-6.57.26h-.72a1,1,0,0,1-1-1,.93.93,0,0,1,1-1h.84c2,0,3.93-.06,5.81-.2a6.45,6.45,0,0,1-.31-1.32c0-.61.63-.94,1.25-.94a.93.93,0,0,1,1,.63,11.65,11.65,0,0,0,.36,1.44c1.93-.2,3.77-.47,5.45-.77a.61.61,0,0,1,.23,0,1.1,1.1,0,0,1,1,1.08.85.85,0,0,1-.77.86c-1.61.31-3.41.57-5.29.77a19,19,0,0,0,.88,1.83c2.18-.22,4.23-.51,5.88-.84a1.42,1.42,0,0,1,.28,0,1.09,1.09,0,0,1,1.09,1.13.91.91,0,0,1-.8.94c-1.68.27-3.43.49-5.27.69a32.77,32.77,0,0,0,3.43,4.09,1.15,1.15,0,0,1,.34.8,1.39,1.39,0,0,1-1.36,1.32,1.47,1.47,0,0,1-.79-.24,14.72,14.72,0,0,0-7.36-1.9c-2.5,0-4.7.62-4.7,2.42s2.16,2.85,6.29,2.85a32.27,32.27,0,0,0,6.22-.56,2,2,0,0,1,.32,0,1.06,1.06,0,0,1,1,1.12,1.07,1.07,0,0,1-1,1.13,41.44,41.44,0,0,1-6.63.53c-5.2,0-8.49-1.81-8.49-5,0-3,2.88-4.34,7-4.34a16.27,16.27,0,0,1,5.72,1,22.26,22.26,0,0,1-2.34-3c-3.2.28-6.58.46-10.15.46a1,1,0,0,1-1-1,.93.93,0,0,1,.88-1Z"/>
+        <path class="cls-1" d="M137.8,19.14c0,1.3,0,2.49-.11,3.55a18.07,18.07,0,0,1,2.59,1.47,1.16,1.16,0,0,1,.52,1,1.23,1.23,0,0,1-1.07,1.26,1.15,1.15,0,0,1-.59-.2,17,17,0,0,0-1.77-1.12c-.82,4.4-2.9,5.9-6.63,6.94a2.24,2.24,0,0,1-.48.06,1.29,1.29,0,0,1-1.33-1.28,1,1,0,0,1,.79-1c3.25-.82,5-2.14,5.58-5.76a17.72,17.72,0,0,0-5.85-1.34c-1.18,3.44-3.32,8.11-6.86,8.11-1.73,0-3.09-1.39-3.09-3.7,0-3.07,2.84-6.26,8.29-6.48.77-2.53,1.18-4.34,1.18-4.4,0-.25-.18-.36-.52-.36-1.52.05-3,.14-4.66.14-.39,0-.77,0-1.16,0a1.08,1.08,0,0,1-1-1.14,1,1,0,0,1,1-1c.62,0,1.23,0,1.79,0,1.5,0,2.91,0,4.41-.08H129c1.54,0,2.31.77,2.31,2,0,.48-.18,1.45-1.25,5a22.6,22.6,0,0,1,5.43,1.05c0-.37,0-.77,0-1.19,0-.81,0-1.71-.09-2.7v-.09a1,1,0,0,1,1.11-1A1.17,1.17,0,0,1,137.8,18Zm-16,7.91c0,.94.43,1.39,1,1.39,2,0,3.7-4.19,4.22-5.62-3.93.48-5.24,2.69-5.24,4.23"/>
+        <path class="cls-1" d="M161.49,29.34a1.11,1.11,0,0,1,1.18,1.14,1.25,1.25,0,0,1-1.18,1.26c-2,.15-3.93.26-5.7.26-6.79,0-11.49-1.41-11.49-5.94,0-2.76,2.2-5,6.38-6.44-.13-2-.34-3.87-.57-5.9v-.13c0-.69.71-1.1,1.39-1.1a1.18,1.18,0,0,1,1.29,1.08c.09,1.8.18,3.5.27,5.33a50.5,50.5,0,0,1,7.5-1.19l.23,0A1.13,1.13,0,0,1,162,18.81,1.15,1.15,0,0,1,160.9,20c-9.45.72-14.1,3.12-14.1,6,0,2.69,3.31,3.63,8.65,3.63,1.75,0,3.72-.1,5.86-.28Zm.75-11.79a.83.83,0,0,1-.66-.33,18.66,18.66,0,0,0-2-2,.69.69,0,0,1-.3-.55.85.85,0,0,1,.86-.77c.23,0,.8.09,2.71,2.31a.9.9,0,0,1,.2.53.86.86,0,0,1-.86.81m1.2-2a14.09,14.09,0,0,0-1.81-1.76.73.73,0,0,1-.3-.55.77.77,0,0,1,.79-.73,1,1,0,0,1,.53.2c2.11,1.72,2.18,2.16,2.18,2.36a.83.83,0,0,1-.8.79.76.76,0,0,1-.59-.31"/>
+        <path class="cls-1" d="M173.07,32.38a1.21,1.21,0,0,1-1.36-1.21A1.12,1.12,0,0,1,172.78,30h.13c7.36,0,8.52-3.79,8.52-8.5,0-5.05-1.28-6.7-2.84-6.7a3.58,3.58,0,0,0-1.68.51c-2,1-4.56,6-5.84,10.22a1.29,1.29,0,0,1-1.27.9,1.27,1.27,0,0,1-1.31-1.23c-.1-1.41-.12-2.71-.12-3.95a59.74,59.74,0,0,1,.52-7.84,1.1,1.1,0,0,1,1.18-1,1.21,1.21,0,0,1,1.32,1.08.78.78,0,0,1,0,.22,42.56,42.56,0,0,0-.7,7.1c1.81-4.17,4.08-8.22,8.1-8.22,2.41,0,5,1.8,5,8.88,0,5.26-1.29,10.88-10.62,10.88Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
+    </a>
+    <nav class="header-nav">
+      <a href="#about">会社について</a>
+      <a href="#services">保険商品</a>
+      <a href="#why">選ばれる理由</a>
+      <a href="#process">ご加入の流れ</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+      <button class="header-cta-btn" onclick="location.href='#contact'">
+        <i data-lucide="message-circle" style="width:16px;height:16px;"></i>
+        無料相談
+      </button>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="メニュー">
+      <i data-lucide="menu" style="width:24px;height:24px;"></i>
+    </button>
   </div>
-  <a href="tel:0120000000" class="header-tel">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    0120-000-000
-  </a>
 </header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobile()">会社について</a>
+  <a href="#services" onclick="closeMobile()">保険商品</a>
+  <a href="#why" onclick="closeMobile()">選ばれる理由</a>
+  <a href="#process" onclick="closeMobile()">ご加入の流れ</a>
+  <a href="#company" onclick="closeMobile()">会社概要</a>
+  <a href="#contact" onclick="closeMobile()">お問い合わせ</a>
+</nav>
 
-<!-- ヒーローセクション -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">福岡県 地域密着 30年の実績</div>
-    <h1 class="hero-headline">
-      水回りの<span class="accent-line">トラブル・老朽化</span>を<br>
-      最短即日で解決します
-    </h1>
-    <p class="hero-sub">
-      キッチン・お風呂・トイレ・洗面台の<br>
-      交換・修理・リフォームはお任せください。<br>
-      地元福岡の職人が丁寧・迅速に対応します。
-    </p>
-    <ul class="hero-points">
-      <li>現地調査・お見積り 完全無料</li>
-      <li>最短即日〜翌日対応（緊急修理も可）</li>
-      <li>施工後10年保証 ＋ アフターサービス充実</li>
-      <li>クレジットカード・各種ローン対応</li>
-    </ul>
-    <div class="hero-cta-wrap">
-      <a href="tel:0120000000" class="btn-main">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        無料で今すぐ電話する
+    <div class="hero-content fade-up">
+      <div class="hero-badge">
+        <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+        安心と信頼の保険パートナー
+      </div>
+      <h1 class="hero-title">あなたと家族の<span class="accent">安心</span>を、<br class="sp-only">まっすぐに届ける。</h1>
+      <p class="hero-desc">
+        <span>SSIきみどりは、シニア世代とそのご家族に寄り添い、わかりやすく安心できる保険をお届けします。</span>
+        <span>お一人おひとりのライフステージに合わせた最適なプランをご提案いたします。</span>
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="location.href='#services'">
+          <i data-lucide="search" style="width:16px;height:16px;"></i>
+          保険商品を探す
+        </button>
+        <button class="btn-outline" onclick="location.href='#contact'">
+          <i data-lucide="phone" style="width:16px;height:16px;"></i>
+          無料相談はこちら
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">50<span class="unit">万件</span></div>
+          <div class="hero-stat-label">累計ご契約数</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">98.5<span class="unit">%</span></div>
+          <div class="hero-stat-label">お客様満足度</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">35<span class="unit">年</span></div>
+          <div class="hero-stat-label">業界実績</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image fade-up" style="transition-delay:0.15s;">
+      <a href="https://ibb.co/6cMNqXwS">
+        <img src="https://i.ibb.co/xKk3rFLb/23265808-s.jpg" alt="日本の三世代家族が笑顔でくつろぐ様子" border="0">
       </a>
-      <a href="https://lin.ee/xxxxx" class="btn-line">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-        LINEで無料相談
-      </a>
     </div>
-    <p class="btn-note" style="margin-top:10px;">受付時間：年中無休 8:00〜20:00</p>
   </div>
 </section>
 
-<!-- 信頼バー -->
-<div class="trust-bar">
-  <div class="trust-scroll">
-    <span class="trust-item">施工実績 1,200件以上</span>
-    <span class="trust-item">お客様満足度 98.3%</span>
-    <span class="trust-item">施工後 10年保証</span>
-    <span class="trust-item">福岡全域 即日対応</span>
-    <span class="trust-item">各種ローン対応</span>
-    <span class="trust-item">無料お見積り</span>
-    <span class="trust-item">施工実績 1,200件以上</span>
-    <span class="trust-item">お客様満足度 98.3%</span>
-    <span class="trust-item">施工後 10年保証</span>
-    <span class="trust-item">福岡全域 即日対応</span>
-    <span class="trust-item">各種ローン対応</span>
-    <span class="trust-item">無料お見積り</span>
-  </div>
-</div>
-
-<!-- お悩みセクション -->
-<section class="trouble section">
+<!-- ABOUT -->
+<section class="section" id="about">
   <div class="container">
-    <span class="section-label">こんなお悩みありませんか？</span>
-    <h2 class="section-title">水回りの<span>不満・困りごと</span>、<br>一人で抱えていませんか？</h2>
-    <div class="divider"></div>
-    
-    <div class="trouble-grid fade-up">
-      <div class="trouble-card"><p>水が止まらない・漏れている</p></div>
-      <div class="trouble-card"><p>お湯が出ない・シャワーが弱い</p></div>
-      <div class="trouble-card"><p>トイレが詰まる・流れが悪い</p></div>
-      <div class="trouble-card"><p>キッチンが古くて使いにくい</p></div>
-      <div class="trouble-card"><p>お風呂のタイルが割れた・寒い</p></div>
-      <div class="trouble-card"><p>排水の臭いが気になる</p></div>
+    <div class="section-header fade-up">
+      <div class="section-label en">About Us</div>
+      <h2 class="section-title">SSIきみどり株式会社について</h2>
+      <p class="section-subtitle"><span style="display:inline-block;">私たちは、すべてのお客様の暮らしと未来に安心をお届けすることを使命としています。</span></p>
     </div>
-
-    <div class="trouble-bottom fade-up">
-      <p>そのお悩み、<strong>今すぐ解決できます！</strong><br>
-      まずは<span>無料相談・無料お見積り</span>からどうぞ</p>
+    <div class="about-grid">
+      <div class="about-image fade-up">
+        <img src="/images/about-consultation.jpg" alt="保険アドバイザーがシニアのお客様と相談する様子">
+      </div>
+      <div class="about-text fade-up" style="transition-delay:0.1s;">
+        <h3>お客様の声に耳を傾け、<br>最適な安心をお届けします</h3>
+        <p>SSIきみどり株式会社は創業以来、シニア世代とそのご家族の「もしも」に備える保険商品を提供してまいりました。複雑になりがちな保険の仕組みをわかりやすくご説明し、納得のいく保障選びをサポートいたします。</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <span class="icon-circle"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+            全国200拠点以上の相談窓口
+          </div>
+          <div class="about-feature">
+            <span class="icon-circle"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+            専任アドバイザーによる丁寧なサポート
+          </div>
+          <div class="about-feature">
+            <span class="icon-circle"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+            シニア世代に特化した商品設計
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 選ばれる理由 -->
-<section class="reasons section">
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
   <div class="container">
-    <span class="section-label">選ばれる理由</span>
-    <h2 class="section-title">福岡で<span>1,200件超</span>の<br>実績が信頼の証</h2>
-    <div class="divider"></div>
-    <div class="reason-list">
-      <div class="reason-item fade-up">
-        <div class="reason-num">01</div>
-        <div class="reason-body">
-          <div class="reason-badge">スピード</div>
-          <h3>最短即日対応・365日受付</h3>
-          <p>お電話いただいてから最短30分でスタッフが駆けつけます。緊急の水漏れや故障も年中無休で対応可能です。</p>
-        </div>
+    <div class="section-header fade-up">
+      <div class="section-label en">Products</div>
+      <h2 class="section-title">保険商品のご案内</h2>
+      <p class="section-subtitle"><span style="display:inline-block;">ライフステージやお悩みに合わせた多彩な保険商品をご用意しています。</span></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon"><img src="https://i.ibb.co/Psc29jr2/logo-hajimeteno.png" alt="はじめての入院保険"></div>
+        <h3>はじめての入院保険</h3>
+        <p>入院保険に初めて加入される方でも安心のシンプルなプラン。<br>入院・手術はもちろん、持病をお持ちの方でもご加入いただける引受基準緩和型もご用意しています。</p>
+        <a href="#" class="service-link">詳しくみる <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
       </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">02</div>
-        <div class="reason-body">
-          <div class="reason-badge">安心価格</div>
-          <h3>明朗会計・追加費用なし</h3>
-          <p>見積もり後の追加請求は一切ありません。ご納得いただいてから施工スタート。分割払い・ローンも対応しています。</p>
-        </div>
+      <div class="service-card fade-up" style="transition-delay:0.1s;">
+        <div class="service-icon"><img src="https://i.ibb.co/jvFYBbMD/logo-50saikarano.png" alt="50歳からの終身保険"></div>
+        <h3>50歳からの終身保険</h3>
+        <p>50歳からでも無理なく始められる一生涯の保障プラン。<br>健康に不安がある方も加入しやすく、大切なご家族への想いをしっかりと届けます。</p>
+        <a href="#" class="service-link">詳しくみる <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
       </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">03</div>
-        <div class="reason-body">
-          <div class="reason-badge">長期保証</div>
-          <h3>施工後10年保証＋無料定期点検</h3>
-          <p>施工完了後も安心。万が一のトラブルは保証期間内であれば無償で対応いたします。定期点検も実施しています。</p>
-        </div>
+      <div class="service-card fade-up" style="transition-delay:0.2s;">
+        <div class="service-icon"><img src="https://i.ibb.co/Lz5hZRVn/logo-sasae.png" alt="ささえ保険"></div>
+        <h3>ささえ保険</h3>
+        <p>葬儀費用に加えて、寺院の費用、お墓、仏壇、飲食など、予想を上まわる費用が必要となります。<br>そんな万が一に備えて家族の経済的負担をサポートするのが無選択定期保険「ささえ」です。</p>
+        <a href="#" class="service-link">詳しくみる <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
       </div>
-      <div class="reason-item fade-up">
-        <div class="reason-num">04</div>
-        <div class="reason-body">
-          <div class="reason-badge">地域密着</div>
-          <h3>福岡で30年・地域に根ざした信頼</h3>
-          <p>地元のお客様に長く愛されてきた会社です。ご近所への配慮、騒音・養生など、細部まで丁寧に施工します。</p>
-        </div>
+      <div class="service-card fade-up" style="transition-delay:0.3s;">
+        <div class="service-icon"><img src="https://i.ibb.co/7t3HH4bn/logo-ahitapurasu.png" alt="あしたプラス個人年金保険"></div>
+        <h3>あしたプラス</h3>
+        <p>老後の生活資金をしっかり準備する個人年金保険。<br>計画的に資産を積み立て、ゆとりあるセカンドライフをサポートします。</p>
+        <a href="#" class="service-link">詳しくみる <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 対応工事 -->
-<section class="works section">
+<!-- WHY CHOOSE US -->
+<section class="section" id="why">
   <div class="container">
-    <span class="section-label" style="background:var(--gold);color:var(--navy);">対応工事一覧</span>
-    <h2 class="section-title">水回り全般、<span style="color:var(--gold)">すべて</span>お任せください</h2>
-    <p class="section-sub">交換・修理・リフォームなど、幅広い水回り工事に対応しています。</p>
-    <div class="works-grid fade-up">
-      <div class="work-card">
-        <div class="work-name">キッチン</div>
-        <div class="work-desc">システムキッチン交換・水栓修理</div>
+    <div class="section-header fade-up">
+      <div class="section-label en">Why Choose Us</div>
+      <h2 class="section-title">SSIきみどりが選ばれる理由</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-num">01</div>
+        <h3>わかりやすい説明</h3>
+        <p>専門用語を使わず、図やイラストを交えた丁寧な説明で、初めての方でも安心してご検討いただけます。</p>
       </div>
-      <div class="work-card">
-        <div class="work-name">浴室・浴槽</div>
-        <div class="work-desc">ユニットバス交換・タイル補修</div>
+      <div class="why-card fade-up" style="transition-delay:0.08s;">
+        <div class="why-num">02</div>
+        <h3>手厚いサポート体制</h3>
+        <p>ご契約後もお電話・訪問でのアフターフォローを実施。給付金の請求手続きもスタッフが丁寧にお手伝いします。</p>
       </div>
-      <div class="work-card">
-        <div class="work-name">トイレ</div>
-        <div class="work-desc">便器交換・詰まり修理・ウォシュレット</div>
+      <div class="why-card fade-up" style="transition-delay:0.16s;">
+        <div class="why-num">03</div>
+        <h3>お手頃な保険料</h3>
+        <p>必要な保障を必要な分だけ。無駄を省いたシンプルな商品設計で、家計に優しい保険料を実現しました。</p>
       </div>
-      <div class="work-card">
-        <div class="work-name">洗面台</div>
-        <div class="work-desc">洗面化粧台交換・蛇口修理</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">配管工事</div>
-        <div class="work-desc">漏水修理・給排水管交換</div>
-      </div>
-      <div class="work-card">
-        <div class="work-name">給湯器</div>
-        <div class="work-desc">ガス給湯器・エコキュート交換</div>
+      <div class="why-card fade-up" style="transition-delay:0.24s;">
+        <div class="why-num">04</div>
+        <h3>迅速な給付対応</h3>
+        <p>書類到着から最短5営業日でのお支払い。Webからの請求手続きにも対応し、スムーズな給付をお約束します。</p>
       </div>
     </div>
-    <a href="tel:0120000000" class="btn-main" style="max-width:100%;">
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      工事内容について今すぐ相談する（無料）
-    </a>
   </div>
 </section>
 
-<!-- 施工の流れ -->
-<section class="flow section">
+<!-- PROCESS -->
+<section class="section section-green" id="process">
   <div class="container">
-    <span class="section-label">かんたん4ステップ</span>
-    <h2 class="section-title">ご依頼から完工まで<span>スムーズ</span>な流れ</h2>
-    <div class="divider"></div>
-    <div class="flow-list fade-up">
-      <div class="flow-item">
-        <div class="flow-dot active">1</div>
-        <div class="flow-body">
-          <div class="flow-time">最短30分で担当から折り返し</div>
-          <h3>お電話・LINEでご相談（無料）</h3>
-          <p>症状・場所・ご希望をお聞かせください。概算のお見積りもお伝えできます。</p>
-        </div>
+    <div class="section-header fade-up">
+      <div class="section-label en">Process</div>
+      <h2 class="section-title">ご加入までの流れ</h2>
+      <p class="section-subtitle"><span style="display:inline-block;">簡単4ステップで、お申し込みが完了します。</span></p>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <h3>無料相談のお申込み</h3>
+        <p>お電話またはWebフォームからお気軽にご予約ください。</p>
       </div>
-      <div class="flow-item">
-        <div class="flow-dot">2</div>
-        <div class="flow-body">
-          <div class="flow-time">現地訪問・完全無料</div>
-          <h3>現地調査・お見積り</h3>
-          <p>実際に現場を確認し、詳細なお見積りをご提示。ご納得いただいた後に進みます。</p>
-        </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <h3>ヒアリング</h3>
+        <p>専任アドバイザーがご希望やライフプランを丁寧にお伺いします。</p>
       </div>
-      <div class="flow-item">
-        <div class="flow-dot">3</div>
-        <div class="flow-body">
-          <div class="flow-time">丁寧・迅速に施工</div>
-          <h3>ご契約・施工スタート</h3>
-          <p>プロの職人が養生から後片付けまで責任をもって対応。ご不在でも対応可能です。</p>
-        </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <h3>プランのご提案</h3>
+        <p>お客様に最適な保険プランを複数ご提案いたします。</p>
       </div>
-      <div class="flow-item">
-        <div class="flow-dot">4</div>
-        <div class="flow-body">
-          <div class="flow-time">10年保証付き</div>
-          <h3>完工・お引き渡し</h3>
-          <p>施工後の動作確認をしっかり実施。アフターサービス・定期点検も充実しています。</p>
-        </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <h3>お申込み・ご契約</h3>
+        <p>ご納得いただけましたら、お申込み手続きへ進みます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 施工実績 -->
-<section class="results section">
-  <div class="container">
-    <span class="section-label" style="background:var(--gold);color:var(--navy);">実績・数字で証明</span>
-    <h2 class="section-title" style="color:#fff;">数字が語る<span style="color:var(--gold)">私たちの実力</span></h2>
-    <div class="results-grid fade-up">
-      <div class="result-stat">
-        <div class="result-num">1,200<span style="font-size:18px">+</span></div>
-        <div class="result-unit">施工実績</div>
-        <div class="result-label">件数（福岡県内）</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num">98.3<span style="font-size:18px">%</span></div>
-        <div class="result-unit">満足度</div>
-        <div class="result-label">お客様アンケート</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num">30<span style="font-size:18px">年</span></div>
-        <div class="result-unit">創業</div>
-        <div class="result-label">地域密着の実績</div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="fade-up">
-      <div class="result-stat">
-        <div class="result-num" style="font-size:28px;">最短<span style="color:#fff">即日</span></div>
-        <div class="result-unit">対応スピード</div>
-      </div>
-      <div class="result-stat">
-        <div class="result-num" style="font-size:28px;">10<span style="font-size:18px">年</span></div>
-        <div class="result-unit">施工保証</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- お客様の声 -->
-<section class="voices section">
-  <div class="container">
-    <span class="section-label">お客様の声</span>
-    <h2 class="section-title">実際に利用された<span>お客様</span>から<br>喜びの声をいただいています</h2>
-    <div class="divider"></div>
-    <div class="voice-list">
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">キッチン交換</span>
-        <p class="voice-text">古いキッチンを一新していただきました。見積もりが分かりやすく、当日の職人さんの対応もとても丁寧で安心できました。仕上がりも想像以上で大満足です！</p>
-        <p class="voice-meta">福岡市博多区 ／ 50代 女性</p>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">緊急水漏れ修理</span>
-        <p class="voice-text">深夜に突然水が漏れ出して焦っていたところ、30分以内に駆けつけてくれました。迅速な対応で本当に助かりました。料金も明朗で追加請求もなく信頼できます。</p>
-        <p class="voice-meta">春日市 ／ 40代 男性</p>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="stars">★★★★★</div>
-        <span class="voice-tag">浴室リフォーム</span>
-        <p class="voice-text">タイル張りのお風呂からユニットバスに変えていただきました。工期も短く、毎日のお風呂が快適になりました。近所へのご挨拶まで対応くださり感激しました。</p>
-        <p class="voice-meta">大野城市 ／ 60代 女性</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- よくある質問 -->
-<section class="faq section">
-  <div class="container">
-    <span class="section-label">よくある質問</span>
-    <h2 class="section-title">ご相談の前に<span>確認</span>できます</h2>
-    <div class="divider"></div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          見積もりは本当に無料ですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>はい、現地調査・お見積りは完全無料です。お見積り後に契約を強制することも一切ありません。ご納得いただいてからご検討ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          対応エリアはどこですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>福岡県内全域に対応しています。福岡市（博多区・中央区・東区・西区・南区・城南区・早良区）、春日市、大野城市、筑紫野市、太宰府市、糸島市 等、お気軽にご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          費用の支払い方法は何がありますか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>現金・クレジットカード（VISA/Mastercard等）・銀行振込のほか、各種リフォームローンにも対応しています。月々の支払いに関してもお気軽にご相談ください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          工事中、家にいなくても大丈夫ですか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>ご不在でも対応可能です。カギのお預かりや事前の施錠確認など、安心してお任せいただける体制を整えています。完工後は写真報告もいたします。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          <span class="faq-q-mark">Q</span>
-          保証はどうなっていますか？
-          <span class="chevron">▼</span>
-        </div>
-        <div class="faq-a"><span class="faq-a-mark">A</span>施工完了後10年間の保証を提供しています。保証期間内に施工に起因するトラブルが発生した場合は、無償で対応いたします。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 最終CTA -->
+<!-- CTA -->
 <section class="cta-section">
+  <div class="container fade-up">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p><span style="display:inline-block;">保険のプロが、あなたとご家族に最適なプランをご提案いたします。</span><span style="display:inline-block;">相談は何度でも無料です。</span></p>
+    <button class="btn-white" onclick="location.href='#contact'">
+      <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+      無料相談を予約する
+    </button>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="section section-alt" id="company">
   <div class="container">
-    <span class="section-label" style="background:rgba(255,255,255,0.25);color:#fff;">今すぐ無料相談</span>
-    <h2 class="section-title">まずは<span style="color:var(--gold)">お気軽に</span><br>ご連絡ください</h2>
-    <p class="section-sub">見積もり・相談は無料。しつこい営業は一切ありません。</p>
-    <a href="tel:0120000000" class="cta-tel-big">
-      <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      0120-000-000
-    </a>
-    <p class="cta-tel-hours">📞 受付時間：年中無休 8:00〜20:00（緊急時は24時間対応）</p>
-    <a href="https://lin.ee/xxxxx" class="cta-line-big">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.55 2.19 6.63 5.38 8.34L6 22l3.11-1.49C10.01 20.83 11 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-      LINEで24時間いつでも相談（無料）
-    </a>
-    <div class="cta-guarantee">
-      <strong>安心の3つの約束</strong><br>
-      ① 見積もり・相談は完全無料　② 契約の強制なし　③ しつこい営業なし
+    <div class="section-header fade-up">
+      <div class="section-label en">Company</div>
+      <h2 class="section-title">会社概要</h2>
+    </div>
+    <div class="company-table fade-up">
+      <dl>
+        <div class="company-row"><dt>会社名</dt><dd>SSIきみどり株式会社</dd></div>
+        <div class="company-row"><dt>設立</dt><dd><span class="num">1990</span>年<span class="num">4</span>月</dd></div>
+        <div class="company-row"><dt>代表取締役</dt><dd>田中 一郎</dd></div>
+        <div class="company-row"><dt>本社所在地</dt><dd>東京都千代田区丸の内<span class="num">1-1-1</span></dd></div>
+        <div class="company-row"><dt>資本金</dt><dd><span class="num">100</span>億円</dd></div>
+        <div class="company-row"><dt>従業員数</dt><dd><span class="num">3,200</span>名（<span class="num">2024</span>年<span class="num">4</span>月時点）</dd></div>
+        <div class="company-row"><dt>事業内容</dt><dd>生命保険業</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- フッター -->
-<footer>
-  <p class="footer-logo">○○インフラ設備株式会社</p>
-  <p>福岡県〇〇市〇〇町 1-2-3<br>
-  TEL：0120-000-000　／　受付：年中無休 8:00〜20:00</p>
-  <div class="footer-links">
-    <a href="#">プライバシーポリシー</a>
-    <a href="#">特定商取引法に基づく表記</a>
-    <a href="#">お問い合わせ</a>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label en">Contact</div>
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-subtitle"><span style="display:inline-block;">ご不明な点やご相談がございましたら、お気軽にお問い合わせください。</span></p>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="phone" style="width:18px;height:18px;"></i></div>
+          <div>
+            <h4>お電話でのお問い合わせ</h4>
+            <p><span class="num" style="font-size:20px;font-weight:700;color:var(--green-600);">0120-000-123</span></p>
+            <p>受付時間：<span class="num">9:00</span>〜<span class="num">18:00</span>（土日祝を除く）</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></div>
+          <div>
+            <h4>ご来社でのご相談</h4>
+            <p>東京都千代田区丸の内<span class="num">1-1-1</span></p>
+            <p>事前のご予約をお願いいたします。</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="clock" style="width:18px;height:18px;"></i></div>
+          <div>
+            <h4>営業時間</h4>
+            <p>平日 <span class="num">9:00</span>〜<span class="num">18:00</span></p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。');">
+        <div class="form-group">
+          <label>お名前</label>
+          <input type="text" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス</label>
+          <input type="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>お問い合わせ種別</label>
+          <select>
+            <option>保険商品について</option>
+            <option>ご契約内容の変更</option>
+            <option>給付金のご請求</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>お問い合わせ内容</label>
+          <textarea placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="justify-content:center;">
+          <i data-lucide="send" style="width:16px;height:16px;"></i>
+          送信する
+        </button>
+      </form>
+    </div>
   </div>
-  <p>© 2024 ○○インフラ設備株式会社 All Rights Reserved.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg style="height:28px;width:auto;display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.81 36.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #221815;
+      }
+
+      .cls-2 {
+        fill: #6cbb5a;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #aacf52;
+      }
+    </style>
+  </defs>
+  <g id="レイヤー_2" data-name="レイヤー 2">
+    <g id="レイヤー_1-2" data-name="レイヤー 1">
+      <g>
+        <g>
+          <path class="cls-1" d="M34,1.58a3.1,3.1,0,0,1-.12.29,7.34,7.34,0,0,1-1.54,2.71,1.88,1.88,0,0,0-.52-.47A5.23,5.23,0,0,0,33,2.24a3.87,3.87,0,0,0,.29-.91ZM37.86,4c-.13.17-.13.17-.32.45A6.87,6.87,0,0,1,35.62,6.3a8.63,8.63,0,0,1-3,1.13,2.14,2.14,0,0,0-.35-.63,8.07,8.07,0,0,0,2.92-1A5.1,5.1,0,0,0,37.29,3.6ZM35.76.26a5.61,5.61,0,0,0,0,.83V4.14c0,.52-.19.66-1,.66-.2,0-.47,0-.75,0a2.06,2.06,0,0,0-.14-.64,4.58,4.58,0,0,0,.86.11c.3,0,.37,0,.37-.18v-3a4.06,4.06,0,0,0,0-.83Zm1.61,1a3.93,3.93,0,0,0,.45,1,4.81,4.81,0,0,0,1.23,1.34,2.52,2.52,0,0,0-.44.53A6.46,6.46,0,0,1,37,2c-.13-.26-.16-.32-.22-.42Z"/>
+          <path class="cls-1" d="M40.34,5.41V5a4.13,4.13,0,0,1-.48.25,1.24,1.24,0,0,0-.3-.5,5.38,5.38,0,0,0,1.66-.95,3,3,0,0,1-.57-.61,4.62,4.62,0,0,1-.65.61,2,2,0,0,0-.34-.41,3.64,3.64,0,0,0,1.11-1.17A2.13,2.13,0,0,0,41,1.61l.54.14a1.65,1.65,0,0,0-.13.24l-.1.18h.76a2.13,2.13,0,0,0,.49,0l.31.32a1.29,1.29,0,0,0-.13.18,6.93,6.93,0,0,1-.83,1.12,6.14,6.14,0,0,0,1.36.67,1.79,1.79,0,0,0-.23.5l-.32-.14a6,6,0,0,0,0,.67v1c0,.49,0,.49,0,.72h-.57V6.86H40.89v.46h-.58a4.81,4.81,0,0,0,0-.72Zm.91-4.6a2.62,2.62,0,0,0,0-.52h.65a2.47,2.47,0,0,0,0,.53V1h1.33V.46a3.92,3.92,0,0,0,.78,0H46a3.46,3.46,0,0,0,.77,0v.62A5.32,5.32,0,0,0,46,1h-.7a4.93,4.93,0,0,1-.28.76h.71a5.22,5.22,0,0,0,.72,0c0,.2,0,.4,0,.7V5.11c0,.33,0,.51,0,.77-.23,0-.43,0-.67,0H44a5.4,5.4,0,0,0-.66,0c0-.23,0-.49,0-.71V2.51c0-.32,0-.52,0-.74a3.86,3.86,0,0,0,.67,0h.44c.12-.31.2-.55.26-.76h-.82a6.65,6.65,0,0,0-.73,0,2.62,2.62,0,0,0,0,.43v.23a2.64,2.64,0,0,0,0,.48h-.54V1.52h-2.3v.8h-.56a3.44,3.44,0,0,0,0-.46V1.5c0-.16,0-.26,0-.49.12,0,.29,0,.64,0h.8Zm1,4a3.57,3.57,0,0,0,.53,0,6.73,6.73,0,0,1-1.15-.69,5.2,5.2,0,0,1-1,.71h1.58ZM40.89,6.37h1.3V5.28h-1.3Zm.17-3.74-.12.17a3.47,3.47,0,0,0,.61.65,3.69,3.69,0,0,0,.63-.82Zm3.58,3.66A4.54,4.54,0,0,1,43.2,7.35a1.61,1.61,0,0,0-.38-.48,3.34,3.34,0,0,0,1.37-1ZM44,3h2V2.29H44Zm0,1.18h2V3.46H44Zm0,1.2h2V4.64H44Zm1.56.59a4.59,4.59,0,0,0,1.51,1,2.41,2.41,0,0,0-.36.52,5.32,5.32,0,0,1-1.57-1.15Z"/>
+          <path class="cls-1" d="M48.61,1.85A4.74,4.74,0,0,1,48,2.93a1.48,1.48,0,0,0-.48-.36A4.25,4.25,0,0,0,48.37.88a3.5,3.5,0,0,0,.11-.65l.6.12A1.82,1.82,0,0,0,49,.7c0,.16-.1.38-.18.62h1.05a3.71,3.71,0,0,0,.66,0v.61a4.3,4.3,0,0,0-.67,0h-.22c0,.9,0,.9,0,1.4H50a2.89,2.89,0,0,0,.62,0v.64a3.85,3.85,0,0,0-.63,0h-.48c0,.15,0,.2,0,.37a3.65,3.65,0,0,0,1.28,1.43,2.81,2.81,0,0,0-.4.51,4.25,4.25,0,0,1-1-1.24A4.62,4.62,0,0,1,47.94,7a1.91,1.91,0,0,0-.4-.49A4,4,0,0,0,49,3.81h-.62a4.79,4.79,0,0,0-.7,0V3.21a3.56,3.56,0,0,0,.7,0H49a13.23,13.23,0,0,0,0-1.4Zm4.12,4.59a8.4,8.4,0,0,0,.72-1.89l.59.2a9.9,9.9,0,0,1-.73,1.69h.76a3.89,3.89,0,0,0,.73,0V7a5.07,5.07,0,0,0-.73,0h-3a5,5,0,0,0-.73,0V6.4a3.84,3.84,0,0,0,.73,0ZM50.65.62a3.84,3.84,0,0,0,.73,0h2.54a3.68,3.68,0,0,0,.73,0v.64a5,5,0,0,0-.73,0H51.38a5.25,5.25,0,0,0-.73,0Zm3.59,3.16a4,4,0,0,0,0,.62,4.87,4.87,0,0,0-.7,0h-2a4.73,4.73,0,0,0-.69,0,4.09,4.09,0,0,0,0-.62V2.61a4.29,4.29,0,0,0,0-.64,4.53,4.53,0,0,0,.71,0h2a4.69,4.69,0,0,0,.71,0,4.16,4.16,0,0,0,0,.64ZM51.76,6.23a4.86,4.86,0,0,0-.66-1.46l.51-.21A5.56,5.56,0,0,1,52.29,6Zm-.26-2.4h2.15V2.54H51.5Z"/>
+          <path class="cls-1" d="M56.3,1.05a6.89,6.89,0,0,0,0-.72h.63a4.75,4.75,0,0,0,0,.72V1.2H58.2V1.05a4.35,4.35,0,0,0,0-.72h.62a6.57,6.57,0,0,0,0,.72V1.2a4.73,4.73,0,0,0,.63,0v.57a5,5,0,0,0-.63,0V5a4.18,4.18,0,0,0,.59,0v.57l-.71,0h-2.5a4.67,4.67,0,0,0-.62,0V4.92a3.1,3.1,0,0,0,.61,0h.19V1.7a4.79,4.79,0,0,0-.69,0V1.16a4.27,4.27,0,0,0,.65,0h0ZM57.19,6A4.57,4.57,0,0,1,56,7.35a1.82,1.82,0,0,0-.43-.45,3.06,3.06,0,0,0,1.16-1.22Zm1-3.54V1.7H56.85v.73Zm0,1.22V2.91H56.85v.74ZM58.2,5V4.13H56.85V5Zm0,.72a2.55,2.55,0,0,0,.76.81,2.09,2.09,0,0,0-.43.41A3.9,3.9,0,0,1,57.74,6Zm2-.83a4.24,4.24,0,0,1-.9,2.53,1.62,1.62,0,0,0-.47-.44,2.89,2.89,0,0,0,.74-1.67,29.72,29.72,0,0,0,.15-3.72c0-.52,0-.7,0-.93a7.51,7.51,0,0,0,.77,0h1.1a7.64,7.64,0,0,0,.77,0,7.42,7.42,0,0,0,0,.79V6.66c0,.52-.18.66-.89.66-.14,0-.21,0-.6,0a2.5,2.5,0,0,0-.16-.64,4,4,0,0,0,.83.1c.18,0,.25,0,.25-.18V4.85ZM60.27,3c0,.43,0,1,0,1.35h1.5V3Zm1.46-1.8H60.28V2.45h1.45Z"/>
+          <path class="cls-1" d="M64.21,4c0-.3,0-.6,0-.92a4.38,4.38,0,0,1-.76,1l0-.12a2.27,2.27,0,0,0-.28-.46A6.21,6.21,0,0,0,64.6,1.25,5.9,5.9,0,0,0,64.91.18l.64.2a4.4,4.4,0,0,0-.16.42,9,9,0,0,1-.6,1.45V6.44a6.71,6.71,0,0,0,0,.92h-.67a8.14,8.14,0,0,0,0-.93ZM67.5,3h-.85c-.39,0-.57,0-.83,0a4.84,4.84,0,0,0,0-.72V1.28a4.9,4.9,0,0,0,0-.7,5,5,0,0,0,.87,0h2.37a4.81,4.81,0,0,0,.85,0c0,.25,0,.39,0,.73v1a6.41,6.41,0,0,0,0,.7L69.1,3h-1v.78h1.55a6.31,6.31,0,0,0,.79,0v.64a5.49,5.49,0,0,0-.79,0H68.27a6.2,6.2,0,0,0,1,1,6,6,0,0,0,1.37.85,3.69,3.69,0,0,0-.4.58A8.1,8.1,0,0,1,69.06,6,4.81,4.81,0,0,1,68,4.8a7.68,7.68,0,0,1,0,.84v1a5.66,5.66,0,0,0,0,.75h-.66a5.94,5.94,0,0,0,0-.76v-1a7.86,7.86,0,0,1,0-.84A4.92,4.92,0,0,1,66.4,6.12a6.07,6.07,0,0,1-1.05.74,1.73,1.73,0,0,0-.4-.53,6.22,6.22,0,0,0,1.48-1,4,4,0,0,0,.84-1H66.06a4.88,4.88,0,0,0-.81,0V3.77a6.14,6.14,0,0,0,.81,0H67.5Zm-1.06-.54h2.85V1.16H66.44Z"/>
+          <path class="cls-1" d="M75.09,2.57a6.76,6.76,0,0,0-.69,0V2.17a5.29,5.29,0,0,1-.86.53,1.29,1.29,0,0,0-.36-.47c-.14.3-.17.36-.32.65A2.19,2.19,0,0,1,73.44,4a3,3,0,0,1,.1.83c0,.43-.14.7-.42.8a1.74,1.74,0,0,1-.64.09h-.17a1.51,1.51,0,0,0-.15-.59,2.07,2.07,0,0,0,.4,0c.33,0,.42-.09.42-.47a2.58,2.58,0,0,0-.22-1A1.89,1.89,0,0,0,72.29,3,11.56,11.56,0,0,0,73.09,1H72V6.58a4.25,4.25,0,0,0,0,.78H71.4a4.17,4.17,0,0,0,0-.78V1.1c0-.22,0-.4,0-.63A4,4,0,0,0,72,.5h1a1.87,1.87,0,0,0,.49,0l.31.35a9,9,0,0,0-.38.89c-.06.15-.1.23-.22.49a4.53,4.53,0,0,0,1-.6A4.23,4.23,0,0,0,75.43.25h.62a4.68,4.68,0,0,0,2.51,1.86,1.61,1.61,0,0,0-.37.56,5.26,5.26,0,0,1-.9-.5v.42a6.45,6.45,0,0,0-.68,0h-.55v.62h1.12l.71,0c0,.24,0,.38,0,.58v.89a3.76,3.76,0,0,0,0,.61,5.44,5.44,0,0,0-.76,0h-1a3,3,0,0,0,.88,1,4.33,4.33,0,0,0,1.41.64,2.09,2.09,0,0,0-.35.56,4.08,4.08,0,0,1-2.33-1.87,3.27,3.27,0,0,1-2.3,1.9,1.68,1.68,0,0,0-.37-.53,3.94,3.94,0,0,0,1.49-.66,2.08,2.08,0,0,0,.73-1h-.8a5,5,0,0,0-.71,0s0-.08,0-.11,0-.26,0-.4V3.69a4.27,4.27,0,0,0,0-.52,6.25,6.25,0,0,0,.68,0h1.07V2.57Zm-.77,1.12v1h1.09a6.06,6.06,0,0,0,.1-1Zm2.29-1.64h.49A5.56,5.56,0,0,1,75.77.73,5.32,5.32,0,0,1,74.56,2h2ZM76,3.69a6.88,6.88,0,0,1-.09,1h1.38v-1Z"/>
+          <path class="cls-1" d="M80.69,6a4,4,0,0,0,1.53.32c1,0,1.21-.48,1.21-.93s-.23-.82-1-1.18L82,4c-.94-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A5,5,0,0,1,84,.9v.72a4.19,4.19,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M85.11,6a4,4,0,0,0,1.53.32c1,0,1.21-.48,1.21-.93s-.23-.82-1-1.18L86.44,4c-.94-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A5,5,0,0,1,88.46.9v.72a4.19,4.19,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.16,4.16,0,0,1-1.54-.26Z"/>
+          <path class="cls-1" d="M89.91,6.84v-6h.74v6Z"/>
+          <path class="cls-1" d="M94.05,7.6A5.53,5.53,0,0,1,92.5,3.8,5.53,5.53,0,0,1,94.05,0h.63a5.58,5.58,0,0,0-1.55,3.8,5.58,5.58,0,0,0,1.55,3.8Z"/>
+          <path class="cls-1" d="M95.21,6a4,4,0,0,0,1.53.32c1,0,1.22-.48,1.22-.93s-.23-.82-1-1.18L96.54,4c-.93-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A4.87,4.87,0,0,1,98.56.9v.72a4.15,4.15,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M99.77,6.84V2.4h.68v.36a2,2,0,0,1,1.25-.41,1.4,1.4,0,0,1,1.22.58,2.18,2.18,0,0,1,1.52-.58,1.4,1.4,0,0,1,1.5,1.56V6.84h-.73V4c0-.77-.43-1.06-.95-1.06a1.64,1.64,0,0,0-1.12.45,2.1,2.1,0,0,1,.06.51V6.84h-.74V4c0-.77-.43-1-.95-1a1.56,1.56,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M109.58,6.84a2,2,0,0,1-.08-.44,2,2,0,0,1-1.38.49,1.22,1.22,0,0,1-1.32-1.2c0-.88.42-1.39,2.61-1.5V4.07c0-.61-.28-1.1-.94-1.1a2.73,2.73,0,0,0-1.11.23V2.63a3.15,3.15,0,0,1,1.31-.29c1.07,0,1.45.73,1.45,1.61V5.39a7.41,7.41,0,0,0,.1,1.45Zm-.17-2.09c-1.46.12-1.86.34-1.86.85a.67.67,0,0,0,.75.7,1.89,1.89,0,0,0,1.11-.38Z"/>
+          <path class="cls-1" d="M112.4,6.84c-.67,0-1.06-.23-1.06-1V.42h.73V5.67c0,.42.14.53.46.53h.25v.64Z"/>
+          <path class="cls-1" d="M114.63,6.84c-.67,0-1.06-.23-1.06-1V.42h.72V5.67c0,.42.15.53.47.53H115v.64Z"/>
+          <path class="cls-1" d="M116.82,6.84l2.26-6h.86l2.26,6h-.81l-.63-1.7H118.2l-.62,1.7Zm1.61-2.35h2.09l-1-2.83Z"/>
+          <path class="cls-1" d="M123,6.84V2.4h.68v.36a2,2,0,0,1,1.25-.41,1.4,1.4,0,0,1,1.22.58,2.18,2.18,0,0,1,1.52-.58,1.4,1.4,0,0,1,1.5,1.56V6.84h-.73V4c0-.77-.43-1.06-.95-1.06a1.64,1.64,0,0,0-1.12.45,2.1,2.1,0,0,1,.06.51V6.84h-.74V4c0-.77-.43-1-1-1a1.56,1.56,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M130.15,4.69c0-1.54.79-2.35,2-2.35s2,.67,2,2.22-.8,2.35-2,2.35S130.15,6.24,130.15,4.69Zm3.32-.07c0-1.26-.57-1.68-1.29-1.68s-1.28.42-1.28,1.68.57,1.69,1.28,1.69S133.47,5.88,133.47,4.62Z"/>
+          <path class="cls-1" d="M138,6.84V6.32a2.05,2.05,0,0,1-1.4.56,1.4,1.4,0,0,1-1.45-1.59V2.4h.74V5.21c0,.77.4,1.07,1,1.07A1.54,1.54,0,0,0,138,5.76V2.4h.74V6.84Z"/>
+          <path class="cls-1" d="M140,6.84V2.4h.69v.47A2,2,0,0,1,142,2.35a1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.42-1.06-.94-1.06a1.75,1.75,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M146.79,6.83a4.27,4.27,0,0,1-.75.08c-.83,0-1.16-.32-1.16-1.06V3h-.75V2.4h.75V1.24l.71-.3V2.4h1.16V3h-1.16V5.76c0,.4.15.56.75.56a2.89,2.89,0,0,0,.45,0Z"/>
+          <path class="cls-1" d="M153.33,6.84l-.6-.64a2.7,2.7,0,0,1-2,.72,1.66,1.66,0,0,1-1.85-1.59c0-.81.41-1.29,1.33-1.92a2.1,2.1,0,0,1-.66-1.36A1.3,1.3,0,0,1,150.9.71a1.16,1.16,0,0,1,1.31,1.18c0,.76-.42,1.09-1.06,1.57l1.52,1.66A5.12,5.12,0,0,0,153,3.25h.66a4.93,4.93,0,0,1-.48,2.38c.36.39.73.81,1.11,1.21Zm-2.78-3c-.67.47-.94.79-.94,1.37a1.13,1.13,0,0,0,1.27,1.13,1.82,1.82,0,0,0,1.43-.59Zm.32-2.53a.65.65,0,0,0-.64.72c0,.28.05.49.54,1a1.42,1.42,0,0,0,.76-1.1A.62.62,0,0,0,150.87,1.29Z"/>
+          <path class="cls-1" d="M156.45,6a4,4,0,0,0,1.53.32c1,0,1.22-.48,1.22-.93s-.24-.82-1-1.18L157.78,4c-.93-.42-1.2-.89-1.2-1.6,0-1,.74-1.64,2-1.64A4.89,4.89,0,0,1,159.8.9v.72a4.15,4.15,0,0,0-1.35-.22c-.74,0-1.1.37-1.1.89s.18.73.84,1l.43.2c1,.46,1.36.8,1.36,1.65a1.77,1.77,0,0,1-2,1.76,4.18,4.18,0,0,1-1.55-.26Z"/>
+          <path class="cls-1" d="M161,6.84V.42h.73V2.83A1.89,1.89,0,0,1,163,2.35a1.42,1.42,0,0,1,1.52,1.56V6.84h-.75V4c0-.76-.42-1.06-.94-1.06a1.65,1.65,0,0,0-1.15.48V6.84Z"/>
+          <path class="cls-1" d="M165.49,4.69c0-1.54.8-2.35,2-2.35s2,.67,2,2.22-.8,2.35-2,2.35S165.49,6.24,165.49,4.69Zm3.33-.07c0-1.26-.58-1.68-1.29-1.68s-1.29.42-1.29,1.68.58,1.69,1.29,1.69S168.82,5.88,168.82,4.62Z"/>
+          <path class="cls-1" d="M170.54,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.15,1.15,0,0,1,.3,0V3a1.07,1.07,0,0,0-.29,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M175.77,6.83a4.26,4.26,0,0,1-.74.08c-.84,0-1.17-.32-1.17-1.06V3h-.75V2.4h.75V1.24l.71-.3V2.4h1.16V3h-1.16V5.76c0,.4.15.56.75.56a2.89,2.89,0,0,0,.45,0Z"/>
+          <path class="cls-1" d="M179.69,6.84V1.5h-2.08V.82h4.91V1.5h-2.09V6.84Z"/>
+          <path class="cls-1" d="M185.64,6.74a4.68,4.68,0,0,1-1.26.16,1.91,1.91,0,0,1-2.13-2.14c0-1.5.79-2.4,2-2.4A1.61,1.61,0,0,1,186,4.18v.64h-3c0,1.13.65,1.5,1.62,1.5a3.86,3.86,0,0,0,1-.13Zm-.39-2.51c0-1-.46-1.27-1.1-1.27s-1,.34-1.13,1.27Z"/>
+          <path class="cls-1" d="M186.9,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.3,1.3,0,0,1,.31,0V3a1.19,1.19,0,0,0-.3,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M189.85,6.84V2.4h.67v.36a2,2,0,0,1,1.25-.41,1.41,1.41,0,0,1,1.23.58,2.18,2.18,0,0,1,1.52-.58A1.41,1.41,0,0,1,196,3.91V6.84h-.74V4c0-.77-.42-1.06-.95-1.06a1.66,1.66,0,0,0-1.12.45,2.09,2.09,0,0,1,.07.51V6.84h-.74V4c0-.77-.43-1-.95-1a1.59,1.59,0,0,0-1,.35V6.84Z"/>
+          <path class="cls-1" d="M199.37,6.84v-6h.74v6Z"/>
+          <path class="cls-1" d="M201.61,6.84V2.4h.68v.47a2,2,0,0,1,1.38-.52,1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.43-1.06-.95-1.06a1.78,1.78,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M206.08,6.09a3.17,3.17,0,0,0,1.14.23c.64,0,.92-.26.92-.67a.59.59,0,0,0-.46-.62L207,4.81a1.12,1.12,0,0,1-.88-1.13c0-.88.65-1.35,1.58-1.35a4.11,4.11,0,0,1,1,.12v.63a3.39,3.39,0,0,0-1.1-.17c-.54,0-.79.26-.79.63a.55.55,0,0,0,.44.63l.76.25a1.06,1.06,0,0,1,.83,1.11c0,.84-.62,1.37-1.63,1.37a4.11,4.11,0,0,1-1.15-.15Z"/>
+          <path class="cls-1" d="M212.57,6.84V6.32a2,2,0,0,1-1.39.56,1.41,1.41,0,0,1-1.46-1.59V2.4h.74V5.21c0,.77.4,1.07,1,1.07a1.54,1.54,0,0,0,1.13-.52V2.4h.74V6.84Z"/>
+          <path class="cls-1" d="M214.54,6.84V2.4h.68v.84h0a1.23,1.23,0,0,1,1.23-.9,1.15,1.15,0,0,1,.3,0V3a1.07,1.07,0,0,0-.29,0c-.61,0-1.23.37-1.23,1.44V6.84Z"/>
+          <path class="cls-1" d="M219.78,6.84a2,2,0,0,1-.09-.44,2,2,0,0,1-1.38.49A1.22,1.22,0,0,1,217,5.69c0-.88.42-1.39,2.61-1.5V4.07c0-.61-.28-1.1-.94-1.1a2.73,2.73,0,0,0-1.11.23V2.63a3.15,3.15,0,0,1,1.31-.29c1.08,0,1.45.73,1.45,1.61V5.39a7.31,7.31,0,0,0,.11,1.45Zm-.18-2.09c-1.45.12-1.86.34-1.86.85a.67.67,0,0,0,.75.7,1.87,1.87,0,0,0,1.11-.38Z"/>
+          <path class="cls-1" d="M221.5,6.84V2.4h.69v.47a2,2,0,0,1,1.37-.52,1.41,1.41,0,0,1,1.51,1.56V6.84h-.74V4c0-.76-.43-1.06-1-1.06a1.78,1.78,0,0,0-1.15.47V6.84Z"/>
+          <path class="cls-1" d="M229.24,6.77a3.5,3.5,0,0,1-1,.13A2,2,0,0,1,226,4.8a2.16,2.16,0,0,1,2.32-2.44,4.22,4.22,0,0,1,.92.09v.62a4.26,4.26,0,0,0-.94-.11c-1.13,0-1.57.64-1.57,1.71s.43,1.65,1.69,1.65a3.73,3.73,0,0,0,.84-.09Z"/>
+          <path class="cls-1" d="M233.08,6.74a4.6,4.6,0,0,1-1.25.16,1.92,1.92,0,0,1-2.14-2.14c0-1.5.79-2.4,2-2.4a1.6,1.6,0,0,1,1.73,1.82v.64h-3c0,1.13.66,1.5,1.63,1.5a3.78,3.78,0,0,0,1-.13Zm-.39-2.51c0-1-.46-1.27-1.09-1.27s-1,.34-1.14,1.27Z"/>
+          <path class="cls-1" d="M233.62,7.6a5.54,5.54,0,0,0,1.56-3.8A5.54,5.54,0,0,0,233.62,0h.64a5.58,5.58,0,0,1,1.55,3.8,5.58,5.58,0,0,1-1.55,3.8Z"/>
+        </g>
+        <path class="cls-2" d="M20.51,21C17,15.22,22.65,8.48,36.88,18a31,31,0,0,1,6.67,6c-13.41-8.41-18.69-1.88-15.26,3.78a8.58,8.58,0,0,1-5.81-4.59A5.15,5.15,0,0,0,20.4,21l.11,0m-6.91,5.3A6.68,6.68,0,0,0,10,25.1c.86,1.4,2,3.2,3.5,5.57A19.81,19.81,0,0,0,21,36.9c-5-7.79-5.41-9.22-7.37-10.57M13,24a6,6,0,0,1,6-3.49,9.33,9.33,0,0,1-4.3-4.11c-2.3-4.13-7.5-3.06-9.49.92L2,18.43a6.42,6.42,0,0,1,3.82,1.22c1.41,1,2,2,4.12,5.4Z"/>
+        <path class="cls-3" d="M10.38,17.36a.8.8,0,1,1-.79-.79.8.8,0,0,1,.79.79"/>
+        <path class="cls-2" d="M18.16,24a.8.8,0,1,1-.79-.79.8.8,0,0,1,.79.79"/>
+        <path class="cls-2" d="M6,12.77c.61-4.59,4.13-9,9.79-8.41C15.6,8,12.09,12.16,6,12.77"/>
+        <path class="cls-4" d="M6,12.77C5.6,10,3.45,7.27,0,7.64c.09,2.24,2.24,4.76,6,5.13"/>
+        <path class="cls-2" d="M6,12.77a9,9,0,0,0-1.67,2.37,12.84,12.84,0,0,0-1,2.71c-.06.23-.11.47-.16.71s-.08.47-.13.71S3,19.75,3,20s0,.24,0,.36l0,.36a17.8,17.8,0,0,0,0,2.92,10.69,10.69,0,0,1-.35-2.93c0-.5.05-1,.1-1.48,0-.25.07-.5.12-.74s.09-.49.15-.73l.2-.72.24-.7.3-.69c.11-.22.23-.44.35-.66a6.69,6.69,0,0,1,2-2.21"/>
+        <path class="cls-1" d="M194.74,17.82a8.88,8.88,0,0,1-2.12,2.75.39.39,0,0,1-.26.1.58.58,0,0,1-.53-.53.34.34,0,0,1,.15-.29,7.46,7.46,0,0,0,2.25-2.58h-1.42a.37.37,0,0,1-.39-.31.53.53,0,0,1-.42.3.27.27,0,0,1-.25-.2,7,7,0,0,0-.4-.95v5a.44.44,0,0,1-.88,0V17c-.31,1.23-.46,1.72-.81,1.72a.49.49,0,0,1-.46-.47.37.37,0,0,1,.05-.2,12.94,12.94,0,0,0,1.22-3h-.78c-.2,0-.31-.22-.31-.44s.11-.43.31-.43h.78V12.9a.44.44,0,0,1,.88,0v1.28h.7a.38.38,0,0,1,.37.43.39.39,0,0,1-.37.44h-.67c.43.63.85,1.19,1.06,1.57a.39.39,0,0,1,.37-.25h1.93v-1.5h-1.1c-.49,1.18-.64,1.28-.86,1.28a.58.58,0,0,1-.56-.53.42.42,0,0,1,.06-.21,7.9,7.9,0,0,0,1-2.43.36.36,0,0,1,.38-.31.46.46,0,0,1,.49.43,3.71,3.71,0,0,1-.23.86h.81V12.9a.41.41,0,0,1,.45-.41.41.41,0,0,1,.45.41V14h1.84a.4.4,0,0,1,.41.45.41.41,0,0,1-.41.46h-1.84v1.5h2.08a.41.41,0,0,1,.42.45.42.42,0,0,1-.42.45h-1.57a7.16,7.16,0,0,0,2,2.48.35.35,0,0,1,.14.29.58.58,0,0,1-.5.55c-.35,0-1.38-1.1-2.17-2.78v3.3a.41.41,0,0,1-.45.41.41.41,0,0,1-.45-.41Z"/>
+        <path class="cls-1" d="M201.26,16.4h-1.35a.43.43,0,0,1-.42-.45.42.42,0,0,1,.42-.45h3.86a.41.41,0,0,1,.41.45.41.41,0,0,1-.41.45H202.2v3.53c.74-.13,1.39-.24,1.73-.32l.12,0a.39.39,0,0,1,.38.42.52.52,0,0,1-.39.51c-.53.15-2.61.51-4.25.74h-.07a.48.48,0,0,1-.45-.52.39.39,0,0,1,.34-.42c.53-.07,1.08-.16,1.65-.25Zm4-2c.18,3.45,1.06,6.08,1.64,6.08.4,0,.42-1,.54-1.61a.42.42,0,0,1,.41-.36.47.47,0,0,1,.47.47s0,.05,0,.07c-.18,1.09-.26,2.44-1.43,2.44-1.66,0-2.4-3.88-2.57-7.09h-4.61a.43.43,0,0,1-.41-.47.43.43,0,0,1,.41-.47h4.57V13a.48.48,0,0,1,1,0h0v.51h1.32l-.17-.24a.44.44,0,0,1-.11-.28.42.42,0,0,1,.45-.37.49.49,0,0,1,.39.19,5.84,5.84,0,0,1,1.1,1.88.46.46,0,0,1-.46.46.43.43,0,0,1-.4-.28,4.23,4.23,0,0,0-.22-.42Z"/>
+        <path class="cls-1" d="M191.09,26.67a.46.46,0,0,1-.44-.47.44.44,0,0,1,.18-.37,8.12,8.12,0,0,1-1.09.34.58.58,0,0,1-.51-.6.41.41,0,0,1,.3-.42,10.53,10.53,0,0,0,3.57-1.77,1.05,1.05,0,0,1,.66-.24,1,1,0,0,1,.66.24,9.91,9.91,0,0,0,3.56,1.8.39.39,0,0,1,.3.41.58.58,0,0,1-.52.59,5.24,5.24,0,0,1-1-.31.47.47,0,0,1,.14.34.45.45,0,0,1-.43.46Zm1.7,1.85A20.32,20.32,0,0,1,191.5,31c2.2-.12,4-.3,4.89-.43a13.33,13.33,0,0,0-.83-1,.42.42,0,0,1-.11-.28.5.5,0,0,1,.49-.46.35.35,0,0,1,.26.12,19.28,19.28,0,0,1,1.86,2.43.48.48,0,0,1,.09.27.59.59,0,0,1-.55.56.34.34,0,0,1-.31-.19q-.16-.3-.36-.6a66.32,66.32,0,0,1-7.08.64h0a.48.48,0,0,1-.46-.52.38.38,0,0,1,.38-.42l.56,0a13.83,13.83,0,0,0,1.43-2.52h-2a.42.42,0,0,1-.41-.45.41.41,0,0,1,.41-.45h8a.4.4,0,0,1,.41.45.41.41,0,0,1-.41.45Zm3.74-2.76a12.82,12.82,0,0,1-2.67-1.6l-.06,0-.07,0a13.68,13.68,0,0,1-2.77,1.6Z"/>
+        <path class="cls-1" d="M200.92,28.26c-.87.67-1.06.74-1.18.74a.51.51,0,0,1-.48-.5.39.39,0,0,1,.2-.35,8.5,8.5,0,0,0,2.82-2.62s0,0,0-.05a0,0,0,0,0,0,0H200a.4.4,0,0,1-.41-.43.4.4,0,0,1,.41-.43h.95v-1a.47.47,0,0,1,.93,0v1h.71a.63.63,0,0,1,.69.68,3.46,3.46,0,0,1-1.12,1.88l1.11.92a.37.37,0,0,1,.15.3.54.54,0,0,1-.49.52.36.36,0,0,1-.25-.1c-.24-.21-.59-.59-.8-.77v3.76a.47.47,0,0,1-.93,0Zm2.19,3.64a.48.48,0,0,1,0-.95h2.14V26.08H203.8a.44.44,0,0,1-.42-.47.43.43,0,0,1,.42-.47h1.45V23.61a.48.48,0,0,1,.53-.47.48.48,0,0,1,.51.47v1.53h1.41a.42.42,0,0,1,.41.47.43.43,0,0,1-.41.47h-1.41V31h1.6a.48.48,0,0,1,0,.95Z"/>
+        <path class="cls-1" d="M49.55,18.18c0-2.81,2.43-5,6.66-5,3.86,0,6.4,1.59,6.83,4.48a1.28,1.28,0,0,1,.05.27A1.22,1.22,0,0,1,61.77,19a1.1,1.1,0,0,1-1.11-.77c-.3-1.73-1.73-2.82-4.5-2.82s-4.22,1.18-4.22,2.79c0,1.25.93,1.78,2.68,2.23,1.27.34,3.11.57,4.58,1,2.84.74,4.55,2.27,4.55,5,0,3.13-2.25,5.52-7.36,5.52-4.22,0-7.13-2.09-7.43-5.5,0-.06,0-.13,0-.2a1.25,1.25,0,0,1,1.32-1.14,1,1,0,0,1,1.07.84c.18,2.09,2.08,3.66,5.06,3.66,3.52,0,4.88-1.48,4.88-3.22,0-1.25-.89-2.28-2.68-2.78-1.36-.4-3.11-.56-4.75-1-2.74-.75-4.29-2-4.29-4.36Z"/>
+        <path class="cls-1" d="M67.38,18.18c0-2.81,2.43-5,6.66-5,3.85,0,6.4,1.59,6.83,4.48a1.28,1.28,0,0,1,0,.27A1.23,1.23,0,0,1,79.6,19a1.12,1.12,0,0,1-1.12-.77c-.29-1.73-1.72-2.82-4.49-2.82s-4.22,1.18-4.22,2.79c0,1.25.92,1.78,2.67,2.23,1.28.34,3.12.57,4.59,1,2.84.74,4.54,2.27,4.54,5,0,3.13-2.25,5.52-7.35,5.52-4.23,0-7.13-2.09-7.43-5.5,0-.06,0-.13,0-.2a1.25,1.25,0,0,1,1.32-1.14,1,1,0,0,1,1.06.84c.18,2.09,2.09,3.66,5.07,3.66,3.51,0,4.88-1.48,4.88-3.22,0-1.25-.89-2.28-2.68-2.78-1.36-.4-3.11-.56-4.75-1-2.75-.75-4.29-2-4.29-4.36Z"/>
+        <path class="cls-1" d="M86.64,14.43c0-.68.63-1,1.27-1a1.12,1.12,0,0,1,1.25,1V30.65a1.12,1.12,0,0,1-1.25,1c-.64,0-1.27-.34-1.27-1Z"/>
+        <path class="cls-1" d="M97.17,19.05c.46,0,.94,0,1.44,0,2.34,0,5-.13,7.67-.33-.32-.62-.61-1.23-.88-1.85-2.14.18-4.39.26-6.57.26h-.72a1,1,0,0,1-1-1,.93.93,0,0,1,1-1h.84c2,0,3.93-.06,5.81-.2a6.45,6.45,0,0,1-.31-1.32c0-.61.63-.94,1.25-.94a.93.93,0,0,1,1,.63,11.65,11.65,0,0,0,.36,1.44c1.93-.2,3.77-.47,5.45-.77a.61.61,0,0,1,.23,0,1.1,1.1,0,0,1,1,1.08.85.85,0,0,1-.77.86c-1.61.31-3.41.57-5.29.77a19,19,0,0,0,.88,1.83c2.18-.22,4.23-.51,5.88-.84a1.42,1.42,0,0,1,.28,0,1.09,1.09,0,0,1,1.09,1.13.91.91,0,0,1-.8.94c-1.68.27-3.43.49-5.27.69a32.77,32.77,0,0,0,3.43,4.09,1.15,1.15,0,0,1,.34.8,1.39,1.39,0,0,1-1.36,1.32,1.47,1.47,0,0,1-.79-.24,14.72,14.72,0,0,0-7.36-1.9c-2.5,0-4.7.62-4.7,2.42s2.16,2.85,6.29,2.85a32.27,32.27,0,0,0,6.22-.56,2,2,0,0,1,.32,0,1.06,1.06,0,0,1,1,1.12,1.07,1.07,0,0,1-1,1.13,41.44,41.44,0,0,1-6.63.53c-5.2,0-8.49-1.81-8.49-5,0-3,2.88-4.34,7-4.34a16.27,16.27,0,0,1,5.72,1,22.26,22.26,0,0,1-2.34-3c-3.2.28-6.58.46-10.15.46a1,1,0,0,1-1-1,.93.93,0,0,1,.88-1Z"/>
+        <path class="cls-1" d="M137.8,19.14c0,1.3,0,2.49-.11,3.55a18.07,18.07,0,0,1,2.59,1.47,1.16,1.16,0,0,1,.52,1,1.23,1.23,0,0,1-1.07,1.26,1.15,1.15,0,0,1-.59-.2,17,17,0,0,0-1.77-1.12c-.82,4.4-2.9,5.9-6.63,6.94a2.24,2.24,0,0,1-.48.06,1.29,1.29,0,0,1-1.33-1.28,1,1,0,0,1,.79-1c3.25-.82,5-2.14,5.58-5.76a17.72,17.72,0,0,0-5.85-1.34c-1.18,3.44-3.32,8.11-6.86,8.11-1.73,0-3.09-1.39-3.09-3.7,0-3.07,2.84-6.26,8.29-6.48.77-2.53,1.18-4.34,1.18-4.4,0-.25-.18-.36-.52-.36-1.52.05-3,.14-4.66.14-.39,0-.77,0-1.16,0a1.08,1.08,0,0,1-1-1.14,1,1,0,0,1,1-1c.62,0,1.23,0,1.79,0,1.5,0,2.91,0,4.41-.08H129c1.54,0,2.31.77,2.31,2,0,.48-.18,1.45-1.25,5a22.6,22.6,0,0,1,5.43,1.05c0-.37,0-.77,0-1.19,0-.81,0-1.71-.09-2.7v-.09a1,1,0,0,1,1.11-1A1.17,1.17,0,0,1,137.8,18Zm-16,7.91c0,.94.43,1.39,1,1.39,2,0,3.7-4.19,4.22-5.62-3.93.48-5.24,2.69-5.24,4.23"/>
+        <path class="cls-1" d="M161.49,29.34a1.11,1.11,0,0,1,1.18,1.14,1.25,1.25,0,0,1-1.18,1.26c-2,.15-3.93.26-5.7.26-6.79,0-11.49-1.41-11.49-5.94,0-2.76,2.2-5,6.38-6.44-.13-2-.34-3.87-.57-5.9v-.13c0-.69.71-1.1,1.39-1.1a1.18,1.18,0,0,1,1.29,1.08c.09,1.8.18,3.5.27,5.33a50.5,50.5,0,0,1,7.5-1.19l.23,0A1.13,1.13,0,0,1,162,18.81,1.15,1.15,0,0,1,160.9,20c-9.45.72-14.1,3.12-14.1,6,0,2.69,3.31,3.63,8.65,3.63,1.75,0,3.72-.1,5.86-.28Zm.75-11.79a.83.83,0,0,1-.66-.33,18.66,18.66,0,0,0-2-2,.69.69,0,0,1-.3-.55.85.85,0,0,1,.86-.77c.23,0,.8.09,2.71,2.31a.9.9,0,0,1,.2.53.86.86,0,0,1-.86.81m1.2-2a14.09,14.09,0,0,0-1.81-1.76.73.73,0,0,1-.3-.55.77.77,0,0,1,.79-.73,1,1,0,0,1,.53.2c2.11,1.72,2.18,2.16,2.18,2.36a.83.83,0,0,1-.8.79.76.76,0,0,1-.59-.31"/>
+        <path class="cls-1" d="M173.07,32.38a1.21,1.21,0,0,1-1.36-1.21A1.12,1.12,0,0,1,172.78,30h.13c7.36,0,8.52-3.79,8.52-8.5,0-5.05-1.28-6.7-2.84-6.7a3.58,3.58,0,0,0-1.68.51c-2,1-4.56,6-5.84,10.22a1.29,1.29,0,0,1-1.27.9,1.27,1.27,0,0,1-1.31-1.23c-.1-1.41-.12-2.71-.12-3.95a59.74,59.74,0,0,1,.52-7.84,1.1,1.1,0,0,1,1.18-1,1.21,1.21,0,0,1,1.32,1.08.78.78,0,0,1,0,.22,42.56,42.56,0,0,0-.7,7.1c1.81-4.17,4.08-8.22,8.1-8.22,2.41,0,5,1.8,5,8.88,0,5.26-1.29,10.88-10.62,10.88Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
+        </div>
+        <p class="footer-desc">すべてのお客様の暮らしと未来に安心をお届けすることを使命として、誠実な保険サービスを提供してまいります。</p>
+      </div>
+      <div>
+        <h4>保険商品</h4>
+        <ul>
+          <li><a href="#">医療保険</a></li>
+          <li><a href="#">終身保険</a></li>
+          <li><a href="#">がん保険</a></li>
+          <li><a href="#">死亡保険</a></li>
+          <li><a href="#">介護保険</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>企業情報</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">経営理念</a></li>
+          <li><a href="#">ニュース</a></li>
+          <li><a href="#">採用情報</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="#">よくあるご質問</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span class="num">2025</span> SSIきみどり株式会社 All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:14px;height:14px;"></i></a>
+        <a href="#" aria-label="X"><i data-lucide="twitter" style="width:14px;height:14px;"></i></a>
+        <a href="#" aria-label="YouTube"><i data-lucide="youtube" style="width:14px;height:14px;"></i></a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-  // ===== FAQ アコーディオン =====
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
+// Lucide icons
+lucide.createIcons();
+
+// Mobile menu
+function toggleMobile() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+// Intersection Observer for fade-up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
   });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  // ===== スクロールアニメーション =====
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // ===== スクロールトップ =====
-  const scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', () => {
-    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
-  });
-  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
