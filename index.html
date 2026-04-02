@@ -7,111 +7,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  /* オレンジ系のカラーパレット定義 */
-  --orange-main: #f78e1e;    /* メインのオレンジ */
-  --orange-light: #fbad18;   /* 明るいオレンジ */
-  --orange-pale: #fef0e7;    /* 極めて薄いオレンジ（背景用） */
-  --orange-deep: #e67e00;    /* 濃いオレンジ（ホバー用） */
-  --brown-dark: #4d3a2e;     /* 文字用の焦げ茶（オレンジと相性が良い） */
-  --line-green: #28C000;     /* LINE用グリーン */
-  --warm-gray: #fdfaf7;      /* 暖かいグレー */
-}
-
-body{font-family:'Noto Sans JP',sans-serif;color:var(--brown-dark);overflow-x:hidden;background:#fff;}
+:root{--orange-main:#f78e1e;--orange-light:#fbad18;--orange-pale:#fef0e7;--brown-dark:#4d3a2e;--line:#28C000;--yellow-orange:#f59e0b;--warm-gray:#fdfaf7;}
+body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;overflow-x:hidden;background:#fff;}
 a{text-decoration:none;color:inherit;}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--orange-pale);}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e5eae6;}
 .hd-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.logo-main{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--orange-main);letter-spacing:-.5px;}
-.pill-nav{background:var(--orange-pale);border-radius:50px;padding:6px 6px 6px 20px;display:flex;align-items:center;gap:2px;}
+.logo-wrap{display:flex;flex-direction:column;line-height:1;flex-shrink:0;}
+.logo-by{font-size:8px;font-weight:700;color:#aaa;letter-spacing:.2em;margin-bottom:3px;}
+.logo-main{font-family:'Montserrat',sans-serif;font-weight:900;font-size:17px;color:var(--orange-main);letter-spacing:-.5px;}
+.pill-nav{background:#fff3ed;border-radius:50px;padding:6px 6px 6px 20px;display:flex;align-items:center;gap:2px;}
 .pill-nav a.pill-link{font-size:12px;font-weight:700;color:var(--orange-main);padding:7px 14px;border-radius:40px;white-space:nowrap;transition:background .2s;}
 .pill-nav a.pill-link:hover{background:rgba(247,142,30,.1);}
-.pill-nav a.pill-contact{display:flex;align-items:center;gap:6px;background:var(--brown-dark);color:#fff;font-size:12px;font-weight:700;padding:9px 20px;border-radius:40px;white-space:nowrap;}
-.hd-cta{background:var(--orange-main);color:#fff;font-size:11px;font-weight:700;padding:10px 18px;border-radius:40px;white-space:nowrap;flex-shrink:0;transition: background .3s;}
-.hd-cta:hover{background:var(--orange-deep);}
-
-/* HAMBURGER */
+.pill-nav a.pill-contact{display:flex;align-items:center;gap:6px;background:rgba(77,58,46,.6);color:#fff;font-size:12px;font-weight:700;padding:9px 20px;border-radius:40px;white-space:nowrap;}
+.hd-cta{background:var(--yellow-orange);color:#fff;font-size:11px;font-weight:700;padding:10px 18px;border-radius:40px;white-space:nowrap;flex-shrink:0;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--brown-dark);border-radius:2px;}
+.hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* GNAV */
+.gnav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;}
+.gnav-overlay.open{display:block;}
+.gnav{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#fff;z-index:200;transition:right .3s;padding:80px 0 40px;overflow-y:auto;}
+.gnav.open{right:0;}
+.gnav-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#555;}
+.gnav ul{list-style:none;}
+.gnav ul li a{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;font-size:13px;font-weight:700;border-bottom:1px solid #f5f5f5;}
+.gnav ul li a::after{content:'›';color:var(--orange-main);font-size:18px;}
+.gnav-cta{margin:24px 20px 0;}
+.gnav-cta a{display:block;background:var(--line);color:#fff;text-align:center;font-size:13px;font-weight:700;padding:16px;border-radius:8px;}
 
 /* HERO */
-.hero{background:linear-gradient(135deg, #fff7ed 0%, #fef0e7 100%);padding:80px 24px;text-align:center;}
-.hero-eyebrow{font-size:12px;font-weight:700;color:var(--orange-main);letter-spacing:.2em;margin-bottom:16px;}
-.hero h1{font-size:clamp(24px,4vw,42px);font-weight:900;line-height:1.5;color:var(--brown-dark);margin-bottom:32px;}
+/* ▼ここの直接指定されていた色をオレンジのグラデーションに修正しています▼ */
+.hero{background:linear-gradient(135deg,#fbeeda 0%,#fdf3ed 40%,#fff 100%);padding:64px 24px 80px;overflow:hidden;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.hero-eyebrow{font-size:11px;font-weight:700;color:var(--orange-main);letter-spacing:.15em;margin-bottom:14px;}
+.hero h1{font-size:clamp(22px,3vw,40px);font-weight:900;line-height:1.4;color:var(--brown-dark);margin-bottom:10px;}
 .hero h1 em{font-style:normal;color:var(--orange-main);}
-.hero-btn{display:inline-block;background:var(--orange-main);color:#fff;font-size:18px;font-weight:900;padding:20px 60px;border-radius:50px;box-shadow:0 10px 25px rgba(247,142,30,0.3);transition:transform .3s;}
-.hero-btn:hover{transform:translateY(-2px);background:var(--orange-deep);}
+.hero-sub{font-size:14px;color:#555;line-height:1.9;margin-bottom:8px;}
+.hero-sub strong{color:var(--brown-dark);font-weight:900;}
+.hero-btn{display:inline-block;background:var(--yellow-orange);color:#fff;font-size:16px;font-weight:900;padding:18px 48px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);margin-top:24px;}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px;}
+.hero-photos img{width:100%;object-fit:cover;border-radius:12px;}
+.hero-photos img:nth-child(1){grid-row:span 2;aspect-ratio:3/4;}
+.hero-photos img:nth-child(2){aspect-ratio:4/3;}
+.hero-photos img:nth-child(3){aspect-ratio:4/3;}
 
 /* PAIN */
-.pain{padding:80px 24px;background:#fff;}
-.pain h2{text-align:center;font-size:clamp(20px,3vw,28px);font-weight:900;margin-bottom:48px;}
+.pain{padding:72px 24px;background:#fff;}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center;}
+.sec-label{font-size:10px;font-weight:700;color:var(--orange-main);letter-spacing:.2em;margin-bottom:10px;}
+.pain h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;margin-bottom:40px;color:var(--brown-dark);}
 .pain-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
-.pain-tag{background:var(--orange-pale);color:var(--orange-main);font-size:14px;font-weight:700;padding:14px 24px;border-radius:50px;border:1px solid rgba(247,142,30,0.2);}
+.pain-tag{background:var(--orange-main);color:#fff;font-size:13px;font-weight:700;padding:12px 24px;border-radius:50px;}
 
-/* SECTION COMMON */
-.svc-lead{padding:60px 24px;background:var(--orange-main);color:#fff;text-align:center;}
-.svc-lead p{font-size:14px;font-weight:700;margin-bottom:8px;opacity:0.9;}
-.svc-lead h2{font-size:clamp(18px,2.5vw,26px);font-weight:900;line-height:1.6;}
-.svc-lead h2 em{font-style:normal;color:#fff;text-decoration:underline;}
+/* SERVICE LEAD */
+/* ▼こちらも背景グラデーションをオレンジ系に修正しています▼ */
+.svc-lead{padding:64px 24px;background:linear-gradient(160deg,#fdf3ed 0%,#fff 60%,#fbeeda 100%);text-align:center;border-top:1px solid #fbd5c0;border-bottom:1px solid #fbd5c0;}
+.svc-lead p{font-size:13px;color:var(--orange-main);margin-bottom:12px;font-weight:700;}
+.svc-lead h2{font-size:clamp(18px,2.5vw,28px);font-weight:900;color:var(--brown-dark);line-height:1.6;}
+.svc-lead h2 em{font-style:normal;color:var(--orange-main);}
 
 /* BENEFITS */
-.benefits{padding:100px 24px;background:var(--warm-gray);}
-.benefits-inner{max-width:800px;margin:0 auto;}
-.benefit-row{background:#fff;padding:40px;border-radius:24px;margin-bottom:32px;border:1px solid var(--orange-pale);box-shadow:0 4px 20px rgba(0,0,0,0.03);}
-.benefit-num{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:900;color:var(--orange-main);margin-bottom:12px;}
-.benefit-text h3{font-size:20px;font-weight:900;line-height:1.5;margin-bottom:16px;}
+.benefits{padding:80px 24px;background:var(--warm-gray);}
+.benefits-inner{max-width:1000px;margin:0 auto;}
+.benefit-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:72px;}
+.benefit-row:last-child{margin-bottom:0;}
+.benefit-row.rev{direction:rtl;}
+.benefit-row.rev>*{direction:ltr;}
+.benefit-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.benefit-num{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:900;color:var(--orange-main);letter-spacing:.2em;margin-bottom:12px;}
+.benefit-text h3{font-size:clamp(18px,2vw,24px);font-weight:900;color:var(--brown-dark);line-height:1.4;margin-bottom:14px;}
 .benefit-text h3 em{font-style:normal;color:var(--orange-main);}
-.benefit-text p{font-size:14px;color:#666;line-height:1.8;}
+.benefit-text p{font-size:13px;color:#555;line-height:2;}
+.benefit-more{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:12px;font-weight:700;color:var(--orange-main);border-bottom:2px solid var(--orange-main);padding-bottom:2px;}
+
+/* MESSAGE */
+.message{position:relative;padding:100px 24px;background:var(--brown-dark);overflow:hidden;text-align:center;}
+.message-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;}
+.message-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.message-en{font-family:'Montserrat',sans-serif;font-size:clamp(36px,6vw,80px);font-weight:900;color:rgba(255,255,255,.08);letter-spacing:.05em;line-height:1;margin-bottom:-20px;}
+.message h2{font-size:clamp(18px,2.5vw,28px);font-weight:900;color:#fff;line-height:1.7;margin-bottom:20px;}
+.message h2 em{font-style:normal;color:var(--orange-light);}
+.message p{font-size:13px;color:rgba(255,255,255,.7);line-height:2;}
 
 /* FLOW */
-.flow{padding:100px 24px;background:#fff;}
-.sec-head{text-align:center;margin-bottom:48px;}
-.sec-head h2{font-size:28px;font-weight:900;position:relative;display:inline-block;padding-bottom:10px;}
-.sec-head h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:40px;height:4px;background:var(--orange-main);border-radius:2px;}
-.flow-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;}
-.flow-step{text-align:center;}
-.flow-num{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--orange-main);margin-bottom:8px;}
-.flow-circle{width:80px;height:80px;border-radius:50%;background:var(--orange-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid var(--orange-main);}
-/* SVG内の青色をオレンジに上書きする指定 */
-.flow-circle svg [fill="#2563a8"] { fill: var(--orange-main) !important; }
-.flow-circle svg [fill="#fef0e7"] { fill: var(--orange-pale) !important; }
+.flow{padding:80px 24px;background:#fff;}
+.flow-inner{max-width:1000px;margin:0 auto;}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;position:relative;}
 
-.flow-step h4{font-size:16px;font-weight:900;margin-bottom:10px;}
-.flow-step p{font-size:12px;color:#777;line-height:1.7;}
+.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;}
+.flow-circle{width:64px;height:64px;border-radius:50%;background:#fff;border:3px solid var(--orange-main);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 16px rgba(247,142,30,.15);}
+.flow-circle span{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--orange-main);}
+.flow-step h4{font-size:13px;font-weight:900;margin-bottom:8px;color:var(--brown-dark);}
+.flow-step p{font-size:11px;color:#888;line-height:1.8;}
+
+/* CTA BAND */
+.cta-band{text-align:center;padding:16px 24px;background:var(--warm-gray);}
+.cta-band a{display:inline-block;background:var(--yellow-orange);color:#fff;font-size:15px;font-weight:900;padding:16px 56px;border-radius:50px;box-shadow:0 6px 20px rgba(245,158,11,.35);}
 
 /* FAQ */
-.faq{padding:100px 24px;background:var(--warm-gray);}
-.faq-inner{max-width:700px;margin:0 auto;}
-.faq-item{background:#fff;margin-bottom:12px;border-radius:12px;border:1px solid var(--orange-pale);}
-.faq-q{width:100%;padding:20px;display:flex;align-items:center;gap:15px;background:none;border:none;cursor:pointer;text-align:left;font-weight:700;font-size:15px;}
-.faq-q-badge{color:var(--orange-main);font-weight:900;}
-.faq-a{display:none;padding:0 20px 20px 45px;font-size:14px;color:#666;line-height:1.8;}
+.faq{padding:80px 24px;background:var(--warm-gray);}
+.faq-inner{max-width:720px;margin:0 auto;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:10px;}
+.faq-item{border-radius:0;overflow:hidden;background:transparent;box-shadow:none;border-bottom:1px solid #fcdcc6;}
+.faq-q{width:100%;display:flex;align-items:center;padding:22px 8px;background:transparent;border:none;cursor:pointer;text-align:left;font-size:15px;font-weight:700;color:var(--brown-dark);gap:14px;}
+.faq-q-badge{width:32px;height:32px;border-radius:50%;background:var(--orange-main);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.faq-q-text{flex:1;}
+.fq-icon{font-size:20px;color:var(--orange-main);font-weight:400;flex-shrink:0;transition:transform .3s;line-height:1;}
+.faq-q.open .fq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 8px 20px 54px;font-size:13px;color:#666;line-height:1.9;}
 .faq-a.open{display:block;}
 
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,#fbeeda,#fdf3ed);padding:72px 24px;text-align:center;}
+.cta-final h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--brown-dark);margin-bottom:10px;}
+.cta-final p{font-size:13px;color:#666;margin-bottom:28px;line-height:1.9;}
+.cta-final a.line-btn{display:inline-block;background:var(--yellow-orange);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);}
+.cta-note{font-size:11px;color:#aaa;margin-top:14px;}
+
+/* FOOTER NAV */
+.footer-nav{padding:40px 24px;background:#fff;border-top:1px solid #eee;}
+.fn-grid{max-width:800px;margin:0 auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fn-item{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid #eee;border-radius:8px;}
+.fn-item-text .en{font-size:12px;font-weight:900;letter-spacing:.04em;color:var(--brown-dark);}
+.fn-item-text .ja{font-size:9px;color:#aaa;margin-top:2px;}
+.fn-arrow{color:var(--orange-main);font-size:16px;font-weight:700;}
+
 /* FOOTER */
-footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:center;}
-.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:var(--orange-main);margin-bottom:20px;}
-.footer-info{font-size:12px;opacity:0.7;line-height:2;}
+footer{padding:40px 24px 32px;background:#fef0e7;text-align:center;}
+.footer-by{font-size:9px;color:#aaa;letter-spacing:.2em;margin-bottom:6px;}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:var(--orange-main);letter-spacing:-1px;margin-bottom:14px;}
+.footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
+footer small{font-size:10px;color:#bbb;}
 
-/* FLOAT LINE */
-.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line-green);color:#fff;font-size:15px;font-weight:700;padding:16px 40px;border-radius:50px;box-shadow:0 8px 20px rgba(40,192,0,0.4);}
+/* FLOAT */
+.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line);color:#fff;font-size:14px;font-weight:700;padding:14px 40px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.5);white-space:nowrap;}
 
-  /* CTAボタンと最終セクションの追加デザイン */
-.cta-band a {display:inline-block;background:var(--orange-main);color:#fff;font-size:16px;font-weight:900;padding:18px 50px;border-radius:50px;box-shadow:0 6px 20px rgba(247,142,30,0.3);transition:.3s;}
-.cta-band a:hover {background:var(--orange-deep);transform:translateY(-2px);}
-.cta-final {background:linear-gradient(135deg,#fbeeda,#fdf3ed);padding:80px 24px;text-align:center;}
-.cta-final h2 {font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--brown-dark);margin-bottom:12px;}
-.cta-final p {font-size:13px;color:#666;margin-bottom:32px;line-height:1.9;}
-.line-btn {display:inline-block;background:var(--line-green);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.4);transition:.3s;}
-.line-btn:hover {transform:translateY(-2px);box-shadow:0 10px 25px rgba(40,192,0,.5);}
-  
+/* SECTION COMMON */
+.sec-head{text-align:center;margin-bottom:0;}
+.sec-head .en{font-size:10px;font-weight:700;letter-spacing:.25em;color:var(--orange-main);margin-bottom:10px;}
+.sec-head h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--brown-dark);}
+
 @media(max-width:768px){
   .pill-nav{display:none;}
   .hamburger{display:flex;}
-  .flow-grid{grid-template-columns:1fr 1fr;}
-  .benefit-row{padding:24px;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-photos{display:none;}
+  .benefit-row,.benefit-row.rev{grid-template-columns:1fr;direction:ltr;}
+  .flow-grid{grid-template-columns:repeat(3,1fr);gap:32px;}
+  .flow-grid::before,.flow-grid::after,.flow-step::before,.flow-step::after{content:none!important;display:none!important;border:none!important;background:none!important;}
+  .flow-grid{border:none!important;background:none!important;border-top:none!important;}
+  .fn-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
@@ -124,7 +174,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
       <span class="logo-main">ルミナスキャリア</span>
     </div>
     <nav class="pill-nav">
-      <a href="#steps" class="pill-link">4つのSTEP</a>
+      <a href="#steps" class="pill-link">ご利用の流れ</a>
       <a href="#reasons" class="pill-link">選ばれる理由</a>
       <a href="#service" class="pill-link">サービス</a>
       <a href="#faq" class="pill-link">よくある質問</a>
@@ -143,12 +193,12 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
 <nav class="gnav" id="gnav">
   <button class="gnav-close" id="gnav-close">✕</button>
   <ul>
-    <li><a href="#steps">4つのSTEP</a></li>
+    <li><a href="#steps">ご利用の流れ</a></li>
     <li><a href="#reasons">選ばれる理由</a></li>
     <li><a href="#service">サービス</a></li>
     <li><a href="#faq">よくある質問</a></li>
   </ul>
-  <div class="gnav-cta"><a href="#cta">LINEで無料キャリア相談</a></div>
+  <div class="gnav-cta"><a href="#cta">LINEで無料キャリア相談する</a></div>
 </nav>
 
 <!-- HERO -->
@@ -156,7 +206,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
   <div class="hero-inner">
     <div>
       <p class="hero-eyebrow">ルミナスキャリア</p>
-      <h1><em>「人生を変える」転職を、</em><br>ルミナスキャリア。</h1>
+      <h1><em>人生を逆転させる転職を、</em><br>ルミナスキャリア。</h1>
       <a href="#cta" class="hero-btn">無料キャリア相談</a>
     </div>
 
@@ -216,6 +266,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
         <h3>企業との交渉を全て行えるから、<br><em>タイパの良い転職ができる。</em></h3>
         <p>条件交渉・入社後フォローまで、一緒に。転職はゴールではなく、スタートです。</p>
       </div>
+      </div>
     </div>
 
   </div>
@@ -241,13 +292,13 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
             <line x1="16" y1="14" x2="32" y2="14" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="16" y1="20" x2="32" y2="20" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="16" y1="26" x2="26" y2="26" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="28" y="30" width="14" height="18" rx="2" transform="rotate(-35 28 30)" fill="#fef0e7" stroke="#1a1a2e" stroke-width="1.5"/>
-            <rect x="30" y="33" width="10" height="13" rx="1" transform="rotate(-35 30 33)" fill="#f78e1e"/>
+            <rect x="28" y="30" width="14" height="18" rx="2" transform="rotate(-35 28 30)" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5"/>
+            <rect x="30" y="33" width="10" height="13" rx="1" transform="rotate(-35 30 33)" fill="#2563a8"/>
             <polygon points="24,44 22,49 27,47" fill="#1a1a2e"/>
           </svg>
         </div>
         <h4>無料キャリア相談</h4>
-        <p><a href="#cta" style="color:var(--orange-main);text-decoration:underline; font-weight:bold;">こちら</a>より、1分でできる無料相談<br>申込を行なってください。</p>
+        <p><a href="#cta" style="color:var(--blue);text-decoration:underline;">こちら</a>より、1分でできる無料キャリア相談<br>申込を行なってください。</p>
       </div>
       <div class="flow-step">
         <div class="flow-num">02</div>
@@ -258,13 +309,13 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
             <line x1="16" y1="46" x2="30" y2="46" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
             <circle cx="37" cy="16" r="6" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
             <circle cx="37" cy="13.5" r="2.5" fill="#e8c44a"/>
-            <path d="M32 22 Q37 19 42 22" stroke="#1a1a2e" stroke-width="1.5" fill="#f78e1e"/>
+            <path d="M32 22 Q37 19 42 22" stroke="#1a1a2e" stroke-width="1.5" fill="#2563a8"/>
             <rect x="39" y="7" width="12" height="8" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
             <line x1="42" y1="10" x2="48" y2="10" stroke="#1a1a2e" stroke-width="1.2"/>
             <line x1="42" y1="12" x2="48" y2="12" stroke="#1a1a2e" stroke-width="1.2"/>
             <polygon points="41,15 39,18 44,17" fill="#1a1a2e"/>
-            <rect x="9" y="24" width="20" height="3" rx="1" fill="#f78e1e" opacity="0.15"/>
-            <rect x="9" y="30" width="15" height="3" rx="1" fill="#f78e1e" opacity="0.15"/>
+            <rect x="9" y="24" width="20" height="3" rx="1" fill="#2563a8" opacity="0.15"/>
+            <rect x="9" y="30" width="15" height="3" rx="1" fill="#2563a8" opacity="0.15"/>
           </svg>
         </div>
         <h4>キャリアカウンセリング</h4>
@@ -277,8 +328,8 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
             <rect x="6" y="22" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
             <rect x="12" y="16" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
             <rect x="18" y="10" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
-            <rect x="20" y="13" width="8" height="6" rx="1" fill="#f78e1e"/>
-            <rect x="30" y="14" width="8" height="2" rx="1" fill="#fef0e7"/>
+            <rect x="20" y="13" width="8" height="6" rx="1" fill="#2563a8"/>
+            <rect x="30" y="14" width="8" height="2" rx="1" fill="#cce4f7"/>
             <line x1="20" y1="23" x2="38" y2="23" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
             <line x1="20" y1="27" x2="38" y2="27" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
             <line x1="20" y1="31" x2="32" y2="31" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
@@ -291,8 +342,8 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
         <div class="flow-num">04</div>
         <div class="flow-circle">
           <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="12" r="5" fill="#fef0e7" stroke="#1a1a2e" stroke-width="1.5"/>
-            <circle cx="38" cy="12" r="5" fill="#f78e1e" stroke="#1a1a2e" stroke-width="1.5"/>
+            <circle cx="16" cy="12" r="5" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5"/>
+            <circle cx="38" cy="12" r="5" fill="#2563a8" stroke="#1a1a2e" stroke-width="1.5"/>
             <line x1="8" y1="38" x2="8" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="24" y1="38" x2="24" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="8" y1="38" x2="24" y2="38" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
@@ -312,7 +363,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
         <div class="flow-circle">
           <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 38 L22 26 L28 20 L30 22 L26 28 L34 28 C36 28 37 29 37 31 C37 33 36 34 34 34 L30 34 C32 34 33 35 33 37 C33 39 32 40 30 40 L24 40 C23 40 22 39 22 38Z" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5" stroke-linejoin="round"/>
-            <rect x="14" y="26" width="8" height="16" rx="2" fill="#f78e1e" stroke="#1a1a2e" stroke-width="1.5"/>
+            <rect x="14" y="26" width="8" height="16" rx="2" fill="#2563a8" stroke="#1a1a2e" stroke-width="1.5"/>
             <line x1="27" y1="10" x2="27" y2="6" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
             <line x1="34" y1="13" x2="37" y2="10" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
             <line x1="37" y1="20" x2="41" y2="20" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
@@ -341,7 +392,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
 
 <!-- CTA BAND 2 -->
 <div class="cta-band" style="padding:40px 24px;">
-  <a href="#cta">無料キャリア相談</a>
+  <a href="#cta">無料キャリア相談をする</a>
 </div>
 
 <!-- FAQ -->
@@ -388,6 +439,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
     所在地：〒000-0000 東京都〇〇区〇〇1-2-3<br>
     TEL：03-0000-0000　／　MAIL：info@zerotalent.co.jp
   </div>
+  <small>© 2026 Career Hub Partner. All rights reserved.</small>
 </footer>
 
 <!-- FLOAT -->
