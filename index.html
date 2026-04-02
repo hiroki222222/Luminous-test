@@ -3,27 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>by ZERO TALENT | 本気の転職、始めよう。</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--blue:#4a90d9;--blue-light:#7ab8e8;--blue-pale:#e8f4fb;--navy:#0f1f3d;--line:#28C000;--orange:#f59e0b;--gray:#f7f9fc;}
 body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;overflow-x:hidden;background:#fff;}
 a{text-decoration:none;color:inherit;}
-
-/* 追加：アイコン用スタイル */
-.main-icon {
-  width: 80px;
-  height: auto;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-}
-.btn-icon {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 8px;
-}
 
 /* HEADER */
 header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e5eaf2;}
@@ -65,6 +50,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdr
 .hero-btn{display:inline-block;background:var(--orange);color:#fff;font-size:16px;font-weight:900;padding:18px 48px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);margin-top:24px;}
 .hero-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px;}
 .hero-photos img{width:100%;object-fit:cover;border-radius:12px;}
+.hero-photos img:nth-child(1){grid-row:span 2;aspect-ratio:3/4;}
+.hero-photos img:nth-child(2){aspect-ratio:4/3;}
+.hero-photos img:nth-child(3){aspect-ratio:4/3;}
 
 /* PAIN */
 .pain{padding:72px 24px;background:#fff;}
@@ -84,56 +72,104 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdr
 .benefits{padding:80px 24px;background:var(--gray);}
 .benefits-inner{max-width:1000px;margin:0 auto;}
 .benefit-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:72px;}
+.benefit-row:last-child{margin-bottom:0;}
+.benefit-row.rev{direction:rtl;}
+.benefit-row.rev>*{direction:ltr;}
+.benefit-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.08);}
 .benefit-num{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.2em;margin-bottom:12px;}
 .benefit-text h3{font-size:clamp(18px,2vw,24px);font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:14px;}
 .benefit-text h3 em{font-style:normal;color:var(--blue);}
 .benefit-text p{font-size:13px;color:#555;line-height:2;}
+.benefit-more{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:12px;font-weight:700;color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:2px;}
+
+/* MESSAGE */
+.message{position:relative;padding:100px 24px;background:var(--navy);overflow:hidden;text-align:center;}
+.message-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;}
+.message-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.message-en{font-family:'Montserrat',sans-serif;font-size:clamp(36px,6vw,80px);font-weight:900;color:rgba(255,255,255,.08);letter-spacing:.05em;line-height:1;margin-bottom:-20px;}
+.message h2{font-size:clamp(18px,2.5vw,28px);font-weight:900;color:#fff;line-height:1.7;margin-bottom:20px;}
+.message h2 em{font-style:normal;color:#7ec8f0;}
+.message p{font-size:13px;color:rgba(255,255,255,.7);line-height:2;}
 
 /* FLOW */
 .flow{padding:80px 24px;background:#fff;}
 .flow-inner{max-width:1000px;margin:0 auto;}
-.flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative;}
-.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;margin-bottom: 32px;}
-.flow-circle{width:64px;height:64px;border-radius:50%;background:#fff;border:3px solid var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 16px rgba(37,99,168,.15);overflow: hidden;}
-.flow-num{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:900;color:var(--blue);margin-bottom:5px;}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;position:relative;}
+
+.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;}
+.flow-circle{width:64px;height:64px;border-radius:50%;background:#fff;border:3px solid var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 16px rgba(37,99,168,.15);}
+.flow-circle span{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--blue);}
 .flow-step h4{font-size:13px;font-weight:900;margin-bottom:8px;color:var(--navy);}
 .flow-step p{font-size:11px;color:#888;line-height:1.8;}
 
-/* CTA */
+/* CTA BAND */
 .cta-band{text-align:center;padding:16px 24px;background:var(--gray);}
 .cta-band a{display:inline-block;background:var(--orange);color:#fff;font-size:15px;font-weight:900;padding:16px 56px;border-radius:50px;box-shadow:0 6px 20px rgba(245,158,11,.35);}
 
+
+/* FAQ */
 .faq{padding:80px 24px;background:var(--gray);}
 .faq-inner{max-width:720px;margin:0 auto;}
 .faq-list{margin-top:48px;display:flex;flex-direction:column;gap:10px;}
-.faq-item{border-bottom:1px solid #dde6f0;}
+.faq-item{border-radius:0;overflow:hidden;background:transparent;box-shadow:none;border-bottom:1px solid #dde6f0;}
 .faq-q{width:100%;display:flex;align-items:center;padding:22px 8px;background:transparent;border:none;cursor:pointer;text-align:left;font-size:15px;font-weight:700;color:var(--navy);gap:14px;}
 .faq-q-badge{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.faq-q-text{flex:1;}
+.fq-icon{font-size:20px;color:var(--blue);font-weight:400;flex-shrink:0;transition:transform .3s;line-height:1;}
+.faq-q.open .fq-icon{transform:rotate(45deg);}
 .faq-a{display:none;padding:0 8px 20px 54px;font-size:13px;color:#666;line-height:1.9;}
 .faq-a.open{display:block;}
 
+/* CTA FINAL */
 .cta-final{background:linear-gradient(135deg,#deeeff,#f0f7ff);padding:72px 24px;text-align:center;}
+.cta-final h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--navy);margin-bottom:10px;}
+.cta-final p{font-size:13px;color:#666;margin-bottom:28px;line-height:1.9;}
 .cta-final a.line-btn{display:inline-block;background:var(--orange);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);}
+.cta-note{font-size:11px;color:#aaa;margin-top:14px;}
 
+/* FOOTER NAV */
+.footer-nav{padding:40px 24px;background:#fff;border-top:1px solid #eee;}
+.fn-grid{max-width:800px;margin:0 auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.fn-item{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid #eee;border-radius:8px;}
+.fn-item-text .en{font-size:12px;font-weight:900;letter-spacing:.04em;color:var(--navy);}
+.fn-item-text .ja{font-size:9px;color:#aaa;margin-top:2px;}
+.fn-arrow{color:var(--blue);font-size:16px;font-weight:700;}
+
+/* FOOTER */
 footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
+.footer-by{font-size:9px;color:#aaa;letter-spacing:.2em;margin-bottom:6px;}
 .footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:var(--blue);letter-spacing:-1px;margin-bottom:14px;}
+.footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
+footer small{font-size:10px;color:#bbb;}
 
-.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line);color:#fff;font-size:14px;font-weight:700;padding:14px 40px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.5);white-space:nowrap;display:flex;align-items:center;}
+/* FLOAT */
+.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line);color:#fff;font-size:14px;font-weight:700;padding:14px 40px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.5);white-space:nowrap;}
+
+/* SECTION COMMON */
+.sec-head{text-align:center;margin-bottom:0;}
+.sec-head .en{font-size:10px;font-weight:700;letter-spacing:.25em;color:var(--blue);margin-bottom:10px;}
+.sec-head h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--navy);}
 
 @media(max-width:768px){
   .pill-nav{display:none;}
   .hamburger{display:flex;}
   .hero-inner{grid-template-columns:1fr;}
-  .flow-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-photos{display:none;}
+  .benefit-row,.benefit-row.rev{grid-template-columns:1fr;direction:ltr;}
+  .flow-grid{grid-template-columns:repeat(3,1fr);gap:32px;}
+  .flow-grid::before,.flow-grid::after,.flow-step::before,.flow-step::after{content:none!important;display:none!important;border:none!important;background:none!important;}
+.flow-grid{border:none!important;background:none!important;border-top:none!important;}
+  .fn-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="hd-inner">
     <div class="logo-wrap">
-      <span class="logo-by">BY ZERO TALENT</span>
+      <span class="logo-by">by ZERO TALENT</span>
       <span class="logo-main">CAREER AGENT</span>
     </div>
     <nav class="pill-nav">
@@ -141,13 +177,20 @@ footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
       <a href="#reasons" class="pill-link">選ばれる理由</a>
       <a href="#service" class="pill-link">サービス</a>
       <a href="#faq" class="pill-link">よくある質問</a>
-      <a href="#cta" class="pill-contact">お問い合わせ</a>
+      <a href="#cta" class="pill-contact">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        お問い合わせ
+      </a>
     </nav>
-    <a href="#cta" class="hd-cta">無料相談申込</a>
+    <a href="#cta" class="hd-cta" style="display:flex; align-items:center; gap:5px;">
+      <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="icon" style="width:16px; height:auto; filter:brightness(0) invert(1);">
+      無料相談申込
+    </a>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </header>
 
+<!-- GNAV -->
 <div class="gnav-overlay" id="gnav-overlay"></div>
 <nav class="gnav" id="gnav">
   <button class="gnav-close" id="gnav-close">✕</button>
@@ -157,19 +200,25 @@ footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
     <li><a href="#service">サービス</a></li>
     <li><a href="#faq">よくある質問</a></li>
   </ul>
+  <div class="gnav-cta"><a href="#cta">LINEで無料相談する</a></div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
       <p class="hero-eyebrow">by ZERO TALENT — Career Agent</p>
-      <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="Icon" class="main-icon">
       <h1><em>「人生を逆転」させる</em><br>転職エージェント。</h1>
-      <a href="#cta" class="hero-btn">無料相談申込</a>
+      <a href="#cta" class="hero-btn" style="display:inline-flex; align-items:center; gap:10px;">
+       <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="icon" style="width:24px; height:auto; filter:brightness(0) invert(1);">
+       無料相談申込
+      </a>
     </div>
+
   </div>
 </section>
 
+<!-- PAIN -->
 <section class="pain">
   <div class="pain-inner">
     <h2>こんなお悩みありませんか？</h2>
@@ -177,17 +226,21 @@ footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
       <span class="pain-tag">今のままでは給料が上がらない</span>
       <span class="pain-tag">転職したいけど実績がない</span>
       <span class="pain-tag">キャリアについて相談できる人がいない</span>
+
     </div>
   </div>
 </section>
 
+<!-- SERVICE LEAD -->
 <section class="svc-lead" id="service">
   <p>現役企業人事が行うサービス「ゼメキャリ転職エージェント」</p>
   <h2>なら転職活動の悩みを<em>解決できます。</em></h2>
 </section>
 
+<!-- BENEFITS -->
 <section class="benefits" id="reasons">
   <div class="benefits-inner">
+
     <div class="benefit-row" style="grid-template-columns:1fr;">
       <div class="benefit-text">
         <div class="benefit-num">BENEFIT 01</div>
@@ -195,6 +248,7 @@ footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
         <p>LINEチャットで気軽に相談できます。転職意思がなくても大丈夫。まず話すだけでいい。</p>
       </div>
     </div>
+
     <div class="benefit-row" style="grid-template-columns:1fr;">
       <div class="benefit-text">
         <div class="benefit-num">BENEFIT 02</div>
@@ -202,61 +256,204 @@ footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
         <p>あなたの強みと希望をもとに、マッチする企業だけをご紹介。量より質のご提案です。</p>
       </div>
     </div>
+
+    <div class="benefit-row" style="grid-template-columns:1fr;">
+      <div class="benefit-text">
+        <div class="benefit-num">BENEFIT 03</div>
+        <h3>現役企業人事と面接対策ができるから、<br><em>選考の不安が消える。</em></h3>
+        <p>書類添削から面接対策まで、現場を知り尽くした担当が徹底サポートします。</p>
+      </div>
+    </div>
+
+    <div class="benefit-row" style="grid-template-columns:1fr;">
+      <div class="benefit-text">
+        <div class="benefit-num">BENEFIT 04</div>
+        <h3>企業との交渉を全て行えるから、<br><em>タイパの良い転職ができる。</em></h3>
+        <p>条件交渉・入社後フォローまで、一緒に。転職はゴールではなく、スタートです。</p>
+      </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- CTA BAND -->
+<div class="cta-band" style="padding:40px 24px;">
+          <a href="#cta">無料相談申込</a>
+</div>
+
+<!-- FLOW -->
 <section class="flow" id="steps">
   <div class="flow-inner">
-    <div class="sec-head" style="text-align:center;">
-      <h2>ご利用の流れ</h2>
+    <div class="sec-head">
+      <h2 style="margin-top:8px;">ご利用の流れ</h2>
     </div>
     <div class="flow-grid">
       <div class="flow-step">
         <div class="flow-num">01</div>
         <div class="flow-circle">
-          <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="STEP1" style="width:70%; height:auto;">
+          <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="5" width="28" height="35" rx="3" stroke="#1a1a2e" stroke-width="1.8" fill="white"/>
+            <line x1="16" y1="14" x2="32" y2="14" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="20" x2="32" y2="20" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="26" x2="26" y2="26" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="28" y="30" width="14" height="18" rx="2" transform="rotate(-35 28 30)" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5"/>
+            <rect x="30" y="33" width="10" height="13" rx="1" transform="rotate(-35 30 33)" fill="#2563a8"/>
+            <polygon points="24,44 22,49 27,47" fill="#1a1a2e"/>
+          </svg>
         </div>
         <h4>無料相談申込</h4>
-        <p>1分で完了する無料相談に<br>お申し込みください。</p>
+        <p><a href="#cta" style="color:var(--blue);text-decoration:underline;">こちら</a>より、1分でできる無料相談<br>申込を行なってください。</p>
       </div>
       <div class="flow-step">
         <div class="flow-num">02</div>
         <div class="flow-circle">
-          <span style="font-size:24px;">💬</span>
+          <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="18" width="34" height="22" rx="3" stroke="#1a1a2e" stroke-width="1.8" fill="white"/>
+            <line x1="23" y1="40" x2="23" y2="46" stroke="#1a1a2e" stroke-width="1.8"/>
+            <line x1="16" y1="46" x2="30" y2="46" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="37" cy="16" r="6" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+            <circle cx="37" cy="13.5" r="2.5" fill="#e8c44a"/>
+            <path d="M32 22 Q37 19 42 22" stroke="#1a1a2e" stroke-width="1.5" fill="#2563a8"/>
+            <rect x="39" y="7" width="12" height="8" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+            <line x1="42" y1="10" x2="48" y2="10" stroke="#1a1a2e" stroke-width="1.2"/>
+            <line x1="42" y1="12" x2="48" y2="12" stroke="#1a1a2e" stroke-width="1.2"/>
+            <polygon points="41,15 39,18 44,17" fill="#1a1a2e"/>
+            <rect x="9" y="24" width="20" height="3" rx="1" fill="#2563a8" opacity="0.15"/>
+            <rect x="9" y="30" width="15" height="3" rx="1" fill="#2563a8" opacity="0.15"/>
+          </svg>
         </div>
-        <h4>カウンセリング</h4>
-        <p>希望条件や不安なことを<br>なんでも相談してください。</p>
+        <h4>キャリアカウンセリング</h4>
+        <p>転職の希望条件や不安なことなど、<br>なんでも相談してください。</p>
       </div>
       <div class="flow-step">
         <div class="flow-num">03</div>
         <div class="flow-circle">
-          <span style="font-size:24px;">🏢</span>
+          <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="22" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
+            <rect x="12" y="16" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
+            <rect x="18" y="10" width="24" height="28" rx="2" fill="white" stroke="#1a1a2e" stroke-width="1.8"/>
+            <rect x="20" y="13" width="8" height="6" rx="1" fill="#2563a8"/>
+            <rect x="30" y="14" width="8" height="2" rx="1" fill="#cce4f7"/>
+            <line x1="20" y1="23" x2="38" y2="23" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
+            <line x1="20" y1="27" x2="38" y2="27" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
+            <line x1="20" y1="31" x2="32" y2="31" stroke="#1a1a2e" stroke-width="1.2" opacity="0.4"/>
+          </svg>
         </div>
         <h4>求人紹介</h4>
-        <p>最適な求人を厳選して<br>ご紹介いたします。</p>
+        <p>専任アドバイザーが責任を持って、<br>最適な求人を紹介します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">04</div>
+        <div class="flow-circle">
+          <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="12" r="5" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5"/>
+            <circle cx="38" cy="12" r="5" fill="#2563a8" stroke="#1a1a2e" stroke-width="1.5"/>
+            <line x1="8" y1="38" x2="8" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="24" y1="38" x2="24" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8" y1="38" x2="24" y2="38" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 28 Q16 22 24 28" stroke="#1a1a2e" stroke-width="1.5" fill="none"/>
+            <line x1="30" y1="38" x2="30" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="46" y1="38" x2="46" y2="28" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30" y1="38" x2="46" y2="38" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M30 28 Q38 22 46 28" stroke="#1a1a2e" stroke-width="1.5" fill="none"/>
+            <rect x="20" y="26" width="14" height="10" rx="1" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>書類・面接</h4>
+        <p>書類の添削から面接対策まで、<br>しっかりサポートします。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">05</div>
+        <div class="flow-circle">
+          <svg width="42" height="42" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 38 L22 26 L28 20 L30 22 L26 28 L34 28 C36 28 37 29 37 31 C37 33 36 34 34 34 L30 34 C32 34 33 35 33 37 C33 39 32 40 30 40 L24 40 C23 40 22 39 22 38Z" fill="#cce4f7" stroke="#1a1a2e" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="14" y="26" width="8" height="16" rx="2" fill="#2563a8" stroke="#1a1a2e" stroke-width="1.5"/>
+            <line x1="27" y1="10" x2="27" y2="6" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="34" y1="13" x2="37" y2="10" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="37" y1="20" x2="41" y2="20" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="20" y1="13" x2="17" y2="10" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="17" y1="20" x2="13" y2="20" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>内定・入社</h4>
+        <p>年収交渉や入社日の調整など、<br>代行します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">06</div>
+        <div class="flow-circle">
+          <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="27" cy="18" r="8" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+            <path d="M27 14 Q34 14 35 20" fill="#e8c44a" stroke="none"/>
+            <path d="M15 44 C15 33 39 33 39 44" stroke="#1a1a2e" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h4>入社後フォロー</h4>
+        <p>入社後の不安や困りごとなど、<br>なんでもご相談ください。</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA BAND 2 -->
+<div class="cta-band" style="padding:40px 24px;">
+  <a href="#cta">無料相談をする</a>
+</div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="sec-head">
+      <h2 style="margin-top:8px;">よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-badge">Q</span><span class="faq-q-text">サービスの利用は完全無料ですか？</span><span class="fq-icon">+</span></button>
+        <div class="faq-a">はい、完全無料です。相談から内定・入社後フォローまで、費用は一切かかりません。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-badge">Q</span><span class="faq-q-text">年齢や職種など利用にあたって制限はありますか？</span><span class="fq-icon">+</span></button>
+        <div class="faq-a">基本的に制限はありません。第二新卒・社会人1〜3年目の方を中心に、幅広い方のご支援をしています。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-badge">Q</span><span class="faq-q-text">転職するか決まっていないのですが相談してもいいですか？</span><span class="fq-icon">+</span></button>
+        <div class="faq-a">もちろんです。「転職すべきかどうか」の判断から一緒に考えます。相談したからといって転職を強制することは一切ありません。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-badge">Q</span><span class="faq-q-text">どのような企業を紹介してもらえますか？</span><span class="fq-icon">+</span></button>
+        <div class="faq-a">あなたの強みや希望をもとに、マッチする企業のみをご紹介します。量より質を重視した厳選提案です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
 <section class="cta-final" id="cta">
   <h2>本気の転職、始めよう。</h2>
   <p>まずはLINEで、無料相談。<br>登録はたった30秒、履歴書も不要です。</p>
-  <a href="#" class="line-btn">
-    <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="" class="btn-icon">
-    無料相談申込
+  <a href="#" class="line-btn" style="display:inline-flex; align-items:center; gap:12px;">
+   <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="icon" style="width:28px; height:auto; filter:brightness(0) invert(1);">
+   無料相談申込
   </a>
+
 </section>
 
+
+
+<!-- FOOTER -->
 <footer>
+  <div class="footer-by">by ZERO TALENT Partner Program</div>
   <div class="footer-logo">ゼロタレ</div>
+  <div class="footer-info">
+    会社名：株式会社ゼロタレント<br>
+    所在地：〒000-0000 東京都〇〇区〇〇1-2-3<br>
+    TEL：03-0000-0000　／　MAIL：info@zerotalent.co.jp
+  </div>
   <small>© 2026 Career Hub Partner. All rights reserved.</small>
 </footer>
 
-<a href="#cta" class="line-float">
-  <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="" class="btn-icon">
-  LINEで無料相談する
-</a>
+<!-- FLOAT -->
+<a href="#cta" class="line-float">LINEで無料相談する</a>
 
 <script>
 const btn=document.getElementById('hamburger');
@@ -266,8 +463,12 @@ const closeBtn=document.getElementById('gnav-close');
 function openMenu(){btn.classList.add('open');gnav.classList.add('open');overlay.classList.add('open');}
 function closeMenu(){btn.classList.remove('open');gnav.classList.remove('open');overlay.classList.remove('open');}
 btn.addEventListener('click',()=>gnav.classList.contains('open')?closeMenu():openMenu());
-if(closeBtn) closeBtn.addEventListener('click',closeMenu);
+closeBtn.addEventListener('click',closeMenu);
 overlay.addEventListener('click',closeMenu);
+function toggleFaq(el){
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
 </script>
 </body>
 </html>
