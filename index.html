@@ -3,674 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美容・健康機器A | 1日10分で輝く肌へ</title>
+<title>by ZERO TALENT | 本気の転職、始めよう。</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --pk: #fdf0f5;
-  --pk2: #f7dde9;
-  --pk3: #efc4d8;
-  --ac: #c0487a;
-  --ac2: #e8608a;
-  --wh: #fff;
-  --dark: #1c1c1c;
-  --gray: #666;
-  --lgray: #999;
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--blue:#4a90d9;--blue-light:#7ab8e8;--blue-pale:#e8f4fb;--navy:#0f1f3d;--line:#28C000;--orange:#f59e0b;--gray:#f7f9fc;}
+body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;overflow-x:hidden;background:#fff;}
+a{text-decoration:none;color:inherit;}
+
+/* 追加：アイコン用スタイル */
+.main-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Hiragino Sans','Yu Gothic UI','Noto Sans JP',sans-serif;color:var(--dark);background:var(--wh);overflow-x:hidden}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
-/* ─── UTILITY ─── */
-.w{max-width:1040px;margin:0 auto;padding:0 24px}
-.wn{max-width:720px;margin:0 auto;padding:0 24px}
-.sec{padding:80px 0;background:var(--wh)}
-.sec-pk{padding:80px 0;background:var(--pk)}
-.btn{display:inline-block;text-decoration:none;border:none;cursor:pointer;font-family:inherit;font-weight:700;transition:all .2s;text-align:center}
-.btn-main{background:var(--ac);color:var(--wh);padding:18px 48px;font-size:17px;border-radius:50px;box-shadow:0 6px 20px rgba(192,72,122,.28)}
-.btn-main:hover{background:var(--ac2);transform:translateY(-2px)}
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #e5eaf2;}
+.hd-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo-wrap{display:flex;flex-direction:column;line-height:1;flex-shrink:0;}
+.logo-by{font-size:8px;font-weight:700;color:#aaa;letter-spacing:.2em;margin-bottom:3px;}
+.logo-main{font-family:'Montserrat',sans-serif;font-weight:900;font-size:17px;color:var(--blue);letter-spacing:-.5px;}
+.pill-nav{background:#eef4fb;border-radius:50px;padding:6px 6px 6px 20px;display:flex;align-items:center;gap:2px;}
+.pill-nav a.pill-link{font-size:12px;font-weight:700;color:var(--blue);padding:7px 14px;border-radius:40px;white-space:nowrap;transition:background .2s;}
+.pill-nav a.pill-link:hover{background:rgba(37,99,168,.1);}
+.pill-nav a.pill-contact{display:flex;align-items:center;gap:6px;background:rgba(15,31,61,.6);color:#fff;font-size:12px;font-weight:700;padding:9px 20px;border-radius:40px;white-space:nowrap;}
+.hd-cta{background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:10px 18px;border-radius:40px;white-space:nowrap;flex-shrink:0;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* ─── SERIAL BADGE ─── */
-.serial{display:inline-block;background:var(--ac);color:var(--wh);font-size:13px;font-weight:700;padding:6px 20px;border-radius:4px;letter-spacing:1px;margin-bottom:16px}
+/* GNAV */
+.gnav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;}
+.gnav-overlay.open{display:block;}
+.gnav{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#fff;z-index:200;transition:right .3s;padding:80px 0 40px;overflow-y:auto;}
+.gnav.open{right:0;}
+.gnav-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;color:#555;}
+.gnav ul{list-style:none;}
+.gnav ul li a{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;font-size:13px;font-weight:700;border-bottom:1px solid #f5f5f5;}
+.gnav ul li a::after{content:'›';color:var(--blue);font-size:18px;}
+.gnav-cta{margin:24px 20px 0;}
+.gnav-cta a{display:block;background:var(--line);color:#fff;text-align:center;font-size:13px;font-weight:700;padding:16px;border-radius:8px;}
 
-/* ─── BUBBLE BADGES ─── */
-.bubbles{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0}
-.bubble{width:90px;height:90px;border-radius:50%;background:var(--pk2);border:2px solid var(--pk3);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:700;color:var(--ac);line-height:1.3;padding:8px;flex-shrink:0}
-.bubble.ac{background:var(--ac);border-color:var(--ac2);color:var(--wh)}
+/* HERO */
+.hero{background:linear-gradient(135deg,#deeeff 0%,#f0f7ff 40%,#fff 100%);padding:64px 24px 80px;overflow:hidden;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.hero-eyebrow{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.15em;margin-bottom:14px;}
+.hero h1{font-size:clamp(22px,3vw,40px);font-weight:900;line-height:1.4;color:var(--navy);margin-bottom:10px;}
+.hero h1 em{font-style:normal;color:var(--blue);}
+.hero-sub{font-size:14px;color:#555;line-height:1.9;margin-bottom:8px;}
+.hero-sub strong{color:var(--navy);font-weight:900;}
+.hero-btn{display:inline-block;background:var(--orange);color:#fff;font-size:16px;font-weight:900;padding:18px 48px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);margin-top:24px;}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:10px;}
+.hero-photos img{width:100%;object-fit:cover;border-radius:12px;}
 
-/* ─── SECTION HEADING STYLE ─── */
-.sec-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--ac);text-align:center;margin-bottom:10px}
-.sec-ttl{font-size:clamp(22px,4vw,36px);font-weight:900;text-align:center;line-height:1.35;margin-bottom:12px}
-.sec-sub{font-size:15px;color:var(--gray);text-align:center;line-height:1.8;max-width:560px;margin:0 auto}
-.u-bar{width:36px;height:3px;background:var(--ac);margin:16px auto 24px;border-radius:2px}
+/* PAIN */
+.pain{padding:72px 24px;background:#fff;}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center;}
+.sec-label{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:.2em;margin-bottom:10px;}
+.pain h2{font-size:clamp(20px,2.5vw,30px);font-weight:900;margin-bottom:40px;color:var(--navy);}
+.pain-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
+.pain-tag{background:var(--blue);color:#fff;font-size:13px;font-weight:700;padding:12px 24px;border-radius:50px;}
 
-/* ──────────────────────────────
-   1. HERO
-────────────────────────────── */
-#hero{background:linear-gradient(160deg,#fff8fb 0%,#fdf0f5 60%,#f5e0ee 100%);padding:100px 0 64px;min-height:100vh;display:flex;align-items:center}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.hero-serial{display:inline-block;background:var(--ac);color:var(--wh);font-size:12px;font-weight:700;padding:5px 18px;border-radius:3px;letter-spacing:2px;margin-bottom:24px}
-.hero-catch{font-size:clamp(28px,5vw,52px);font-weight:900;line-height:1.2;margin-bottom:10px}
-.hero-catch em{color:var(--ac);font-style:normal}
-.hero-sub-catch{font-size:clamp(14px,2vw,17px);color:var(--gray);margin-bottom:28px;line-height:1.8}
-.hero-price-area{background:var(--wh);border:2px solid var(--pk3);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:inline-block;width:100%}
-.hp-product{font-size:17px;font-weight:700;margin-bottom:8px}
-.hp-row{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
-.hp-orig{font-size:14px;color:var(--lgray);text-decoration:line-through}
-.hp-price{font-size:36px;font-weight:900;color:var(--ac);line-height:1}
-.hp-price span{font-size:14px;font-weight:400}
-.hp-off{background:var(--ac);color:var(--wh);font-size:12px;font-weight:900;padding:4px 10px;border-radius:50px;align-self:center}
-.hp-note{font-size:11px;color:var(--lgray);margin-top:6px}
-.hero-vis{display:flex;justify-content:center;align-items:center}
-.hero-vis-box{width:100%;max-width:400px;aspect-ratio:3/4;background:var(--wh);border-radius:24px;box-shadow:0 20px 60px rgba(192,72,122,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 28px;border:1px solid var(--pk3)}
-.vis-mark{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--pk2));border:2px solid var(--pk3);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--ac);letter-spacing:1px}
-.vis-nm{font-size:22px;font-weight:900;color:var(--dark);letter-spacing:2px}
-.vis-sub{font-size:12px;color:var(--lgray)}
+/* SERVICE LEAD */
+.svc-lead{padding:64px 24px;background:linear-gradient(160deg,#e8f4fb 0%,#fff 60%,#deeeff 100%);text-align:center;border-top:1px solid #d0e8f5;border-bottom:1px solid #d0e8f5;}
+.svc-lead p{font-size:13px;color:var(--blue);margin-bottom:12px;font-weight:700;}
+.svc-lead h2{font-size:clamp(18px,2.5vw,28px);font-weight:900;color:var(--navy);line-height:1.6;}
+.svc-lead h2 em{font-style:normal;color:var(--blue);}
 
-/* ──────────────────────────────
-   2. PROBLEM
-────────────────────────────── */
-.prob-dark{background:#1a1a2a;padding:80px 0}
-.prob-lead{font-size:clamp(18px,3vw,26px);font-weight:700;text-align:center;color:#fff;margin-bottom:8px}
-.prob-sub{font-size:14px;color:#aaa;text-align:center;margin-bottom:40px}
-.prob-items{display:flex;flex-direction:column;gap:0;max-width:540px;margin:0 auto}
-.prob-item{display:flex;align-items:center;gap:16px;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.08)}
-.prob-item:last-child{border-bottom:none}
-.prob-dot{width:10px;height:10px;border-radius:50%;background:var(--ac2);flex-shrink:0}
-.prob-txt{font-size:16px;color:#f0f0f0;font-weight:600}
-.prob-cause{margin-top:40px;text-align:center}
-.prob-cause p{font-size:18px;color:#ccc;line-height:1.9}
-.prob-cause strong{color:var(--ac2);font-size:22px}
+/* BENEFITS */
+.benefits{padding:80px 24px;background:var(--gray);}
+.benefits-inner{max-width:1000px;margin:0 auto;}
+.benefit-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:72px;}
+.benefit-num{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.2em;margin-bottom:12px;}
+.benefit-text h3{font-size:clamp(18px,2vw,24px);font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:14px;}
+.benefit-text h3 em{font-style:normal;color:var(--blue);}
+.benefit-text p{font-size:13px;color:#555;line-height:2;}
 
-/* ──────────────────────────────
-   3. RISK
-────────────────────────────── */
-.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px}
-.risk-chart-box{background:var(--wh);border:1px solid var(--pk2);border-radius:12px;padding:32px}
-.risk-chart-ttl{font-size:12px;color:var(--lgray);font-weight:600;text-align:center;margin-bottom:20px;letter-spacing:1px}
-.bars{display:flex;flex-direction:column;gap:18px}
-.bar-r{display:flex;align-items:center;gap:12px}
-.bar-l{font-size:12px;font-weight:700;width:52px;text-align:right;flex-shrink:0}
-.bar-bg{flex:1;background:var(--pk);height:22px;border-radius:3px;overflow:hidden}
-.bar-f{height:100%;border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;font-weight:700;color:var(--wh);transition:width 1.1s ease}
-.bf1{background:linear-gradient(90deg,#e8b0c8,var(--ac))}
-.bf2{background:linear-gradient(90deg,var(--ac),#a03060)}
-.bf3{background:linear-gradient(90deg,#a03060,#7a1848)}
-.risk-pts{display:flex;flex-direction:column;gap:24px}
-.risk-pt{border-left:3px solid var(--pk3);padding-left:18px}
-.risk-pt-ttl{font-weight:700;font-size:16px;margin-bottom:4px}
-.risk-pt-desc{font-size:14px;color:var(--gray)}
+/* FLOW */
+.flow{padding:80px 24px;background:#fff;}
+.flow-inner{max-width:1000px;margin:0 auto;}
+.flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative;}
+.flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;margin-bottom: 32px;}
+.flow-circle{width:64px;height:64px;border-radius:50%;background:#fff;border:3px solid var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 16px rgba(37,99,168,.15);overflow: hidden;}
+.flow-num{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:900;color:var(--blue);margin-bottom:5px;}
+.flow-step h4{font-size:13px;font-weight:900;margin-bottom:8px;color:var(--navy);}
+.flow-step p{font-size:11px;color:#888;line-height:1.8;}
 
-/* ──────────────────────────────
-   4. SOLUTION
-────────────────────────────── */
-.solution-nm{font-size:clamp(32px,6vw,58px);font-weight:900;color:var(--ac);text-align:center;letter-spacing:3px;margin:12px 0 8px}
-.sol-lead{font-size:clamp(18px,3vw,26px);font-weight:700;text-align:center;margin-bottom:32px}
+/* CTA */
+.cta-band{text-align:center;padding:16px 24px;background:var(--gray);}
+.cta-band a{display:inline-block;background:var(--orange);color:#fff;font-size:15px;font-weight:900;padding:16px 56px;border-radius:50px;box-shadow:0 6px 20px rgba(245,158,11,.35);}
 
-/* ──────────────────────────────
-   5. COMPARISON
-────────────────────────────── */
-.comp-wrap{overflow-x:auto;margin-top:40px}
-table.comp{width:100%;border-collapse:collapse;min-width:560px}
-table.comp th,table.comp td{padding:15px 18px;text-align:center;font-size:14px;border-bottom:1px solid #f0e0ea}
-table.comp thead{background:var(--dark)}
-table.comp thead th{color:#fff;font-size:12px;font-weight:700;letter-spacing:1px}
-table.comp thead th.hl{background:var(--ac)}
-table.comp tbody td.hl{background:#fff8fb;font-weight:700;color:var(--ac);border-left:2px solid var(--pk3);border-right:2px solid var(--pk3)}
-table.comp tbody tr:last-child td.hl{border-bottom:2px solid var(--pk3)}
-table.comp tbody tr:nth-child(even) td{background:#fafafa}
-table.comp tbody tr:nth-child(even) td.hl{background:#fff0f7}
-.cy{color:#2a9a50;font-weight:700}
-.cn{color:#ccc}
-.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
-.trust-item{text-align:center;padding:20px 10px;border:1px solid var(--pk2);border-bottom:3px solid var(--pk3)}
-.trust-mark{font-size:12px;font-weight:900;color:var(--ac);letter-spacing:1px;margin-bottom:6px}
-.trust-text{font-size:12px;font-weight:600}
+.faq{padding:80px 24px;background:var(--gray);}
+.faq-inner{max-width:720px;margin:0 auto;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:10px;}
+.faq-item{border-bottom:1px solid #dde6f0;}
+.faq-q{width:100%;display:flex;align-items:center;padding:22px 8px;background:transparent;border:none;cursor:pointer;text-align:left;font-size:15px;font-weight:700;color:var(--navy);gap:14px;}
+.faq-q-badge{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.faq-a{display:none;padding:0 8px 20px 54px;font-size:13px;color:#666;line-height:1.9;}
+.faq-a.open{display:block;}
 
-/* ──────────────────────────────
-   6. MECHANISM
-────────────────────────────── */
-.mech-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:48px}
-.skin-box{background:var(--wh);border:1px solid var(--pk2);border-radius:12px;padding:28px}
-.skin-cap{font-size:11px;color:var(--lgray);text-align:center;font-weight:600;letter-spacing:1px;margin-bottom:18px}
-.layers{border-radius:8px;overflow:hidden}
-.layer{padding:15px 18px;display:flex;align-items:center;gap:12px}
-.l1{background:#fde8f0}.l2{background:#f8d2e4}.l3{background:#f0b8d0}.l4{background:#e898b8}
-.layer-n{width:24px;height:24px;border-radius:50%;background:var(--wh);font-size:11px;font-weight:900;color:var(--ac);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.layer-nm{font-size:12px;font-weight:700;color:#5a1a38}
-.layer-fx{font-size:11px;color:#7a3058;margin-top:2px}
-.mech-list{display:flex;flex-direction:column;gap:28px}
-.mech-item{display:flex;gap:16px;align-items:flex-start}
-.mn{font-size:32px;font-weight:900;color:var(--pk3);line-height:1;flex-shrink:0;width:44px}
-.mech-ttl{font-weight:700;font-size:16px;margin-bottom:4px}
-.mech-desc{font-size:14px;color:var(--gray);line-height:1.7}
+.cta-final{background:linear-gradient(135deg,#deeeff,#f0f7ff);padding:72px 24px;text-align:center;}
+.cta-final a.line-btn{display:inline-block;background:var(--orange);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;border-radius:50px;box-shadow:0 8px 24px rgba(245,158,11,.4);}
 
-/* ──────────────────────────────
-   7. USAGE
-────────────────────────────── */
-.usage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.usage-card{background:var(--wh);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(192,72,122,.07)}
-.usage-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--ac);letter-spacing:1px}
-.ui-a{background:linear-gradient(135deg,#fdf8fb,#f5e0ee)}
-.ui-b{background:linear-gradient(135deg,#f0f4fd,#dce8f8)}
-.ui-c{background:linear-gradient(135deg,#f0fdf4,#d0f0dc)}
-.usage-body{padding:18px 20px}
-.usage-ttl{font-weight:700;font-size:15px;margin-bottom:4px}
-.usage-desc{font-size:13px;color:var(--gray)}
-.how-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;position:relative}
-.how-row::before{content:'';position:absolute;top:24px;left:17%;right:17%;height:1px;background:var(--pk3)}
-.how-step{text-align:center;position:relative;z-index:1;padding:0 12px}
-.how-c{width:48px;height:48px;border-radius:50%;background:var(--ac);color:var(--wh);font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.how-l{font-size:10px;letter-spacing:2px;color:var(--ac);font-weight:700;margin-bottom:4px}
-.how-ttl{font-weight:700;font-size:14px;margin-bottom:3px}
-.how-desc{font-size:12px;color:var(--gray)}
+footer{padding:40px 24px 32px;background:#f0f5fb;text-align:center;}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:var(--blue);letter-spacing:-1px;margin-bottom:14px;}
 
-/* ──────────────────────────────
-   8. BENEFITS / VOICE
-────────────────────────────── */
-.points-lead{font-size:clamp(20px,3vw,28px);font-weight:900;text-align:center;margin-bottom:48px}
-.points-lead span{color:var(--ac)}
-.point-item{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start;padding:32px 0;border-bottom:1px solid var(--pk2)}
-.point-item:last-child{border-bottom:none}
-.pn{font-size:52px;font-weight:900;color:var(--pk3);line-height:1}
-.p-ttl{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--dark)}
-.p-desc{font-size:14px;color:var(--gray);line-height:1.8}
-.voice-lead{text-align:center;margin:64px 0 32px}
-.voice-lead p{font-size:13px;letter-spacing:2px;color:var(--lgray);font-weight:600;margin-bottom:4px}
-.voice-lead h3{font-size:22px;font-weight:900}
-.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.voice-card{background:var(--wh);padding:24px;border:1px solid var(--pk2);border-radius:12px}
-.v-hd{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.v-av{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--wh);flex-shrink:0}
-.av1{background:var(--ac)}.av2{background:#7b5ea7}.av3{background:#3a8a5a}
-.v-nm{font-weight:700;font-size:14px}
-.v-mt{font-size:11px;color:var(--lgray)}
-.v-stars{color:#c8941a;font-size:14px;letter-spacing:2px;margin-bottom:10px}
-.v-txt{font-size:13px;color:var(--dark);line-height:1.8}
+.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line);color:#fff;font-size:14px;font-weight:700;padding:14px 40px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.5);white-space:nowrap;display:flex;align-items:center;}
 
-/* ──────────────────────────────
-   9. PRICING
-────────────────────────────── */
-.price-grid{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:20px;align-items:start;margin-top:40px}
-.price-card{background:var(--wh);padding:28px 22px;border:1px solid var(--pk2);border-radius:12px;text-align:center;position:relative}
-.price-card.feat{border:2px solid var(--ac)}
-.feat-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--ac);color:var(--wh);padding:3px 18px;font-size:11px;font-weight:700;white-space:nowrap;border-radius:3px;letter-spacing:1px}
-.p-nm{font-size:14px;font-weight:700;margin-bottom:8px}
-.p-orig{text-decoration:line-through;color:var(--lgray);font-size:15px}
-.p-main{font-size:36px;font-weight:900;line-height:1;margin:6px 0}
-.p-main span{font-size:14px;font-weight:400}
-.p-save{font-size:12px;color:var(--ac);font-weight:700;margin-bottom:14px}
-.p-feats{list-style:none;text-align:left;margin-bottom:20px;display:flex;flex-direction:column;gap:7px}
-.p-feats li{font-size:13px;display:flex;gap:8px}
-.p-feats li::before{content:'—';color:var(--ac);flex-shrink:0}
-.install-box{margin-top:28px;background:var(--pk);padding:20px;border-radius:8px;border:1px solid var(--pk3);text-align:center}
-.install-box strong{color:var(--ac);font-size:20px}
-
-/* ──────────────────────────────
-   10. FLOW
-────────────────────────────── */
-.flow-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;position:relative}
-.flow-row::before{content:'';position:absolute;top:32px;left:17%;right:17%;height:1px;background:var(--ac);opacity:.3;z-index:0}
-.flow-step{text-align:center;padding:0 16px;position:relative;z-index:1}
-.flow-n{width:64px;height:64px;border-radius:50%;background:var(--wh);border:2px solid var(--ac);color:var(--ac);font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.flow-ttl{font-weight:700;font-size:15px;margin-bottom:4px}
-.flow-desc{font-size:13px;color:var(--gray)}
-
-/* ──────────────────────────────
-   11. FAQ
-────────────────────────────── */
-.faq-list{max-width:700px;margin:40px auto 0;display:flex;flex-direction:column}
-.faq-item{border-bottom:1px solid var(--pk2)}
-.faq-q{width:100%;display:flex;align-items:center;gap:12px;padding:18px 0;background:none;border:none;text-align:left;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;color:var(--dark)}
-.faq-ql{font-size:13px;font-weight:900;color:var(--ac);flex-shrink:0;width:20px}
-.faq-ar{margin-left:auto;font-size:18px;color:var(--ac);transition:transform .3s;flex-shrink:0}
-.faq-item.open .faq-ar{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-a{max-height:300px}
-.faq-ai{padding:0 0 18px 32px;font-size:14px;color:var(--gray);line-height:1.85}
-
-/* ──────────────────────────────
-   12. CTA
-────────────────────────────── */
-.cta-band{background:var(--pk2);padding:80px 24px;text-align:center}
-.cta-ttl{font-size:clamp(24px,5vw,40px);font-weight:900;margin-bottom:10px}
-.cta-sub{color:var(--gray);font-size:15px;margin-bottom:32px}
-.micro{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:18px}
-.mc{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px}
-.mcd{width:5px;height:5px;border-radius:50%;background:var(--ac)}
-
-/* ──────────────────────────────
-   13. CLOSING
-────────────────────────────── */
-.closing{padding:80px 0;background:var(--wh);text-align:center}
-.cl-bar{width:40px;height:2px;background:var(--ac);margin:14px auto 32px}
-.cl-msg{max-width:640px;margin:0 auto 36px;font-size:16px;line-height:2.1;color:#444}
-.cl-sig{font-size:13px;color:var(--lgray);margin-top:12px}
-
-/* ──────────────────────────────
-   FOOTER / FLOAT
-────────────────────────────── */
-footer{background:#1a1a1a;color:#888;text-align:center;padding:40px 20px;font-size:12px}
-footer .fbrand{font-size:15px;font-weight:700;color:#fff;letter-spacing:2px;margin-bottom:12px}
-footer a{color:#888}
-.float{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--wh);border-top:2px solid var(--pk3);padding:12px 16px}
-.float-btn{width:100%;padding:16px;background:var(--ac);color:var(--wh);font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:inherit;border-radius:50px}
-
-/* ──────────────────────────────
-   RESPONSIVE
-────────────────────────────── */
 @media(max-width:768px){
-  .sec,.sec-pk{padding:56px 0}
-  .hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}
-  .hero-inner>div:first-child{order:2}
-  .hero-inner>div:last-child{order:1}
-  .hero-price-area{text-align:left}
-  .hero-vis-box{max-width:260px}
-  .bubbles .bubble{width:76px;height:76px;font-size:11px}
-  .risk-grid,.mech-inner{grid-template-columns:1fr}
-  .usage-grid,.voice-grid,.flow-row,.how-row,.price-grid,.trust-row{grid-template-columns:1fr}
-  .how-row::before,.flow-row::before{display:none}
-  .point-item{grid-template-columns:56px 1fr;gap:16px}
-  .pn{font-size:40px}
-  body{padding-bottom:76px}
-  .float{display:block}
-  table.comp th,table.comp td{padding:10px 10px;font-size:12px}
+  .pill-nav{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}
+  .flow-grid{grid-template-columns:repeat(2,1fr);}
 }
-@media(min-width:769px){.float{display:none!important}}
 </style>
 </head>
 <body>
 
-<!-- ============================
-     1. HERO
-============================= -->
-<section id="hero">
-  <div class="w">
-    <div class="hero-inner">
-      <div>
-        <p class="hero-serial">シリーズ累計10万台突破</p>
-        <h1 class="hero-catch">1日10分で、<br><em>自信を持てる肌へ</em></h1>
-        <p class="hero-sub-catch">プロのエステを自宅で毎日。<br>忙しい毎日の中でも続けられる、<br>新しい美容習慣が始まります。</p>
+<header>
+  <div class="hd-inner">
+    <div class="logo-wrap">
+      <span class="logo-by">BY ZERO TALENT</span>
+      <span class="logo-main">CAREER AGENT</span>
+    </div>
+    <nav class="pill-nav">
+      <a href="#steps" class="pill-link">4つのSTEP</a>
+      <a href="#reasons" class="pill-link">選ばれる理由</a>
+      <a href="#service" class="pill-link">サービス</a>
+      <a href="#faq" class="pill-link">よくある質問</a>
+      <a href="#cta" class="pill-contact">お問い合わせ</a>
+    </nav>
+    <a href="#cta" class="hd-cta">無料相談申込</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-        <div class="bubbles">
-          <div class="bubble ac">EMS<br>搭載</div>
-          <div class="bubble ac">RF<br>高周波</div>
-          <div class="bubble ac">LED<br>光療法</div>
-          <div class="bubble ac">完全<br>防水</div>
-          <div class="bubble">1日<br>10分</div>
-          <div class="bubble">医師<br>監修</div>
+<div class="gnav-overlay" id="gnav-overlay"></div>
+<nav class="gnav" id="gnav">
+  <button class="gnav-close" id="gnav-close">✕</button>
+  <ul>
+    <li><a href="#steps">4つのSTEP</a></li>
+    <li><a href="#reasons">選ばれる理由</a></li>
+    <li><a href="#service">サービス</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">by ZERO TALENT — Career Agent</p>
+      <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="Icon" class="main-icon">
+      <h1><em>「人生を逆転」させる</em><br>転職エージェント。</h1>
+      <a href="#cta" class="hero-btn">無料相談申込</a>
+    </div>
+  </div>
+</section>
+
+<section class="pain">
+  <div class="pain-inner">
+    <h2>こんなお悩みありませんか？</h2>
+    <div class="pain-tags" style="margin-top:36px;">
+      <span class="pain-tag">今のままでは給料が上がらない</span>
+      <span class="pain-tag">転職したいけど実績がない</span>
+      <span class="pain-tag">キャリアについて相談できる人がいない</span>
+    </div>
+  </div>
+</section>
+
+<section class="svc-lead" id="service">
+  <p>現役企業人事が行うサービス「ゼメキャリ転職エージェント」</p>
+  <h2>なら転職活動の悩みを<em>解決できます。</em></h2>
+</section>
+
+<section class="benefits" id="reasons">
+  <div class="benefits-inner">
+    <div class="benefit-row" style="grid-template-columns:1fr;">
+      <div class="benefit-text">
+        <div class="benefit-num">BENEFIT 01</div>
+        <h3>本音を話せる場所。<br><em>あなたのペースで進められます。</em></h3>
+        <p>LINEチャットで気軽に相談できます。転職意思がなくても大丈夫。まず話すだけでいい。</p>
+      </div>
+    </div>
+    <div class="benefit-row" style="grid-template-columns:1fr;">
+      <div class="benefit-text">
+        <div class="benefit-num">BENEFIT 02</div>
+        <h3>深掘りしながら、<br><em>企業のリアルを知れる。</em></h3>
+        <p>あなたの強みと希望をもとに、マッチする企業だけをご紹介。量より質のご提案です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="steps">
+  <div class="flow-inner">
+    <div class="sec-head" style="text-align:center;">
+      <h2>ご利用の流れ</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <div class="flow-circle">
+          <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="STEP1" style="width:70%; height:auto;">
         </div>
-
-        <div class="hero-price-area">
-          <p class="hp-product">美容・健康機器A　スターターセット</p>
-          <div class="hp-row">
-            <p class="hp-orig">通常価格 ¥59,800</p>
-            <p class="hp-price">¥44,800<span>（税込）</span></p>
-            <span class="hp-off">25%OFF</span>
-          </div>
-          <p class="hp-note">初回限定特別価格 ／ 送料無料</p>
+        <h4>無料相談申込</h4>
+        <p>1分で完了する無料相談に<br>お申し込みください。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <div class="flow-circle">
+          <span style="font-size:24px;">💬</span>
         </div>
-        <a href="#pricing" class="btn btn-main" style="width:100%;display:block;font-size:18px;padding:20px;">特別価格で購入する</a>
+        <h4>カウンセリング</h4>
+        <p>希望条件や不安なことを<br>なんでも相談してください。</p>
       </div>
-      <div class="hero-vis">
-        <div class="hero-vis-box">
-          <div class="vis-mark">機器A</div>
-          <p class="vis-nm">美容・健康機器A</p>
-          <p class="vis-sub">パーソナル美容器</p>
-          <div class="bubbles" style="margin:8px 0 0">
-            <div class="bubble" style="width:70px;height:70px;font-size:11px;">ながら<br>ケアOK</div>
-            <div class="bubble" style="width:70px;height:70px;font-size:11px;">濡れた手<br>でOK</div>
-          </div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <div class="flow-circle">
+          <span style="font-size:24px;">🏢</span>
         </div>
+        <h4>求人紹介</h4>
+        <p>最適な求人を厳選して<br>ご紹介いたします。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================
-     2. PROBLEM
-============================= -->
-<section class="prob-dark">
-  <div class="wn">
-    <p class="prob-lead">最近こんなことで<br>悩んでいませんか？</p>
-    <p class="prob-sub">あなただけじゃありません。同じ悩みを抱える方がたくさんいます。</p>
-    <div class="prob-items">
-      <div class="prob-item"><span class="prob-dot"></span><p class="prob-txt">エステに通う時間もお金もない</p></div>
-      <div class="prob-item"><span class="prob-dot"></span><p class="prob-txt">最近、実年齢より上に見られることが増えた</p></div>
-      <div class="prob-item"><span class="prob-dot"></span><p class="prob-txt">夕方になると脚や肩のどんより感が抜けない</p></div>
-      <div class="prob-item"><span class="prob-dot"></span><p class="prob-txt">スキンケアを続けてもなかなか実感が得られない</p></div>
-      <div class="prob-item"><span class="prob-dot"></span><p class="prob-txt">鏡を見るたびに気になるフェイスライン</p></div>
-    </div>
-    <div class="prob-cause">
-      <p>実は、ケアをしていても<br><strong>自宅ケアだと届かない層</strong>が<br>あることが原因かもしれません。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     3. RISK
-============================= -->
-<section class="sec">
-  <div class="w">
-    <p class="sec-label">Risk</p>
-    <h2 class="sec-ttl">放置すると、<br>どんどん取り戻しにくくなります</h2>
-    <div class="u-bar"></div>
-    <div class="risk-grid">
-      <div class="risk-chart-box">
-        <p class="risk-chart-ttl">◆ 肌悩みの進行イメージ（ケアなし）</p>
-        <div class="bars">
-          <div class="bar-r"><span class="bar-l">現在</span><div class="bar-bg"><div class="bar-f bf1" style="width:0">35%</div></div></div>
-          <div class="bar-r"><span class="bar-l">1年後</span><div class="bar-bg"><div class="bar-f bf2" style="width:0">60%</div></div></div>
-          <div class="bar-r"><span class="bar-l">3年後</span><div class="bar-bg"><div class="bar-f bf3" style="width:0">88%</div></div></div>
-        </div>
-        <p style="font-size:11px;color:var(--lgray);text-align:center;margin-top:12px;">※ イメージ図です</p>
-      </div>
-      <div class="risk-pts">
-        <div class="risk-pt"><p class="risk-pt-ttl">年齢サインが定着していく</p><p class="risk-pt-desc">ケア不足は年齢とともに蓄積されていきます。後から取り組もうとすると、時間もコストもかかってしまいます。</p></div>
-        <div class="risk-pt"><p class="risk-pt-ttl">筋肉の硬直が連鎖する</p><p class="risk-pt-desc">刺激が足りないと、筋肉がどんどん固まっていきます。肩のコリや疲れた顔に見えることも。</p></div>
-        <div class="risk-pt"><p class="risk-pt-ttl">エステ費がかさんでいく</p><p class="risk-pt-desc">放置してから通い始めると、施術回数が増え費用が大幅にアップします。</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     4. SOLUTION
-============================= -->
-<section class="sec-pk">
-  <div class="wn" style="text-align:center">
-    <p class="sec-label">そんなあなたにおすすめ</p>
-    <p class="solution-nm">美容・健康機器A</p>
-    <p class="sol-lead">そのお悩み、<span style="color:var(--ac);">美容・健康機器A</span>が<br>自宅で解決します</p>
-    <p class="sec-sub">プロ仕様の4つのテクノロジーを1台に凝縮。<br>毎日たった10分で、サロン品質のケアを実現。</p>
-    <div class="bubbles" style="margin-top:32px;justify-content:center">
-      <div class="bubble ac" style="width:100px;height:100px;font-size:13px;">EMS<br>搭載</div>
-      <div class="bubble ac" style="width:100px;height:100px;font-size:13px;">RF<br>高周波</div>
-      <div class="bubble ac" style="width:100px;height:100px;font-size:13px;">LED<br>光療法</div>
-      <div class="bubble ac" style="width:100px;height:100px;font-size:13px;">超音波<br>振動</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     5. COMPARISON
-============================= -->
-<section class="sec">
-  <div class="w">
-    <p class="sec-label">Comparison</p>
-    <h2 class="sec-ttl">他社製品との<br>徹底比較</h2>
-    <div class="u-bar"></div>
-    <div class="comp-wrap">
-      <table class="comp">
-        <thead><tr><th>比較項目</th><th class="hl">美容・健康機器A</th><th>他社A</th><th>他社B</th></tr></thead>
-        <tbody>
-          <tr><td>出力パワー</td><td class="hl">MAX 5段階調節</td><td>3段階</td><td>2段階</td></tr>
-          <tr><td>搭載テクノロジー</td><td class="hl">4種類</td><td>2種類</td><td>1種類</td></tr>
-          <tr><td>防水仕様</td><td class="hl"><span class="cy">✔</span></td><td><span class="cn">✖</span></td><td><span class="cy">✔</span></td></tr>
-          <tr><td>特許技術</td><td class="hl"><span class="cy">✔</span></td><td><span class="cn">✖</span></td><td><span class="cn">✖</span></td></tr>
-          <tr><td>医師監修</td><td class="hl"><span class="cy">✔</span></td><td><span class="cn">✖</span></td><td><span class="cy">✔</span></td></tr>
-          <tr><td>国内生産</td><td class="hl"><span class="cy">✔</span></td><td><span class="cn">✖</span></td><td><span class="cn">✖</span></td></tr>
-          <tr><td>保証期間</td><td class="hl">2年間</td><td>1年間</td><td>6ヶ月</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="trust-row">
-      <div class="trust-item"><p class="trust-mark">特許</p><p class="trust-text">特許技術採用</p></div>
-      <div class="trust-item"><p class="trust-mark">医師</p><p class="trust-text">皮膚科医師監修</p></div>
-      <div class="trust-item"><p class="trust-mark">国産</p><p class="trust-text">完全国内生産</p></div>
-      <div class="trust-item"><p class="trust-mark">PSE</p><p class="trust-text">PSE認証取得</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     6. MECHANISM
-============================= -->
-<section class="sec-pk">
-  <div class="w">
-    <p class="sec-label">Mechanism</p>
-    <h2 class="sec-ttl">なぜ効果が期待できるのか</h2>
-    <div class="u-bar"></div>
-    <p class="sec-sub">科学的根拠に基づく4つのアプローチで、<br>表面だけでなく深層にまで働きかけます。</p>
-    <div class="mech-inner">
-      <div class="skin-box">
-        <p class="skin-cap">◆ 皮膚層へのアプローチ図</p>
-        <div class="layers">
-          <div class="layer l1"><div class="layer-n">1</div><div><p class="layer-nm">表皮層（角質層）</p><p class="layer-fx">LED光 + 超音波振動でアプローチ</p></div></div>
-          <div class="layer l2"><div class="layer-n">2</div><div><p class="layer-nm">真皮層</p><p class="layer-fx">RF高周波が深層まで到達</p></div></div>
-          <div class="layer l3"><div class="layer-n">3</div><div><p class="layer-nm">皮下組織</p><p class="layer-fx">EMS波形が組織にダイレクト刺激</p></div></div>
-          <div class="layer l4"><div class="layer-n">4</div><div><p class="layer-nm">筋肉層</p><p class="layer-fx">EMS独自波長で筋肉にアプローチ</p></div></div>
-        </div>
-        <p style="font-size:11px;color:var(--lgray);text-align:center;margin-top:12px;">※ 模式図です。効果を保証するものではありません。</p>
-      </div>
-      <div class="mech-list">
-        <div class="mech-item"><p class="mn">01</p><div><p class="mech-ttl">特許EMS波形技術</p><p class="mech-desc">独自のEMS波形で筋肉繊維に効率よくアプローチ。一般的な波形とは異なる、なめらかな刺激を実現しています。</p></div></div>
-        <div class="mech-item"><p class="mn">02</p><div><p class="mech-ttl">RF（ラジオ波）温めメカニズム</p><p class="mech-desc">約40℃の温感で皮膚の深部まで届き、血行促進・コリのケアをサポートします。</p></div></div>
-        <div class="mech-item"><p class="mn">03</p><div><p class="mech-ttl">3波長LEDによる光アプローチ</p><p class="mech-desc">赤・近赤外線・青の3種のLEDで、角質層から多角的にケアにアプローチします。</p></div></div>
-        <div class="mech-item"><p class="mn">04</p><div><p class="mech-ttl">超音波振動で成分浸透サポート</p><p class="mech-desc">毎分約100万回の微細振動が、スキンケア成分の角質層への浸透をサポートします。</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     7. USAGE
-============================= -->
-<section class="sec">
-  <div class="w">
-    <p class="sec-label">How to Use</p>
-    <h2 class="sec-ttl">毎日の生活に<br>自然に溶け込みます</h2>
-    <div class="u-bar"></div>
-    <div class="usage-grid">
-      <div class="usage-card"><div class="usage-img ui-a">リビングで</div><div class="usage-body"><p class="usage-ttl">テレビを見ながら</p><p class="usage-desc">ソファでくつろぎながら10分。ながらケアで毎日続けられます。</p></div></div>
-      <div class="usage-card"><div class="usage-img ui-b">お風呂で</div><div class="usage-body"><p class="usage-ttl">湯船につかりながら</p><p class="usage-desc">完全防水だから、バスタイムにそのまま使えます。</p></div></div>
-      <div class="usage-card"><div class="usage-img ui-c">旅先でも</div><div class="usage-body"><p class="usage-ttl">出張・旅行先でも</p><p class="usage-desc">コンパクトだからポーチに入れて持ち歩けます。</p></div></div>
-    </div>
-    <div style="margin-top:48px;text-align:center">
-      <p class="sec-label">Step</p>
-      <h3 style="font-size:20px;font-weight:700;margin:8px 0 32px;">使い方は <span style="color:var(--ac)">3ステップ</span> だけ</h3>
-    </div>
-    <div class="how-row">
-      <div class="how-step"><div class="how-c">1</div><p class="how-l">STEP 01</p><p class="how-ttl">充電する</p><p class="how-desc">USBで約2時間</p></div>
-      <div class="how-step"><div class="how-c">2</div><p class="how-l">STEP 02</p><p class="how-ttl">ジェルを塗る</p><p class="how-desc">専用ジェルを適量</p></div>
-      <div class="how-step"><div class="how-c">3</div><p class="how-l">STEP 03</p><p class="how-ttl">ケアスタート</p><p class="how-desc">気になる部位へあてるだけ</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     8. BENEFITS / VOICE
-============================= -->
-<section class="sec-pk">
-  <div class="w">
-    <p class="sec-label">おすすめ理由</p>
-    <p class="points-lead"><span>3つの</span>ポイント</p>
-    <div class="point-item">
-      <p class="pn">01</p>
-      <div><p class="p-ttl">サロンに通うコストが不要に</p><p class="p-desc">月1回のエステを続けると年間約24万円。美容・健康機器Aなら一度の購入でずっと使えます。毎日のルーティンに組み込むだけで、節約しながらしっかりケアができます。</p></div>
-    </div>
-    <div class="point-item">
-      <p class="pn">02</p>
-      <div><p class="p-ttl">移動ゼロ、好きな時間にケア</p><p class="p-desc">予約も移動もなし。テレビを見ながら、お風呂に入りながら、自分のペースでケアできます。忙しい毎日でも10分だけ自分のための時間をつくれます。</p></div>
-    </div>
-    <div class="point-item">
-      <p class="pn">03</p>
-      <div><p class="p-ttl">続けることで変わっていく実感</p><p class="p-desc">毎日丁寧にケアを積み重ねることで、生まれる自己肯定感。「なんとなく調子がいい」が続くと、メイクの時間も、お出かけも、少しずつ楽しくなっていきます。</p></div>
-    </div>
-
-    <div class="voice-lead">
-      <p>Voice</p>
-      <h3>愛用者の声</h3>
-    </div>
-    <div class="voice-grid">
-      <div class="voice-card">
-        <div class="v-hd"><div class="v-av av1">T.Y</div><div><p class="v-nm">田中 Y様</p><p class="v-mt">42歳・会社員</p></div></div>
-        <div class="v-stars">★★★★★</div>
-        <p class="v-txt">エステに通うのをやめてから2年。半信半疑で試しましたが、1ヶ月で肌のトーンが変わってきた気がします。毎日続けることの大切さを実感しています。</p>
-      </div>
-      <div class="voice-card">
-        <div class="v-hd"><div class="v-av av2">M.S</div><div><p class="v-nm">佐藤 M様</p><p class="v-mt">35歳・2児のママ</p></div></div>
-        <div class="v-stars">★★★★★</div>
-        <p class="v-txt">子供が寝た後にテレビを観ながらケアするのが至福の時間になりました。操作が簡単なので毎日苦なく続けられています！</p>
-      </div>
-      <div class="voice-card">
-        <div class="v-hd"><div class="v-av av3">K.S</div><div><p class="v-nm">鈴木 K様</p><p class="v-mt">50歳・自営業</p></div></div>
-        <div class="v-stars">★★★★☆</div>
-        <p class="v-txt">肩のコリへのアプローチがとにかく気持ちいい。夕方のどんより感が軽くなった気がして、夜のストレッチと組み合わせて使っています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     9. PRICING
-============================= -->
-<section id="pricing" class="sec">
-  <div class="w">
-    <p class="sec-label">期間限定キャンペーン</p>
-    <h2 class="sec-ttl">今だけの特別価格</h2>
-    <div class="u-bar"></div>
-    <p class="sec-sub">キャンペーンは予告なく終了する場合があります。お早めにどうぞ。</p>
-    <div class="price-grid">
-      <div class="price-card">
-        <p class="p-nm">本体のみ</p>
-        <p class="p-orig">¥49,800</p>
-        <p class="p-main">¥38,500<span>（税込）</span></p>
-        <p class="p-save">▼ 11,300円お得</p>
-        <ul class="p-feats"><li>本体</li><li>充電ケーブル</li><li>収納ポーチ</li><li>1年間保証</li></ul>
-        <a href="#cta" class="btn btn-main" style="width:100%;display:block;padding:14px;font-size:15px;">このプランにする</a>
-      </div>
-      <div class="price-card feat">
-        <span class="feat-badge">一番人気</span>
-        <p class="p-nm">スターターセット</p>
-        <p class="p-orig">¥59,800</p>
-        <p class="p-main">¥44,800<span>（税込）</span></p>
-        <p class="p-save">▼ 15,000円お得 ＋ 豪華特典</p>
-        <ul class="p-feats"><li>本体</li><li>専用ジェル 3本セット</li><li>充電ケーブル</li><li>プレミアムポーチ</li><li>2年間保証</li><li>公式アプリ 1年分</li></ul>
-        <a href="#cta" class="btn btn-main" style="width:100%;display:block;padding:16px;">このプランにする</a>
-      </div>
-      <div class="price-card">
-        <p class="p-nm">ファミリーセット</p>
-        <p class="p-orig">¥89,800</p>
-        <p class="p-main">¥69,800<span>（税込）</span></p>
-        <p class="p-save">▼ 20,000円お得</p>
-        <ul class="p-feats"><li>本体 × 2台</li><li>専用ジェル 2本</li><li>充電ケーブル × 2</li><li>ポーチ × 2</li><li>2年間保証</li></ul>
-        <a href="#cta" class="btn btn-main" style="width:100%;display:block;padding:14px;font-size:15px;">このプランにする</a>
-      </div>
-    </div>
-    <div class="install-box">
-      <p style="font-size:13px;color:var(--gray);">分割払い対応 ／ スターターセットの場合</p>
-      <p style="margin-top:6px;font-size:15px;">月々わずか <strong>¥1,866〜</strong> から始められます</p>
-      <p style="font-size:11px;color:var(--lgray);margin-top:4px;">24回払いの場合</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     10. FLOW
-============================= -->
-<section class="sec-pk">
-  <div class="w">
-    <p class="sec-label">ご購入の流れ</p>
-    <h2 class="sec-ttl">最短翌日からケアをスタート</h2>
-    <div class="u-bar"></div>
-    <div class="flow-row">
-      <div class="flow-step"><div class="flow-n">1</div><p class="flow-ttl">Webからお申し込み</p><p class="flow-desc">3分で完了。24時間受付中。</p></div>
-      <div class="flow-step"><div class="flow-n">2</div><p class="flow-ttl">最短翌日にお届け</p><p class="flow-desc">全国送料無料でお届けします。</p></div>
-      <div class="flow-step"><div class="flow-n">3</div><p class="flow-ttl">すぐに使用開始</p><p class="flow-desc">充電してジェルを塗るだけ。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     11. FAQ
-============================= -->
-<section class="sec">
-  <div class="w">
-    <p class="sec-label">Q &amp; A</p>
-    <h2 class="sec-ttl">よくあるご質問</h2>
-    <div class="u-bar"></div>
-    <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>金属アレルギーでも使えますか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">肌に触れる部分は医療用グレードのシリコンとチタンコーティングを採用しています。重度の金属アレルギーの方は、事前に皮膚科医師へのご相談をお勧めします。</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>家族と共有して使えますか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">ご家族での共用が可能です。ご使用前後にプローブ部分をアルコール綿で拭いていただくことをお勧めします。</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>保証期間はどのくらいですか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">本体のみは1年間、スターターセット・ファミリーセットは2年間の保証付きです。30日間の返金保証制度も設けています。</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>妊娠中・授乳中でも使えますか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">妊娠中・授乳中の方のご使用はお控えください。ペースメーカーなどをお使いの方も、主治医にご相談ください。</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>どのくらいの頻度で使えばいいですか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">毎日10〜15分のご使用をお勧めしています。継続することが大切です。公式アプリで部位ごとのガイドも確認できます。</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q</span>専用ジェル以外も使えますか？<span class="faq-ar">+</span></button><div class="faq-a"><div class="faq-ai">EMSモード使用時は専用導電ジェルが必要です。LED・RFモードのみの場合は通常の美容液と組み合わせて使えます。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     12. CTA
-============================= -->
-<section id="cta">
-  <div class="cta-band">
-    <p class="sec-label">期間限定</p>
-    <h2 class="cta-ttl" style="margin-top:8px;">今すぐ、新しい自分へ</h2>
-    <p class="cta-sub">キャンペーン価格は数量限定です。お早めに。</p>
-    <a href="#pricing" class="btn btn-main" style="font-size:18px;padding:20px 56px;">特別価格で購入する</a>
-    <div class="micro">
-      <span class="mc"><span class="mcd"></span>SSL安全決済</span>
-      <span class="mc"><span class="mcd"></span>30日間返金保証</span>
-      <span class="mc"><span class="mcd"></span>全国送料無料</span>
-      <span class="mc"><span class="mcd"></span>専任サポート対応</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
-     13. CLOSING
-============================= -->
-<section class="closing">
-  <div class="wn">
-    <p class="sec-label">Message</p>
-    <div class="cl-bar"></div>
-    <h2 class="sec-ttl" style="margin-bottom:16px;">開発者より、あなたへ</h2>
-    <p class="cl-msg">「毎日頑張っているのに、なぜか結果が出ない。そんな悔しさを抱えた方々の声から、美容・健康機器Aは生まれました。プロの手の届かない時間にも、あなたの美しさと健康を引き出せるように。私たちが全力でサポートします。さあ、今日から新しい自分に出会いましょう。」<span class="cl-sig"><br>— 美容・健康機器A 開発チーム一同</span></p>
-    <a href="#pricing" class="btn btn-main" style="font-size:17px;padding:20px 48px;">今すぐ新しい習慣を始める</a>
-    <div class="micro" style="margin-top:16px;">
-      <span class="mc"><span class="mcd"></span>30日間返金保証</span>
-      <span class="mc"><span class="mcd"></span>全国送料無料</span>
-    </div>
-  </div>
+<section class="cta-final" id="cta">
+  <h2>本気の転職、始めよう。</h2>
+  <p>まずはLINEで、無料相談。<br>登録はたった30秒、履歴書も不要です。</p>
+  <a href="#" class="line-btn">
+    <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="" class="btn-icon">
+    無料相談申込
+  </a>
 </section>
 
 <footer>
-  <p class="fbrand">美容・健康機器A</p>
-  <p style="margin-bottom:12px;">© 2025 All Rights Reserved.</p>
-  <p><a href="#">プライバシーポリシー</a>&ensp;|&ensp;<a href="#">特定商取引法に基づく表記</a>&ensp;|&ensp;<a href="#">お問い合わせ</a></p>
-  <p style="margin-top:14px;color:#555;">※本製品は医療機器ではありません。効果・効能には個人差があります。薬機法上、身体の変化を保証するものではありません。</p>
+  <div class="footer-logo">ゼロタレ</div>
+  <small>© 2026 Career Hub Partner. All rights reserved.</small>
 </footer>
 
-<div class="float" id="floatCta">
-  <button class="float-btn" onclick="document.querySelector('#pricing').scrollIntoView({behavior:'smooth'})">特別価格で購入する</button>
-</div>
+<a href="#cta" class="line-float">
+  <img src="https://i.ibb.co/YF6JxMCL/8-DC3-B1-F3-85-F6-497-C-BA6-F-BA9210787887.png" alt="" class="btn-icon">
+  LINEで無料相談する
+</a>
 
 <script>
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!open)item.classList.add('open');
-}
-const float=document.getElementById('floatCta');
-const sol=document.getElementById('solution')||document.querySelector('.prob-dark');
-window.addEventListener('scroll',()=>{
-  if(window.innerWidth<=768)
-    float.style.display=sol.getBoundingClientRect().top<0?'block':'none';
-});
-const bars=document.querySelectorAll('.bar-f');
-const targets=['35%','60%','88%'];
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      bars.forEach((b,i)=>setTimeout(()=>b.style.width=targets[i],i*280));
-      io.disconnect();
-    }
-  });
-},{threshold:0.3});
-const chart=document.querySelector('.bars');
-if(chart)io.observe(chart);
+const btn=document.getElementById('hamburger');
+const gnav=document.getElementById('gnav');
+const overlay=document.getElementById('gnav-overlay');
+const closeBtn=document.getElementById('gnav-close');
+function openMenu(){btn.classList.add('open');gnav.classList.add('open');overlay.classList.add('open');}
+function closeMenu(){btn.classList.remove('open');gnav.classList.remove('open');overlay.classList.remove('open');}
+btn.addEventListener('click',()=>gnav.classList.contains('open')?closeMenu():openMenu());
+if(closeBtn) closeBtn.addEventListener('click',closeMenu);
+overlay.addEventListener('click',closeMenu);
 </script>
 </body>
 </html>
