@@ -144,8 +144,36 @@ footer{padding:40px 24px 32px;background:#fef0e7;text-align:center;}
 .footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
 footer small{font-size:10px;color:#bbb;}
 
-/* FLOAT */
-.line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line);color:#fff;font-size:14px;font-weight:700;padding:14px 40px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.5);white-space:nowrap;}
+/* FLOAT (PC・スマホ共通で最前面に表示) */
+.line-float {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000; /* 他の要素より一番手前に出す */
+  background: var(--line-green); /* 緑色の変数名を修正 */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(40, 192, 0, 0.4);
+  white-space: nowrap;
+  display: flex !important; /* 強制的に表示 */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* スマホ表示の時のサイズ微調整 */
+@media(max-width: 768px) {
+  .line-float {
+    width: 90%; /* スマホでは横幅いっぱいに近くする */
+    padding: 14px 0;
+    font-size: 14px;
+    bottom: 15px;
+  }
+}
 
 /* SECTION COMMON */
 .sec-head{text-align:center;margin-bottom:0;}
