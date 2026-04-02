@@ -144,27 +144,47 @@ footer{padding:40px 24px 32px;background:#fef0e7;text-align:center;}
 .footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
 footer small{font-size:10px;color:#bbb;}
 
-/* --- 1. PC・スマホ共通の基本設定（PCはここが適用される） --- */
+/* FOOTER */
+footer{padding:40px 24px 32px;background:#fef0e7;text-align:center;}
+.footer-by{font-size:9px;color:#aaa;letter-spacing:.2em;margin-bottom:6px;}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:var(--orange-main);letter-spacing:-1px;margin-bottom:14px;}
+.footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
+footer small{font-size:10px;color:#bbb;}
+
+/* FLOAT (PC・スマホ共通で最前面に表示) */
 .line-float {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10000;
-  background: var(--line-green);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px 40px;
-  border-radius: 50px;
-  box-shadow: 0 8px 25px rgba(40, 192, 0, 0.4);
-  white-space: nowrap;
-  display: flex !important; /* ← PCでもスマホでも絶対に出す */
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000; /* 他の要素より一番手前に出す */
+  background: var(--line-green); /* 緑色の変数名を修正 */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(40, 192, 0, 0.4);
+  white-space: nowrap;
+  display: flex !important; /* 強制的に表示 */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
+
+/* スマホ表示の時のサイズ微調整 */
+@media(max-width: 768px) {
+  .line-float {
+    width: 90%; /* スマホでは横幅いっぱいに近くする */
+    padding: 14px 0;
+    font-size: 14px;
+    bottom: 15px;
+  }
+}
+
+/* SECTION COMMON */
+
+これで良い？
 
 .line-float:hover {
   transform: translateX(-50%) translateY(-3px);
