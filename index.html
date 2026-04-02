@@ -75,10 +75,8 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdr
 .flow-num{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--orange-main);margin-bottom:8px;}
 .flow-circle{width:80px;height:80px;border-radius:50%;background:var(--orange-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid var(--orange-main);}
 /* SVG内の青色をオレンジに上書きする指定 */
-.flow-circle svg rect[fill="#f78e1e"], 
-.flow-circle svg path[fill="#f78e1e"] { fill: var(--orange-main) !important; }
-.flow-circle svg rect[fill="#fef0e7"], 
-.flow-circle svg path[fill="#fef0e7"] { fill: var(--orange-light) !important; }
+.flow-circle svg [fill="#2563a8"] { fill: var(--orange-main) !important; }
+.flow-circle svg [fill="#fef0e7"] { fill: var(--orange-pale) !important; }
 
 .flow-step h4{font-size:16px;font-weight:900;margin-bottom:10px;}
 .flow-step p{font-size:12px;color:#777;line-height:1.7;}
@@ -241,7 +239,7 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
           </svg>
         </div>
         <h4>無料キャリア相談</h4>
-        <p><a href="#cta" style="color:var(--blue);text-decoration:underline;">こちら</a>より、1分でできる無料相談<br>申込を行なってください。</p>
+        <p><a href="#cta" style="color:var(--orange-main);text-decoration:underline; font-weight:bold;"">こちら</a>より、1分でできる無料相談<br>申込を行なってください。</p>
       </div>
       <div class="flow-step">
         <div class="flow-num">02</div>
