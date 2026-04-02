@@ -151,53 +151,34 @@ footer{padding:40px 24px 32px;background:#fef0e7;text-align:center;}
 .footer-info{font-size:11px;color:#888;line-height:2.2;margin-bottom:16px;}
 footer small{font-size:10px;color:#bbb;}
 
-/* FLOAT (PC・スマホ共通で最前面に表示) */
-.line-float {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10000; /* 他の要素より一番手前に出す */
-  background: var(--line-green); /* 緑色の変数名を修正 */
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px 40px;
-  border-radius: 50px;
-  box-shadow: 0 8px 25px rgba(40, 192, 0, 0.4);
-  white-space: nowrap;
-  display: flex !important; /* 強制的に表示 */
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* スマホ表示の時のサイズ微調整 */
-@media(max-width: 768px) {
-  .line-float {
-    width: 90%; /* スマホでは横幅いっぱいに近くする */
-    padding: 14px 0;
-    font-size: 14px;
-    bottom: 15px;
-  }
-}
-
-/* SECTION COMMON */
-
-これで良い？
-
-.line-float:hover {
-  transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 12px 30px rgba(40, 192, 0, 0.5);
-}
-
-/* --- 2. スマホ（768px以下）の時だけ上書きする設定 --- */
+/* --- LINE相談ボタン：スマホ版のみ表示 --- */
 @media (max-width: 768px) {
   .line-float {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
-    padding: 14px 0;
-    font-size: 14px;
-    bottom: 15px;
+    z-index: 100000; /* 他の要素より絶対手前に出す */
+    background: #28C000 !important; /* 変数を使わず直接LINE緑を指定 */
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 0;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(40, 192, 0, 0.4);
+    display: flex !important; /* スマホで強制表示 */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+/* PC版（769px以上）では完全に消す設定 */
+@media (min-width: 769px) {
+  .line-float {
+    display: none !important;
   }
 }
 
