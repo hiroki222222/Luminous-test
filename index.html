@@ -98,6 +98,15 @@ footer{padding:60px 24px;background:var(--brown-dark);color:#fff;text-align:cent
 /* FLOAT LINE */
 .line-float{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:var(--line-green);color:#fff;font-size:15px;font-weight:700;padding:16px 40px;border-radius:50px;box-shadow:0 8px 20px rgba(40,192,0,0.4);}
 
+  /* CTAボタンと最終セクションの追加デザイン */
+.cta-band a {display:inline-block;background:var(--orange-main);color:#fff;font-size:16px;font-weight:900;padding:18px 50px;border-radius:50px;box-shadow:0 6px 20px rgba(247,142,30,0.3);transition:.3s;}
+.cta-band a:hover {background:var(--orange-deep);transform:translateY(-2px);}
+.cta-final {background:linear-gradient(135deg,#fbeeda,#fdf3ed);padding:80px 24px;text-align:center;}
+.cta-final h2 {font-size:clamp(20px,2.5vw,30px);font-weight:900;color:var(--brown-dark);margin-bottom:12px;}
+.cta-final p {font-size:13px;color:#666;margin-bottom:32px;line-height:1.9;}
+.line-btn {display:inline-block;background:var(--line-green);color:#fff;font-size:17px;font-weight:700;padding:20px 64px;border-radius:50px;box-shadow:0 8px 24px rgba(40,192,0,.4);transition:.3s;}
+.line-btn:hover {transform:translateY(-2px);box-shadow:0 10px 25px rgba(40,192,0,.5);}
+  
 @media(max-width:768px){
   .pill-nav{display:none;}
   .hamburger{display:flex;}
